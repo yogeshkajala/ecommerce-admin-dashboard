@@ -1,8 +1,8 @@
 version: '3.8'
 services:
-  db:
+  db-sqlserver:
     image: mcr.microsoft.com/mssql/server:2022-latest
-    container_name: ecommerce_admin_sql
+    container_name: ecommerce_admin_sqlserver
     environment:
       ACCEPT_EULA: "Y"
       MSSQL_SA_PASSWORD: "SuperSecureAdminPassword123!"
@@ -11,5 +11,27 @@ services:
     volumes:
       - sql_data:/var/opt/mssql
 
+  db-postgres:
+    image: postgres:15-alpine
+    container_name: ecommerce_admin_postgres
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: SuperSecureAdminPassword123!
+      POSTGRES_DB: EcommerceAdminCatalog
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+  cache-redis:
+    image: redis:7-alpine
+    container_name: ecommerce_admin_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
 volumes:
   sql_data:
+  pg_data:
+  redis_data:

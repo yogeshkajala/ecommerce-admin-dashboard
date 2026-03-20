@@ -27,7 +27,9 @@ The system operates using a standard Client-Server model. The Admin interfaces w
 graph TD
     A[Admin User] -->|HTTPS| B[Angular Frontend SPA]
     B -->|REST / JSON| C[.NET 8 Web API]
-    C -->|EF Core / TCP| D[(SQL Server Database)]
+    C -->|EF Core / TCP| D[(SQL Server - Identity)]
+    C -->|Npgsql / TCP| E[(PostgreSQL - Catalog)]
+    C -->|StackExchange.Redis| F[(Redis - Cache)]
 ```
 
 ### 2.2 Logical Architecture (Clean Architecture)
