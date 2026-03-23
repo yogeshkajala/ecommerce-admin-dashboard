@@ -2,6 +2,7 @@ using EcommerceAdmin.Core.Entities;
 using EcommerceAdmin.Core.Interfaces;
 using EcommerceAdmin.Infrastructure.Data;
 using EcommerceAdmin.Infrastructure.Services;
+using EcommerceAdmin.Infrastructure.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using StackExchange.Redis;
@@ -11,14 +12,14 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
-// Task 1.1: Configure Entity Framework Core for SQL Server (Identity & User Management)
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("SqlServerConnection")));
+builder.Services.AddControllers();
 
 builder.Services.AddIdentity<SuperAdmin, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
+
+// Phase 2: Dynamic Authentication setup using the Abstraction
+builder.Services.AddDynamicAuthentication(builder.Configuration);
 
 // Task 1.2: Configure Npgsql / EF Core for PostgreSQL (Product Catalog)
 builder.Services.AddDbContext<CatalogDbContext>(options =>
@@ -41,6 +42,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.MapControllers();
 
 // Health Check Endpoint
 app.MapGet("/health", () => Results.Ok(new { Status = "Healthy", Databases = "Pending" }))
