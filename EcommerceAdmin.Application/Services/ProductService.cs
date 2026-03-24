@@ -3,37 +3,34 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using EcommerceAdmin.Core.Entities;
 using EcommerceAdmin.Application.Interfaces;
-using EcommerceAdmin.Infrastructure.Data;
-using Microsoft.EntityFrameworkCore;
+using EcommerceAdmin.Core.Interfaces;
 
 namespace EcommerceAdmin.Application.Services;
 
 public class ProductService : IProductService
 {
-    private readonly CatalogDbContext _context;
+    private readonly IProductRepository _productRepository;
 
-    public ProductService(CatalogDbContext context)
+    public ProductService(IProductRepository productRepository)
     {
-        _context = context;
+        _productRepository = productRepository;
     }
 
     public async Task<IEnumerable<Product>> GetAllProductsAsync()
     {
-        return await _context.Products.ToListAsync();
+        return await _productRepository.GetAllAsync();
     }
 
     public async Task<Product?> GetProductByIdAsync(Guid id)
     {
-        return await _context.Products.FindAsync(id);
+        return await _productRepository.GetByIdAsync(id);
     }
 
     public async Task<Product> CreateProductAsync(Product product)
     {
         product.Id = Guid.NewGuid();
         product.CreatedAt = DateTime.UtcNow;
-        _context.Products.Add(product);
-        await _context.SaveChangesAsync();
-        return product;
+        return await _productRepository.AddAsync(product);
     }
 
     public async Task<bool> UpdateProductAsync(Guid id, Product product)
@@ -44,41 +41,17 @@ public class ProductService : IProductService
         }
 
         product.UpdatedAt = DateTime.UtcNow;
-        _context.Entry(product).State = EntityState.Modified;
-
-        try
-        {
-            await _context.SaveChangesAsync();
-            return true;
-        }
-        catch (DbUpdateConcurrencyException)
-        {
-            if (!await ProductExistsAsync(id))
-            {
-                return false;
-            }
-            else
-            {
-                throw;
-            }
-        }
+        return await _productRepository.UpdateAsync(product);
     }
 
     public async Task<bool> DeleteProductAsync(Guid id)
     {
-        var product = await _context.Products.FindAsync(id);
+        var product = await _productRepository.GetByIdAsync(id);
         if (product == null)
         {
             return false;
         }
 
-        _context.Products.Remove(product);
-        await _context.SaveChangesAsync();
-        return true;
-    }
-
-    private async Task<bool> ProductExistsAsync(Guid id)
-    {
-        return await _context.Products.AnyAsync(e => e.Id == id);
+        return await _productRepository.DeleteAsync(product);
     }
 }
