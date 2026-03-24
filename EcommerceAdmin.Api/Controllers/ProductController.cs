@@ -1,8 +1,7 @@
 using EcommerceAdmin.Core.Entities;
-using EcommerceAdmin.Infrastructure.Data;
+using EcommerceAdmin.Application.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace EcommerceAdmin.Api.Controllers;
 
@@ -11,60 +10,44 @@ namespace EcommerceAdmin.Api.Controllers;
 [Authorize]
 public class ProductController : ControllerBase
 {
-    private readonly CatalogDbContext _context;
+    private readonly IProductService _productService;
 
-    public ProductController(CatalogDbContext context)
+    public ProductController(IProductService productService)
     {
-        _context = context;
+        _productService = productService;
     }
 
     // GET: api/Product
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
     {
-        return await _context.Products.ToListAsync();
+        var products = await _productService.GetAllProductsAsync();
+        return Ok(products);
     }
 
     // GET: api/Product/5
     [HttpGet("{id}")]
     public async Task<ActionResult<Product>> GetProduct(Guid id)
     {
-        var product = await _context.Products.FindAsync(id);
+        var product = await _productService.GetProductByIdAsync(id);
 
         if (product == null)
         {
             return NotFound();
         }
 
-        return product;
+        return Ok(product);
     }
 
     // PUT: api/Product/5
     [HttpPut("{id}")]
     public async Task<IActionResult> PutProduct(Guid id, Product product)
     {
-        if (id != product.Id)
+        var updated = await _productService.UpdateProductAsync(id, product);
+
+        if (!updated)
         {
             return BadRequest();
-        }
-
-        product.UpdatedAt = DateTime.UtcNow;
-        _context.Entry(product).State = EntityState.Modified;
-
-        try
-        {
-            await _context.SaveChangesAsync();
-        }
-        catch (DbUpdateConcurrencyException)
-        {
-            if (!ProductExists(id))
-            {
-                return NotFound();
-            }
-            else
-            {
-                throw;
-            }
         }
 
         return NoContent();
@@ -74,12 +57,9 @@ public class ProductController : ControllerBase
     [HttpPost]
     public async Task<ActionResult<Product>> PostProduct(Product product)
     {
-        product.Id = Guid.NewGuid();
-        product.CreatedAt = DateTime.UtcNow;
-        _context.Products.Add(product);
-        await _context.SaveChangesAsync();
+        var createdProduct = await _productService.CreateProductAsync(product);
 
-        return CreatedAtAction(nameof(GetProduct), new { id = product.Id }, product);
+        return CreatedAtAction(nameof(GetProduct), new { id = createdProduct.Id }, createdProduct);
     }
 
     // DELETE: api/Product/5
@@ -87,20 +67,13 @@ public class ProductController : ControllerBase
     [Authorize(Roles = "Admin")]
     public async Task<IActionResult> DeleteProduct(Guid id)
     {
-        var product = await _context.Products.FindAsync(id);
-        if (product == null)
+        var deleted = await _productService.DeleteProductAsync(id);
+        
+        if (!deleted)
         {
             return NotFound();
         }
 
-        _context.Products.Remove(product);
-        await _context.SaveChangesAsync();
-
         return NoContent();
-    }
-
-    private bool ProductExists(Guid id)
-    {
-        return _context.Products.Any(e => e.Id == id);
     }
 }

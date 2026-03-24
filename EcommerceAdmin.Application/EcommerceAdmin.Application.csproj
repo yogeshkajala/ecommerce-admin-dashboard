@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EcommerceAdmin.Core\EcommerceAdmin.Core.csproj" />
+    <ProjectReference Include="..\EcommerceAdmin.Infrastructure\EcommerceAdmin.Infrastructure.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

@@ -1,3 +1,5 @@
+using EcommerceAdmin.Application.Interfaces;
+using EcommerceAdmin.Application.Services;
 using EcommerceAdmin.Core.Entities;
 using EcommerceAdmin.Core.Interfaces;
 using EcommerceAdmin.Infrastructure.Data;
@@ -29,6 +31,9 @@ builder.Services.AddDbContext<CatalogDbContext>(options =>
 var redisConnection = builder.Configuration.GetConnectionString("RedisConnection");
 builder.Services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect(redisConnection!));
 builder.Services.AddScoped<ICacheService, RedisCacheService>();
+
+// Register Application Services
+builder.Services.AddScoped<IProductService, ProductService>();
 
 var app = builder.Build();
 
