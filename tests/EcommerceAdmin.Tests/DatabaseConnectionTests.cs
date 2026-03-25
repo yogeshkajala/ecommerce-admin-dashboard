@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using EcommerceAdmin.Core.Entities;
 using EcommerceAdmin.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
@@ -9,38 +10,38 @@ namespace EcommerceAdmin.Tests.Database;
 public class DatabaseConnectionTests
 {
     [Fact]
-    public void CatalogDbContext_CanInsertAndRetrieveProduct()
+    public void CatalogDbContext_CanInsertAndRetrieveCatalogItem()
     {
         // Arrange
         var options = new DbContextOptionsBuilder<CatalogDbContext>()
             .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
             .Options;
 
-        var product = new Product
+        var catalogItem = new CatalogItem
         {
-            Id = Guid.NewGuid(),
-            Name = "Test Product",
-            Description = "A product for unit testing.",
+            Id = 1,
+            Name = "Test CatalogItem",
+            Description = "A catalogItem for unit testing.",
             Price = 99.99m,
-            StockQuantity = 10,
-            SKU = "TEST-001",
-            CreatedAt = DateTime.UtcNow
+            AvailableStock = 10,
+            CatalogBrandId = 1,
+            CatalogTypeId = 1
         };
 
         // Act
         using (var context = new CatalogDbContext(options))
         {
-            context.Products.Add(product);
+            context.CatalogItems.Add(catalogItem);
             context.SaveChanges();
         }
 
         // Assert
         using (var context = new CatalogDbContext(options))
         {
-            var savedProduct = context.Products.FirstOrDefault(p => p.SKU == "TEST-001");
-            Assert.NotNull(savedProduct);
-            Assert.Equal("Test Product", savedProduct.Name);
-            Assert.Equal(99.99m, savedProduct.Price);
+            var savedItem = context.CatalogItems.FirstOrDefault(p => p.Name == "Test CatalogItem");
+            Assert.NotNull(savedItem);
+            Assert.Equal("Test CatalogItem", savedItem.Name);
+            Assert.Equal(99.99m, savedItem.Price);
         }
     }
 }
