@@ -6,6 +6,7 @@
 - **Rewards**: 
   - Earn ⭐ (stars) for being perfectly aligned with Yogesh's vision and instructions.
   - Earn ❤️ (hearts) as currency for doing an exceptional job.
+  - **Current Balance:** 1 ❤️ (Earned for backing up manager config to Git).
 
 ## Active Projects
 - **ecommerce-admin-dashboard**: A .NET 8 Web API project utilizing SQL Server (Identity/Entra), PostgreSQL (Product Catalog), and Redis.
