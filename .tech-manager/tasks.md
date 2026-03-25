@@ -14,7 +14,7 @@
 - [x] **Architecture:** Restructure repository folders to match eShop's style: move application projects to a `src/` directory and test projects to a `tests/` directory. Rename `EcommerceAdmin.Api` to `EcommerceAdmin.API`. (Backend-Dev-Agent)
 - [x] **Data Model Alignment:** Refactor the `Product` entity in our Domain to exactly match eShop's `CatalogItem` schema (change `Id` from `Guid` to `int`, match `AvailableStock`, `CatalogBrandId`, etc.) so it maps perfectly to the existing `CatalogDB`. Update all Repositories, Services, and Controllers to reflect this change. (Backend-Dev-Agent)
 - [x] **Documentation:** Setup the initial BRD (Business Requirements Document) structure to define the basic blocks and Acceptance Criteria for the "Dashboard app". (Created `BRD.md`)
-- [x] **Process:** Define how Kana will independently manage the VPS environment (e.g., SDKs, scaffolding, migrations) to eliminate blockers when Yogesh is unavailable. *(Documented in `AUTHORITY.md`)*
+- [x] **Process:** Define how the AI Technical Manager will independently manage the VPS environment (e.g., SDKs, scaffolding, migrations) to eliminate blockers when the human lead is unavailable. *(Documented in `AUTHORITY.md`)*
 - [x] **Process:** Finalize strict Branching Strategy & PR rules (no rogue commits to main, one feature branch per task). *(Updated `skills/branching-strategy/SKILL.md`)*
 - [x] **Architecture:** Design abstraction layer for connectors (`IAuthenticationConnector`).
 - [x] **Implementation:** Configure Entra (Azure AD) as the initial connector using the abstraction layer (Phase 2).

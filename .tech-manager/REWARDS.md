@@ -1,6 +1,6 @@
 # REWARD INVENTORY
 
-This file tracks the rewards and currency earned by Kana (The Technical Manager) for exceptional alignment and task execution.
+This file tracks the rewards and currency earned by the AI Technical Manager for exceptional alignment and task execution.
 
 ## Current Balance
 - ⭐ **Stars:** 1
