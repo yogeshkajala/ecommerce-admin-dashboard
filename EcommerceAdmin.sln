@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcommerceAdmin.Core", "EcommerceAdmin.Core\EcommerceAdmin.Core.csproj", "{84B6BC67-39C0-479E-A7C6-38238A4BD330}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcommerceAdmin.Core", "src\EcommerceAdmin.Core\EcommerceAdmin.Core.csproj", "{84B6BC67-39C0-479E-A7C6-38238A4BD330}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcommerceAdmin.Infrastructure", "EcommerceAdmin.Infrastructure\EcommerceAdmin.Infrastructure.csproj", "{A3A0CFCA-06E9-4F3C-BF2B-D47B05358E38}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcommerceAdmin.Infrastructure", "src\EcommerceAdmin.Infrastructure\EcommerceAdmin.Infrastructure.csproj", "{A3A0CFCA-06E9-4F3C-BF2B-D47B05358E38}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcommerceAdmin.Application", "EcommerceAdmin.Application\EcommerceAdmin.Application.csproj", "{9B9E308C-B175-43E7-A9B8-603B8C918A25}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcommerceAdmin.Application", "src\EcommerceAdmin.Application\EcommerceAdmin.Application.csproj", "{9B9E308C-B175-43E7-A9B8-603B8C918A25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcommerceAdmin.Api", "EcommerceAdmin.Api\EcommerceAdmin.Api.csproj", "{6A1BC068-74FC-40E5-BCE0-D773E4FF4A07}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcommerceAdmin.API", "src\EcommerceAdmin.API\EcommerceAdmin.API.csproj", "{6A1BC068-74FC-40E5-BCE0-D773E4FF4A07}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -24,7 +24,7 @@ builder.Services.AddIdentity<SuperAdmin, IdentityRole>()
 // Phase 2: Dynamic Authentication setup using the Abstraction
 builder.Services.AddDynamicAuthentication(builder.Configuration);
 
-// Task 1.2: Configure Npgsql / EF Core for PostgreSQL (Product Catalog)
+// Task 1.2: Configure Npgsql / EF Core for PostgreSQL (CatalogItem Catalog)
 builder.Services.AddDbContext<CatalogDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("PostgresConnection")));
 
@@ -34,10 +34,10 @@ builder.Services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Conn
 builder.Services.AddScoped<ICacheService, RedisCacheService>();
 
 // Register Repositories
-builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<ICatalogItemRepository, CatalogItemRepository>();
 
 // Register Application Services
-builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<ICatalogItemService, CatalogItemService>();
 
 var app = builder.Build();
 

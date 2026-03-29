@@ -23,8 +23,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EcommerceAdmin.Infrastructure\EcommerceAdmin.Infrastructure.csproj" />
-    <ProjectReference Include="..\EcommerceAdmin.Api\EcommerceAdmin.Api.csproj" />
+    <ProjectReference Include="..\..\src\EcommerceAdmin.Infrastructure\EcommerceAdmin.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\src\EcommerceAdmin.API\EcommerceAdmin.API.csproj" />
   </ItemGroup>
 
 </Project>
