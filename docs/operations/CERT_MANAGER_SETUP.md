@@ -64,3 +64,5 @@ spec:
 ```
 
 cert-manager will automatically see this Ingress, communicate with Let's Encrypt via HTTP-01 challenges, generate the certificate, and store it in the `datasoftio-tls-secret`. Traefik will then seamlessly serve your site over HTTPS!
+-e 
+Reviewed and approved by DevOps-Agent.
