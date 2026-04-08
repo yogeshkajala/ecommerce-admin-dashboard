@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: datasoftio-website
+  namespace: datasoftio
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: datasoftio-website
+  template:
+    metadata:
+      labels:
+        app: datasoftio-website
+    spec:
+      containers:
+      - name: datasoftio-website
+        image: ghcr.io/yogeshkajala/ecommerce-admin-dashboard-datasoftio:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: datasoftio-website-svc
+  namespace: datasoftio
+spec:
+  selector:
+    app: datasoftio-website
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: datasoftio-ingress
+  namespace: datasoftio
+  annotations:
+    ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  rules:
+  - host: datasoftio.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: datasoftio-website-svc
+            port:
+              number: 80
+  - host: www.datasoftio.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: datasoftio-website-svc
+            port:
+              number: 80
