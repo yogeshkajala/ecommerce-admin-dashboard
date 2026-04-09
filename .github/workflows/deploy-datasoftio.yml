@@ -1,0 +1,65 @@
+name: Deploy DataSoft IO Website
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'apps/datasoftio-website/**'
+      - '.github/workflows/deploy-datasoftio.yml'
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}-datasoftio
+  APP_DIR: apps/datasoftio-website
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Log in to the Container registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=sha
+            latest
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./${{ env.APP_DIR }}
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Deploy to K3s on VPS
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            # Pull latest image using the container runtime
+            sudo k3s crictl pull ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+            
+            # Restart deployment to pick up the new image
+            kubectl rollout restart deployment datasoftio-website -n datasoftio
+            
+            # Verify rollout status
+            kubectl rollout status deployment datasoftio-website -n datasoftio
