@@ -7,7 +7,7 @@ using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using Polly;
 using Polly.Retry;
-using EcommerceAdmin.Infrastructure.Data;
+using EcommerceAdmin.Core.Interfaces;
 
 namespace EcommerceAdmin.Infrastructure.Messaging;
 
@@ -116,16 +116,16 @@ public class EventBusBackgroundService : BackgroundService
         await retryPolicy.ExecuteAsync(async () =>
         {
             using var scope = _serviceProvider.CreateScope();
-            var dbContext = scope.ServiceProvider.GetRequiredService<CatalogDbContext>();
+            var repository = scope.ServiceProvider.GetRequiredService<ICatalogItemRepository>();
             
-            // Simulate processing the event using CatalogDbContext
             _logger.LogInformation("Processing ProductPriceChangedIntegrationEvent for ProductId: {ProductId}, NewPrice: {NewPrice}", integrationEvent.ProductId, integrationEvent.NewPrice);
             
-            // For example purposes, we just log that we would interact with dbContext here
-            // var item = await dbContext.CatalogItems.FindAsync(new object[] { integrationEvent.ProductId }, stoppingToken);
-            // if (item != null) { item.Price = integrationEvent.NewPrice; await dbContext.SaveChangesAsync(stoppingToken); }
-
-            await Task.Yield();
+            var item = await repository.GetByIdAsync(integrationEvent.ProductId);
+            if (item != null) 
+            { 
+                item.Price = integrationEvent.NewPrice; 
+                await repository.UpdateAsync(item); 
+            }
         });
     }
 
