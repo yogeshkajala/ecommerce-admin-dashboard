@@ -6,6 +6,7 @@ using EcommerceAdmin.Core.Interfaces;
 using EcommerceAdmin.Infrastructure.Data;
 using EcommerceAdmin.Infrastructure.Repositories;
 using EcommerceAdmin.Infrastructure.Authentication;
+using EcommerceAdmin.Infrastructure.Messaging;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using StackExchange.Redis;
@@ -26,7 +27,7 @@ builder.Services.AddDynamicAuthentication(builder.Configuration);
 
 // Task 1.2: Configure Npgsql / EF Core for PostgreSQL (CatalogItem Catalog)
 builder.Services.AddDbContext<CatalogDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("PostgresConnection")));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("CatalogDB")));
 
 // Task 1.3: Set up StackExchange.Redis for distributed caching
 var redisConnection = builder.Configuration.GetConnectionString("RedisConnection");
@@ -38,6 +39,9 @@ builder.Services.AddScoped<ICatalogItemRepository, CatalogItemRepository>();
 
 // Register Application Services
 builder.Services.AddScoped<ICatalogItemService, CatalogItemService>();
+
+// Register RabbitMQ Event Bus Background Service
+builder.Services.AddHostedService<EventBusBackgroundService>();
 
 var app = builder.Build();
 
