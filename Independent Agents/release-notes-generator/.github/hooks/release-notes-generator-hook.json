@@ -1,0 +1,13 @@
+﻿{
+  "name": "release-notes-generator-hook",
+  "description": "Automated hook for Release Notes Generator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "release-notes-generator",
+      "action": "validate",
+      "description": "Run Release Notes Generator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

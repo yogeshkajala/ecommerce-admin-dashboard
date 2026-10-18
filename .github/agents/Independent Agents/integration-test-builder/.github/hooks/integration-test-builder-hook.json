@@ -1,0 +1,13 @@
+﻿{
+  "name": "integration-test-builder-hook",
+  "description": "Automated hook for Integration Test Builder processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "integration-test-builder",
+      "action": "validate",
+      "description": "Run Integration Test Builder validation on changed files"
+    }
+  ],
+  "enabled": false
+}

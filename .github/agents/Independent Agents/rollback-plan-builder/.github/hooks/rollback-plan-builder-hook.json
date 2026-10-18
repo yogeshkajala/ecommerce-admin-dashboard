@@ -1,0 +1,13 @@
+﻿{
+  "name": "rollback-plan-builder-hook",
+  "description": "Automated hook for Rollback Plan Builder processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "rollback-plan-builder",
+      "action": "validate",
+      "description": "Run Rollback Plan Builder validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "knowledge-updater-hook",
+  "description": "Automated hook for Knowledge Updater processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "knowledge-updater",
+      "action": "validate",
+      "description": "Run Knowledge Updater validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "change-window-planner-hook",
+  "description": "Automated hook for Change Window Planner processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "change-window-planner",
+      "action": "validate",
+      "description": "Run Change Window Planner validation on changed files"
+    }
+  ],
+  "enabled": false
+}

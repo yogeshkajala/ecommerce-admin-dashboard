@@ -1,0 +1,13 @@
+﻿{
+  "name": "gate-reviewer-hook",
+  "description": "Automated hook for Gate Reviewer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "gate-reviewer",
+      "action": "validate",
+      "description": "Run Gate Reviewer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

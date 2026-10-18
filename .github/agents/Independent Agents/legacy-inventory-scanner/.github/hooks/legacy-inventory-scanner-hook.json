@@ -1,0 +1,13 @@
+﻿{
+  "name": "legacy-inventory-scanner-hook",
+  "description": "Automated hook for Legacy Inventory Scanner processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "legacy-inventory-scanner",
+      "action": "validate",
+      "description": "Run Legacy Inventory Scanner validation on changed files"
+    }
+  ],
+  "enabled": false
+}

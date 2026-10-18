@@ -1,0 +1,13 @@
+﻿{
+  "name": "feature-code-reviewer-hook",
+  "description": "Automated hook for Feature Code Reviewer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "feature-code-reviewer",
+      "action": "validate",
+      "description": "Run Feature Code Reviewer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

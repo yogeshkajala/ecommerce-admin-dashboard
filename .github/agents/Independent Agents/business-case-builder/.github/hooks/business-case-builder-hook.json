@@ -1,0 +1,13 @@
+﻿{
+  "name": "business-case-builder-hook",
+  "description": "Automated hook for Business Case Builder processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "business-case-builder",
+      "action": "validate",
+      "description": "Run Business Case Builder validation on changed files"
+    }
+  ],
+  "enabled": false
+}

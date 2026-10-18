@@ -1,0 +1,13 @@
+﻿{
+  "name": "api-contract-tester-hook",
+  "description": "Automated hook for Api Contract Tester processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "api-contract-tester",
+      "action": "validate",
+      "description": "Run Api Contract Tester validation on changed files"
+    }
+  ],
+  "enabled": false
+}

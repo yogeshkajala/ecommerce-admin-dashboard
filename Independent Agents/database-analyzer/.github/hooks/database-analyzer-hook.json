@@ -1,0 +1,13 @@
+﻿{
+  "name": "database-analyzer-hook",
+  "description": "Automated hook for Database Analyzer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "database-analyzer",
+      "action": "validate",
+      "description": "Run Database Analyzer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

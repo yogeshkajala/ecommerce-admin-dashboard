@@ -1,0 +1,13 @@
+﻿{
+  "name": "compute-monitor-hook",
+  "description": "Automated hook for Compute Monitor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "compute-monitor",
+      "action": "validate",
+      "description": "Run Compute Monitor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

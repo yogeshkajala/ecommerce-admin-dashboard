@@ -1,0 +1,13 @@
+﻿{
+  "name": "tech-debt-analyzer-hook",
+  "description": "Automated hook for Tech Debt Analyzer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "tech-debt-analyzer",
+      "action": "validate",
+      "description": "Run Tech Debt Analyzer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

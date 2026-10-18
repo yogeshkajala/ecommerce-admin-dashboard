@@ -1,0 +1,13 @@
+﻿{
+  "name": "chaos-designer-hook",
+  "description": "Automated hook for Chaos Designer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "chaos-designer",
+      "action": "validate",
+      "description": "Run Chaos Designer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

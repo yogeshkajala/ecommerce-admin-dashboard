@@ -1,0 +1,13 @@
+﻿{
+  "name": "data-flow-analyzer-hook",
+  "description": "Automated hook for Data Flow Analyzer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "data-flow-analyzer",
+      "action": "validate",
+      "description": "Run Data Flow Analyzer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

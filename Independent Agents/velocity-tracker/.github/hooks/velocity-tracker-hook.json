@@ -1,0 +1,13 @@
+﻿{
+  "name": "velocity-tracker-hook",
+  "description": "Automated hook for Velocity Tracker processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "velocity-tracker",
+      "action": "validate",
+      "description": "Run Velocity Tracker validation on changed files"
+    }
+  ],
+  "enabled": false
+}

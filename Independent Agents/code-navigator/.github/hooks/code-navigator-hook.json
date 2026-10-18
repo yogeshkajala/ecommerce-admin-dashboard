@@ -1,0 +1,13 @@
+﻿{
+  "name": "code-navigator-hook",
+  "description": "Automated hook for Code Navigator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "code-navigator",
+      "action": "validate",
+      "description": "Run Code Navigator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

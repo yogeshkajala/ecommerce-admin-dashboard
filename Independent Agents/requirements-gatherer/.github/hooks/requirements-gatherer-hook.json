@@ -1,0 +1,13 @@
+﻿{
+  "name": "requirements-gatherer-hook",
+  "description": "Automated hook for Requirements Gatherer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "requirements-gatherer",
+      "action": "validate",
+      "description": "Run Requirements Gatherer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

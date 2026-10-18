@@ -1,0 +1,13 @@
+﻿{
+  "name": "code-translator-hook",
+  "description": "Automated hook for Code Translator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "code-translator",
+      "action": "validate",
+      "description": "Run Code Translator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

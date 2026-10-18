@@ -1,0 +1,13 @@
+﻿{
+  "name": "coexistence-designer-hook",
+  "description": "Automated hook for Coexistence Designer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "coexistence-designer",
+      "action": "validate",
+      "description": "Run Coexistence Designer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

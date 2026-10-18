@@ -1,0 +1,13 @@
+﻿{
+  "name": "metrics-analyzer-hook",
+  "description": "Automated hook for Metrics Analyzer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "metrics-analyzer",
+      "action": "validate",
+      "description": "Run Metrics Analyzer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "cost-estimator-hook",
+  "description": "Automated hook for Cost Estimator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "cost-estimator",
+      "action": "validate",
+      "description": "Run Cost Estimator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "service-isolation-tester-hook",
+  "description": "Automated hook for Service Isolation Tester processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "service-isolation-tester",
+      "action": "validate",
+      "description": "Run Service Isolation Tester validation on changed files"
+    }
+  ],
+  "enabled": false
+}

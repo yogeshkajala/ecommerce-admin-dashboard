@@ -1,0 +1,13 @@
+﻿{
+  "name": "security-scan-runner-hook",
+  "description": "Automated hook for Security Scan Runner processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "security-scan-runner",
+      "action": "validate",
+      "description": "Run Security Scan Runner validation on changed files"
+    }
+  ],
+  "enabled": false
+}

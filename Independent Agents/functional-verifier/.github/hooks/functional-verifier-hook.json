@@ -1,0 +1,13 @@
+﻿{
+  "name": "functional-verifier-hook",
+  "description": "Automated hook for Functional Verifier processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "functional-verifier",
+      "action": "validate",
+      "description": "Run Functional Verifier validation on changed files"
+    }
+  ],
+  "enabled": false
+}

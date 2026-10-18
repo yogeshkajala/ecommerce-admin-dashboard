@@ -1,0 +1,13 @@
+﻿{
+  "name": "dependency-mapper-hook",
+  "description": "Automated hook for Dependency Mapper processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "dependency-mapper",
+      "action": "validate",
+      "description": "Run Dependency Mapper validation on changed files"
+    }
+  ],
+  "enabled": false
+}

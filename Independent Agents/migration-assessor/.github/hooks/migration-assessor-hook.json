@@ -1,0 +1,13 @@
+﻿{
+  "name": "migration-assessor-hook",
+  "description": "Automated hook for Migration Assessor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "migration-assessor",
+      "action": "validate",
+      "description": "Run Migration Assessor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

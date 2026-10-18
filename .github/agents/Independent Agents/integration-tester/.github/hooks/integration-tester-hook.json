@@ -1,0 +1,13 @@
+﻿{
+  "name": "integration-tester-hook",
+  "description": "Automated hook for Integration Tester processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "integration-tester",
+      "action": "validate",
+      "description": "Run Integration Tester validation on changed files"
+    }
+  ],
+  "enabled": false
+}

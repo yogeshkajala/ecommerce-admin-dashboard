@@ -1,0 +1,13 @@
+﻿{
+  "name": "requirements-validator-hook",
+  "description": "Automated hook for Requirements Validator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "requirements-validator",
+      "action": "validate",
+      "description": "Run Requirements Validator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

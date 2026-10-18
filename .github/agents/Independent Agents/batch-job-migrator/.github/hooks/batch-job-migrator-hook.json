@@ -1,0 +1,13 @@
+﻿{
+  "name": "batch-job-migrator-hook",
+  "description": "Automated hook for Batch Job Migrator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "batch-job-migrator",
+      "action": "validate",
+      "description": "Run Batch Job Migrator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

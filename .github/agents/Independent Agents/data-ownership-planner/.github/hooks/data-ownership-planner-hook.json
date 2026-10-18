@@ -1,0 +1,13 @@
+﻿{
+  "name": "data-ownership-planner-hook",
+  "description": "Automated hook for Data Ownership Planner processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "data-ownership-planner",
+      "action": "validate",
+      "description": "Run Data Ownership Planner validation on changed files"
+    }
+  ],
+  "enabled": false
+}

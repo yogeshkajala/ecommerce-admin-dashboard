@@ -1,0 +1,13 @@
+﻿{
+  "name": "knowledge-retriever-hook",
+  "description": "Automated hook for Knowledge Retriever processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "knowledge-retriever",
+      "action": "validate",
+      "description": "Run Knowledge Retriever validation on changed files"
+    }
+  ],
+  "enabled": false
+}

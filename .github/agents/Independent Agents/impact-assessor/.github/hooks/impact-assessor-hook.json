@@ -1,0 +1,13 @@
+﻿{
+  "name": "impact-assessor-hook",
+  "description": "Automated hook for Impact Assessor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "impact-assessor",
+      "action": "validate",
+      "description": "Run Impact Assessor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

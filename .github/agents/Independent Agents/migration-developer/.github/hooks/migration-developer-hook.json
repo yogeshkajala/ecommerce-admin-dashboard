@@ -1,0 +1,13 @@
+﻿{
+  "name": "migration-developer-hook",
+  "description": "Automated hook for Migration Developer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "migration-developer",
+      "action": "validate",
+      "description": "Run Migration Developer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

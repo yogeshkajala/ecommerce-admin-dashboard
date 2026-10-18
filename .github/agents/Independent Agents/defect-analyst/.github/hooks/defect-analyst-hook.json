@@ -1,0 +1,13 @@
+﻿{
+  "name": "defect-analyst-hook",
+  "description": "Automated hook for Defect Analyst processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "defect-analyst",
+      "action": "validate",
+      "description": "Run Defect Analyst validation on changed files"
+    }
+  ],
+  "enabled": false
+}

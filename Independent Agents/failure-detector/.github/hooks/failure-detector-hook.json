@@ -1,0 +1,13 @@
+﻿{
+  "name": "failure-detector-hook",
+  "description": "Automated hook for Failure Detector processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "failure-detector",
+      "action": "validate",
+      "description": "Run Failure Detector validation on changed files"
+    }
+  ],
+  "enabled": false
+}

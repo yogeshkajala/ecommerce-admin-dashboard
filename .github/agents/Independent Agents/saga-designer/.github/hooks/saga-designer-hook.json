@@ -1,0 +1,13 @@
+﻿{
+  "name": "saga-designer-hook",
+  "description": "Automated hook for Saga Designer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "saga-designer",
+      "action": "validate",
+      "description": "Run Saga Designer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "dns-switchover-hook",
+  "description": "Automated hook for Dns Switchover processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "dns-switchover",
+      "action": "validate",
+      "description": "Run Dns Switchover validation on changed files"
+    }
+  ],
+  "enabled": false
+}

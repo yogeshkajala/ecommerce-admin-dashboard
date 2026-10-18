@@ -1,0 +1,13 @@
+﻿{
+  "name": "chaos-engineer-hook",
+  "description": "Automated hook for Chaos Engineer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "chaos-engineer",
+      "action": "validate",
+      "description": "Run Chaos Engineer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

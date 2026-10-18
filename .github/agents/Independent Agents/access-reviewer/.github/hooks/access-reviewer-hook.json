@@ -1,0 +1,13 @@
+﻿{
+  "name": "access-reviewer-hook",
+  "description": "Automated hook for Access Reviewer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "access-reviewer",
+      "action": "validate",
+      "description": "Run Access Reviewer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

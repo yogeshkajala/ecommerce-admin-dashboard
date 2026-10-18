@@ -1,0 +1,13 @@
+﻿{
+  "name": "sla-compliance-tracker-hook",
+  "description": "Automated hook for Sla Compliance Tracker processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "sla-compliance-tracker",
+      "action": "validate",
+      "description": "Run Sla Compliance Tracker validation on changed files"
+    }
+  ],
+  "enabled": false
+}

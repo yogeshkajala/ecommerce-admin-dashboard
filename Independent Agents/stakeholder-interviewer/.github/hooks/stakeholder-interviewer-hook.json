@@ -1,0 +1,13 @@
+﻿{
+  "name": "stakeholder-interviewer-hook",
+  "description": "Automated hook for Stakeholder Interviewer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "stakeholder-interviewer",
+      "action": "validate",
+      "description": "Run Stakeholder Interviewer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

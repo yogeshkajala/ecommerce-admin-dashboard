@@ -1,0 +1,13 @@
+﻿{
+  "name": "service-extractor-hook",
+  "description": "Automated hook for Service Extractor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "service-extractor",
+      "action": "validate",
+      "description": "Run Service Extractor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

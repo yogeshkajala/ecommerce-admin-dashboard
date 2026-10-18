@@ -1,0 +1,13 @@
+﻿{
+  "name": "env-health-checker-hook",
+  "description": "Automated hook for Env Health Checker processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "env-health-checker",
+      "action": "validate",
+      "description": "Run Env Health Checker validation on changed files"
+    }
+  ],
+  "enabled": false
+}

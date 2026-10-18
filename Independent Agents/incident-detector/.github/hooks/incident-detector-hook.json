@@ -1,0 +1,13 @@
+﻿{
+  "name": "incident-detector-hook",
+  "description": "Automated hook for Incident Detector processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "incident-detector",
+      "action": "validate",
+      "description": "Run Incident Detector validation on changed files"
+    }
+  ],
+  "enabled": false
+}

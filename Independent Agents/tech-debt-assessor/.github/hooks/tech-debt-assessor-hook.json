@@ -1,0 +1,13 @@
+﻿{
+  "name": "tech-debt-assessor-hook",
+  "description": "Automated hook for Tech Debt Assessor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "tech-debt-assessor",
+      "action": "validate",
+      "description": "Run Tech Debt Assessor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "upgrade-executor-hook",
+  "description": "Automated hook for Upgrade Executor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "upgrade-executor",
+      "action": "validate",
+      "description": "Run Upgrade Executor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "migration-step-sequencer-hook",
+  "description": "Automated hook for Migration Step Sequencer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "migration-step-sequencer",
+      "action": "validate",
+      "description": "Run Migration Step Sequencer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

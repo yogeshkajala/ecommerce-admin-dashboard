@@ -1,0 +1,13 @@
+﻿{
+  "name": "support-handover-agent-hook",
+  "description": "Automated hook for Support Handover Agent processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "support-handover-agent",
+      "action": "validate",
+      "description": "Run Support Handover Agent validation on changed files"
+    }
+  ],
+  "enabled": false
+}

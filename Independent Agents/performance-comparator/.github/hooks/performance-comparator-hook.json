@@ -1,0 +1,13 @@
+﻿{
+  "name": "performance-comparator-hook",
+  "description": "Automated hook for Performance Comparator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "performance-comparator",
+      "action": "validate",
+      "description": "Run Performance Comparator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "pre-deploy-tester-hook",
+  "description": "Automated hook for Pre Deploy Tester processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "pre-deploy-tester",
+      "action": "validate",
+      "description": "Run Pre Deploy Tester validation on changed files"
+    }
+  ],
+  "enabled": false
+}

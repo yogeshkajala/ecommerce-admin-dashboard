@@ -1,0 +1,13 @@
+﻿{
+  "name": "developer-assistant-hook",
+  "description": "Automated hook for Developer Assistant processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "developer-assistant",
+      "action": "validate",
+      "description": "Run Developer Assistant validation on changed files"
+    }
+  ],
+  "enabled": false
+}

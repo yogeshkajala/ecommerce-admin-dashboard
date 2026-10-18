@@ -1,0 +1,13 @@
+﻿{
+  "name": "roadmap-planner-hook",
+  "description": "Automated hook for Roadmap Planner processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "roadmap-planner",
+      "action": "validate",
+      "description": "Run Roadmap Planner validation on changed files"
+    }
+  ],
+  "enabled": false
+}

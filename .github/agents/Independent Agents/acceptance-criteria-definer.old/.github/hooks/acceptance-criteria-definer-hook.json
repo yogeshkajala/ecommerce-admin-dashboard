@@ -1,0 +1,13 @@
+﻿{
+  "name": "acceptance-criteria-definer-hook",
+  "description": "Automated hook for Acceptance Criteria Definer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "acceptance-criteria-definer",
+      "action": "validate",
+      "description": "Run Acceptance Criteria Definer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

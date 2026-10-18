@@ -1,0 +1,13 @@
+﻿{
+  "name": "perf-tester-hook",
+  "description": "Automated hook for Perf Tester processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "perf-tester",
+      "action": "validate",
+      "description": "Run Perf Tester validation on changed files"
+    }
+  ],
+  "enabled": false
+}

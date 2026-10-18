@@ -1,0 +1,13 @@
+﻿{
+  "name": "parallel-run-manager-hook",
+  "description": "Automated hook for Parallel Run Manager processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "parallel-run-manager",
+      "action": "validate",
+      "description": "Run Parallel Run Manager validation on changed files"
+    }
+  ],
+  "enabled": false
+}

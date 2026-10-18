@@ -1,0 +1,13 @@
+﻿{
+  "name": "sprint-planner-hook",
+  "description": "Automated hook for Sprint Planner processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "sprint-planner",
+      "action": "validate",
+      "description": "Run Sprint Planner validation on changed files"
+    }
+  ],
+  "enabled": false
+}

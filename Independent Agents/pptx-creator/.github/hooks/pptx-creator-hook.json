@@ -1,0 +1,13 @@
+﻿{
+  "name": "pptx-creator-hook",
+  "description": "Automated hook for Pptx Creator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "pptx-creator",
+      "action": "validate",
+      "description": "Run Pptx Creator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

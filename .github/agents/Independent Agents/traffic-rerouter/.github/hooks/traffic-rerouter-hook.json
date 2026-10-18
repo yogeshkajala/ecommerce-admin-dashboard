@@ -1,0 +1,13 @@
+﻿{
+  "name": "traffic-rerouter-hook",
+  "description": "Automated hook for Traffic Rerouter processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "traffic-rerouter",
+      "action": "validate",
+      "description": "Run Traffic Rerouter validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "data-migration-planner-hook",
+  "description": "Automated hook for Data Migration Planner processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "data-migration-planner",
+      "action": "validate",
+      "description": "Run Data Migration Planner validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "test-suite-runner-hook",
+  "description": "Automated hook for Test Suite Runner processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "test-suite-runner",
+      "action": "validate",
+      "description": "Run Test Suite Runner validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "legacy-decommissioner-hook",
+  "description": "Automated hook for Legacy Decommissioner processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "legacy-decommissioner",
+      "action": "validate",
+      "description": "Run Legacy Decommissioner validation on changed files"
+    }
+  ],
+  "enabled": false
+}

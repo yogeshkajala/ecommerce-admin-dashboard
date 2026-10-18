@@ -1,0 +1,13 @@
+﻿{
+  "name": "monitoring-validator-hook",
+  "description": "Automated hook for Monitoring Validator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "monitoring-validator",
+      "action": "validate",
+      "description": "Run Monitoring Validator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

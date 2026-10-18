@@ -1,0 +1,13 @@
+﻿{
+  "name": "ml-pipeline-manager-hook",
+  "description": "Automated hook for Ml Pipeline Manager processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "ml-pipeline-manager",
+      "action": "validate",
+      "description": "Run Ml Pipeline Manager validation on changed files"
+    }
+  ],
+  "enabled": false
+}

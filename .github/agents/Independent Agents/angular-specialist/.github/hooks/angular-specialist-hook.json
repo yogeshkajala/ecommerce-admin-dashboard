@@ -1,0 +1,13 @@
+﻿{
+  "name": "angular-specialist-hook",
+  "description": "Automated hook for Angular Specialist processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "angular-specialist",
+      "action": "validate",
+      "description": "Run Angular Specialist validation on changed files"
+    }
+  ],
+  "enabled": false
+}

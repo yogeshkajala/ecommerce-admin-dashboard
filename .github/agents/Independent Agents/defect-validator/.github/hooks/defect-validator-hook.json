@@ -1,0 +1,13 @@
+﻿{
+  "name": "defect-validator-hook",
+  "description": "Automated hook for Defect Validator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "defect-validator",
+      "action": "validate",
+      "description": "Run Defect Validator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

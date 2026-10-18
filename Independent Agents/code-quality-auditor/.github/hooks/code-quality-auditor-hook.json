@@ -1,0 +1,13 @@
+﻿{
+  "name": "code-quality-auditor-hook",
+  "description": "Automated hook for Code Quality Auditor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "code-quality-auditor",
+      "action": "validate",
+      "description": "Run Code Quality Auditor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "impact-analyzer-hook",
+  "description": "Automated hook for Impact Analyzer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "impact-analyzer",
+      "action": "validate",
+      "description": "Run Impact Analyzer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

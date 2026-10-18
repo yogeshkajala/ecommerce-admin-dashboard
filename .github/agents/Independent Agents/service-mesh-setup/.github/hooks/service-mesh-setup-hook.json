@@ -1,0 +1,13 @@
+﻿{
+  "name": "service-mesh-setup-hook",
+  "description": "Automated hook for Service Mesh Setup processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "service-mesh-setup",
+      "action": "validate",
+      "description": "Run Service Mesh Setup validation on changed files"
+    }
+  ],
+  "enabled": false
+}

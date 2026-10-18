@@ -1,0 +1,13 @@
+﻿{
+  "name": "monolith-analyzer-hook",
+  "description": "Automated hook for Monolith Analyzer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "monolith-analyzer",
+      "action": "validate",
+      "description": "Run Monolith Analyzer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

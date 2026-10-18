@@ -1,0 +1,13 @@
+﻿{
+  "name": "context-isolator-hook",
+  "description": "Automated hook for Context Isolator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "context-isolator",
+      "action": "validate",
+      "description": "Run Context Isolator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

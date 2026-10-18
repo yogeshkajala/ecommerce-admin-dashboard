@@ -1,0 +1,13 @@
+﻿{
+  "name": "cloud-network-designer-hook",
+  "description": "Automated hook for Cloud Network Designer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "cloud-network-designer",
+      "action": "validate",
+      "description": "Run Cloud Network Designer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

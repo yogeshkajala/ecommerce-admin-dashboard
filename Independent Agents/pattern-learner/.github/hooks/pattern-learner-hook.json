@@ -1,0 +1,13 @@
+﻿{
+  "name": "pattern-learner-hook",
+  "description": "Automated hook for Pattern Learner processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "pattern-learner",
+      "action": "validate",
+      "description": "Run Pattern Learner validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "telemetry-fuser-hook",
+  "description": "Automated hook for Telemetry Fuser processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "telemetry-fuser",
+      "action": "validate",
+      "description": "Run Telemetry Fuser validation on changed files"
+    }
+  ],
+  "enabled": false
+}

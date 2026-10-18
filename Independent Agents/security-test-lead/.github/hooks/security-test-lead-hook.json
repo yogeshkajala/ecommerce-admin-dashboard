@@ -1,0 +1,13 @@
+﻿{
+  "name": "security-test-lead-hook",
+  "description": "Automated hook for Security Test Lead processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "security-test-lead",
+      "action": "validate",
+      "description": "Run Security Test Lead validation on changed files"
+    }
+  ],
+  "enabled": false
+}

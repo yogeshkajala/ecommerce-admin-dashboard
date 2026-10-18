@@ -1,0 +1,13 @@
+﻿{
+  "name": "express-gateway-specialist-hook",
+  "description": "Automated hook for Express Gateway Specialist processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "express-gateway-specialist",
+      "action": "validate",
+      "description": "Run Express Gateway Specialist validation on changed files"
+    }
+  ],
+  "enabled": false
+}

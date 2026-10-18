@@ -1,0 +1,13 @@
+﻿{
+  "name": "security-guardian-hook",
+  "description": "Automated hook for Security Guardian processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "security-guardian",
+      "action": "validate",
+      "description": "Run Security Guardian validation on changed files"
+    }
+  ],
+  "enabled": false
+}

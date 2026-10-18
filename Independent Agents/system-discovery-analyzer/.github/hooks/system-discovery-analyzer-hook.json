@@ -1,0 +1,13 @@
+﻿{
+  "name": "system-discovery-analyzer-hook",
+  "description": "Automated hook for System Discovery Analyzer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "system-discovery-analyzer",
+      "action": "validate",
+      "description": "Run System Discovery Analyzer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

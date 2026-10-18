@@ -1,0 +1,13 @@
+﻿{
+  "name": "backlog-manager-hook",
+  "description": "Automated hook for Backlog Manager processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "backlog-manager",
+      "action": "validate",
+      "description": "Run Backlog Manager validation on changed files"
+    }
+  ],
+  "enabled": false
+}

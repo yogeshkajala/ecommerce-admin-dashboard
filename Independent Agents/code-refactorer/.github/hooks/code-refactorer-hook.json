@@ -1,0 +1,13 @@
+﻿{
+  "name": "code-refactorer-hook",
+  "description": "Automated hook for Code Refactorer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "code-refactorer",
+      "action": "validate",
+      "description": "Run Code Refactorer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

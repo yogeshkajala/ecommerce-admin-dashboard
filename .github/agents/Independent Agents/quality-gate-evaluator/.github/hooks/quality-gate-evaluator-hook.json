@@ -1,0 +1,13 @@
+﻿{
+  "name": "quality-gate-evaluator-hook",
+  "description": "Automated hook for Quality Gate Evaluator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "quality-gate-evaluator",
+      "action": "validate",
+      "description": "Run Quality Gate Evaluator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

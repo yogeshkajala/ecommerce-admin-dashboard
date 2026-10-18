@@ -1,0 +1,13 @@
+﻿{
+  "name": "migration-architect-hook",
+  "description": "Automated hook for Migration Architect processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "migration-architect",
+      "action": "validate",
+      "description": "Run Migration Architect validation on changed files"
+    }
+  ],
+  "enabled": false
+}

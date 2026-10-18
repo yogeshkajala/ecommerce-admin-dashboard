@@ -1,0 +1,13 @@
+﻿{
+  "name": "canary-validator-hook",
+  "description": "Automated hook for Canary Validator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "canary-validator",
+      "action": "validate",
+      "description": "Run Canary Validator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

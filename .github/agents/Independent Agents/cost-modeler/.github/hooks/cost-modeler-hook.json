@@ -1,0 +1,13 @@
+﻿{
+  "name": "cost-modeler-hook",
+  "description": "Automated hook for Cost Modeler processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "cost-modeler",
+      "action": "validate",
+      "description": "Run Cost Modeler validation on changed files"
+    }
+  ],
+  "enabled": false
+}

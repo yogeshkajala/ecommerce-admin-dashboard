@@ -1,0 +1,13 @@
+﻿{
+  "name": "trace-correlator-hook",
+  "description": "Automated hook for Trace Correlator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "trace-correlator",
+      "action": "validate",
+      "description": "Run Trace Correlator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

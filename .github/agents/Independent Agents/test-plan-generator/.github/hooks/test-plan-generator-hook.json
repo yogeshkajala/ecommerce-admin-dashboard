@@ -1,0 +1,13 @@
+﻿{
+  "name": "test-plan-generator-hook",
+  "description": "Automated hook for Test Plan Generator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "test-plan-generator",
+      "action": "validate",
+      "description": "Run Test Plan Generator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

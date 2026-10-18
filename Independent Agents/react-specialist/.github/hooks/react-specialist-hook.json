@@ -1,0 +1,13 @@
+﻿{
+  "name": "react-specialist-hook",
+  "description": "Automated hook for React Specialist processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "react-specialist",
+      "action": "validate",
+      "description": "Run React Specialist validation on changed files"
+    }
+  ],
+  "enabled": false
+}

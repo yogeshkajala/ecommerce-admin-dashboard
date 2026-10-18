@@ -1,0 +1,13 @@
+﻿{
+  "name": "progress-tracker-hook",
+  "description": "Automated hook for Progress Tracker processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "progress-tracker",
+      "action": "validate",
+      "description": "Run Progress Tracker validation on changed files"
+    }
+  ],
+  "enabled": false
+}

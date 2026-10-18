@@ -1,0 +1,13 @@
+﻿{
+  "name": "path-analyzer-hook",
+  "description": "Automated hook for Path Analyzer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "path-analyzer",
+      "action": "validate",
+      "description": "Run Path Analyzer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

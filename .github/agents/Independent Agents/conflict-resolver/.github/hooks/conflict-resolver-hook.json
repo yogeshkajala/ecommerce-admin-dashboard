@@ -1,0 +1,13 @@
+﻿{
+  "name": "conflict-resolver-hook",
+  "description": "Automated hook for Conflict Resolver processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "conflict-resolver",
+      "action": "validate",
+      "description": "Run Conflict Resolver validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "content-syncer-hook",
+  "description": "Automated hook for Content Syncer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "content-syncer",
+      "action": "validate",
+      "description": "Run Content Syncer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

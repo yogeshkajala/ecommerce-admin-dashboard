@@ -1,0 +1,13 @@
+﻿{
+  "name": "cost-optimizer-agent-hook",
+  "description": "Automated hook for Cost Optimizer Agent processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "cost-optimizer-agent",
+      "action": "validate",
+      "description": "Run Cost Optimizer Agent validation on changed files"
+    }
+  ],
+  "enabled": false
+}

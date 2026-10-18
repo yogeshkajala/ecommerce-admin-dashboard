@@ -1,0 +1,13 @@
+﻿{
+  "name": "quality-metric-tracker-hook",
+  "description": "Automated hook for Quality Metric Tracker processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "quality-metric-tracker",
+      "action": "validate",
+      "description": "Run Quality Metric Tracker validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "pipeline-configurator-hook",
+  "description": "Automated hook for Pipeline Configurator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "pipeline-configurator",
+      "action": "validate",
+      "description": "Run Pipeline Configurator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

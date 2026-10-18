@@ -1,0 +1,13 @@
+﻿{
+  "name": "gap-detector-hook",
+  "description": "Automated hook for Gap Detector processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "gap-detector",
+      "action": "validate",
+      "description": "Run Gap Detector validation on changed files"
+    }
+  ],
+  "enabled": false
+}

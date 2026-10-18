@@ -1,0 +1,13 @@
+﻿{
+  "name": "architecture-analyzer-hook",
+  "description": "Automated hook for Architecture Analyzer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "architecture-analyzer",
+      "action": "validate",
+      "description": "Run Architecture Analyzer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

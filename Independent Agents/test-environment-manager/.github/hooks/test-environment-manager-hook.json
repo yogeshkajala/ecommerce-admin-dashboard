@@ -1,0 +1,13 @@
+﻿{
+  "name": "test-environment-manager-hook",
+  "description": "Automated hook for Test Environment Manager processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "test-environment-manager",
+      "action": "validate",
+      "description": "Run Test Environment Manager validation on changed files"
+    }
+  ],
+  "enabled": false
+}

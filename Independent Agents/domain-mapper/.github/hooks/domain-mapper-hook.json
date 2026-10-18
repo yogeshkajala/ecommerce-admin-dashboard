@@ -1,0 +1,13 @@
+﻿{
+  "name": "domain-mapper-hook",
+  "description": "Automated hook for Domain Mapper processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "domain-mapper",
+      "action": "validate",
+      "description": "Run Domain Mapper validation on changed files"
+    }
+  ],
+  "enabled": false
+}

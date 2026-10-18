@@ -1,0 +1,13 @@
+﻿{
+  "name": "symptom-matcher-hook",
+  "description": "Automated hook for Symptom Matcher processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "symptom-matcher",
+      "action": "validate",
+      "description": "Run Symptom Matcher validation on changed files"
+    }
+  ],
+  "enabled": false
+}

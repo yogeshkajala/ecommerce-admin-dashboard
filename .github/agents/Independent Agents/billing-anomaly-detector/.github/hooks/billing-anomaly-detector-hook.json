@@ -1,0 +1,13 @@
+﻿{
+  "name": "billing-anomaly-detector-hook",
+  "description": "Automated hook for Billing Anomaly Detector processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "billing-anomaly-detector",
+      "action": "validate",
+      "description": "Run Billing Anomaly Detector validation on changed files"
+    }
+  ],
+  "enabled": false
+}

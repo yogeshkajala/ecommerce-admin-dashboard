@@ -1,0 +1,13 @@
+﻿{
+  "name": "sixr-mapper-hook",
+  "description": "Automated hook for Sixr Mapper processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "sixr-mapper",
+      "action": "validate",
+      "description": "Run Sixr Mapper validation on changed files"
+    }
+  ],
+  "enabled": false
+}

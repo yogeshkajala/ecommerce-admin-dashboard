@@ -1,0 +1,13 @@
+﻿{
+  "name": "iac-developer-hook",
+  "description": "Automated hook for Iac Developer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "iac-developer",
+      "action": "validate",
+      "description": "Run Iac Developer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

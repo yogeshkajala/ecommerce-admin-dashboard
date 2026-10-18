@@ -1,0 +1,13 @@
+﻿{
+  "name": "schema-attester-hook",
+  "description": "Automated hook for Schema Attester processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "schema-attester",
+      "action": "validate",
+      "description": "Run Schema Attester validation on changed files"
+    }
+  ],
+  "enabled": false
+}

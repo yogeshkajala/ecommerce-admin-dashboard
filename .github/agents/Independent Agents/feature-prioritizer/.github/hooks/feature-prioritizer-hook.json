@@ -1,0 +1,13 @@
+﻿{
+  "name": "feature-prioritizer-hook",
+  "description": "Automated hook for Feature Prioritizer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "feature-prioritizer",
+      "action": "validate",
+      "description": "Run Feature Prioritizer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

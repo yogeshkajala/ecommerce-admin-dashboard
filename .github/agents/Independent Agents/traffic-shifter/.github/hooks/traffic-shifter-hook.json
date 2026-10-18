@@ -1,0 +1,13 @@
+﻿{
+  "name": "traffic-shifter-hook",
+  "description": "Automated hook for Traffic Shifter processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "traffic-shifter",
+      "action": "validate",
+      "description": "Run Traffic Shifter validation on changed files"
+    }
+  ],
+  "enabled": false
+}

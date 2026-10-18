@@ -1,0 +1,13 @@
+﻿{
+  "name": "knowledge-transfer-agent-hook",
+  "description": "Automated hook for Knowledge Transfer Agent processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "knowledge-transfer-agent",
+      "action": "validate",
+      "description": "Run Knowledge Transfer Agent validation on changed files"
+    }
+  ],
+  "enabled": false
+}

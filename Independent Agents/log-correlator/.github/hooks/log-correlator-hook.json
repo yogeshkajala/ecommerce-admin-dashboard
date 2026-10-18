@@ -1,0 +1,13 @@
+﻿{
+  "name": "log-correlator-hook",
+  "description": "Automated hook for Log Correlator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "log-correlator",
+      "action": "validate",
+      "description": "Run Log Correlator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

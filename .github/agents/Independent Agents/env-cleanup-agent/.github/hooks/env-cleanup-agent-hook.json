@@ -1,0 +1,13 @@
+﻿{
+  "name": "env-cleanup-agent-hook",
+  "description": "Automated hook for Env Cleanup Agent processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "env-cleanup-agent",
+      "action": "validate",
+      "description": "Run Env Cleanup Agent validation on changed files"
+    }
+  ],
+  "enabled": false
+}

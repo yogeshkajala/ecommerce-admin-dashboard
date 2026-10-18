@@ -1,0 +1,13 @@
+﻿{
+  "name": "cicd-pipeline-builder-hook",
+  "description": "Automated hook for Cicd Pipeline Builder processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "cicd-pipeline-builder",
+      "action": "validate",
+      "description": "Run Cicd Pipeline Builder validation on changed files"
+    }
+  ],
+  "enabled": false
+}

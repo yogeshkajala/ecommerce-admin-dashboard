@@ -1,0 +1,13 @@
+﻿{
+  "name": "codebase-profiler-hook",
+  "description": "Automated hook for Codebase Profiler processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "codebase-profiler",
+      "action": "validate",
+      "description": "Run Codebase Profiler validation on changed files"
+    }
+  ],
+  "enabled": false
+}

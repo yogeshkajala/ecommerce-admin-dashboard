@@ -1,0 +1,13 @@
+﻿{
+  "name": "database-writer-hook",
+  "description": "Automated hook for Database Writer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "database-writer",
+      "action": "validate",
+      "description": "Run Database Writer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

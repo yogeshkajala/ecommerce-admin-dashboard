@@ -1,0 +1,13 @@
+﻿{
+  "name": "stakeholder-updater-hook",
+  "description": "Automated hook for Stakeholder Updater processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "stakeholder-updater",
+      "action": "validate",
+      "description": "Run Stakeholder Updater validation on changed files"
+    }
+  ],
+  "enabled": false
+}

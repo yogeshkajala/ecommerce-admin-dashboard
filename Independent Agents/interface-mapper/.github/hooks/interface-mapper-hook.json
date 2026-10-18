@@ -1,0 +1,13 @@
+﻿{
+  "name": "interface-mapper-hook",
+  "description": "Automated hook for Interface Mapper processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "interface-mapper",
+      "action": "validate",
+      "description": "Run Interface Mapper validation on changed files"
+    }
+  ],
+  "enabled": false
+}

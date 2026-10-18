@@ -1,0 +1,13 @@
+﻿{
+  "name": "data-dictionary-builder-hook",
+  "description": "Automated hook for Data Dictionary Builder processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "data-dictionary-builder",
+      "action": "validate",
+      "description": "Run Data Dictionary Builder validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "snapshot-manager-hook",
+  "description": "Automated hook for Snapshot Manager processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "snapshot-manager",
+      "action": "validate",
+      "description": "Run Snapshot Manager validation on changed files"
+    }
+  ],
+  "enabled": false
+}

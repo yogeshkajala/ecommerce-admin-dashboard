@@ -1,0 +1,13 @@
+﻿{
+  "name": "recovery-validator-hook",
+  "description": "Automated hook for Recovery Validator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "recovery-validator",
+      "action": "validate",
+      "description": "Run Recovery Validator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

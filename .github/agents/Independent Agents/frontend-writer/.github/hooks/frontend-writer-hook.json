@@ -1,0 +1,13 @@
+﻿{
+  "name": "frontend-writer-hook",
+  "description": "Automated hook for Frontend Writer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "frontend-writer",
+      "action": "validate",
+      "description": "Run Frontend Writer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

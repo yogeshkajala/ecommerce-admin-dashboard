@@ -1,0 +1,13 @@
+﻿{
+  "name": "finops-advisor-hook",
+  "description": "Automated hook for Finops Advisor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "finops-advisor",
+      "action": "validate",
+      "description": "Run Finops Advisor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

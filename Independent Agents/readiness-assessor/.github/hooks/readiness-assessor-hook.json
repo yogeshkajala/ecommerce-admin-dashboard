@@ -1,0 +1,13 @@
+﻿{
+  "name": "readiness-assessor-hook",
+  "description": "Automated hook for Readiness Assessor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "readiness-assessor",
+      "action": "validate",
+      "description": "Run Readiness Assessor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "action-executor-hook",
+  "description": "Automated hook for Action Executor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "action-executor",
+      "action": "validate",
+      "description": "Run Action Executor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

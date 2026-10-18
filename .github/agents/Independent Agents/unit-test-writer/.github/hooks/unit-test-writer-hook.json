@@ -1,0 +1,13 @@
+﻿{
+  "name": "unit-test-writer-hook",
+  "description": "Automated hook for Unit Test Writer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "unit-test-writer",
+      "action": "validate",
+      "description": "Run Unit Test Writer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

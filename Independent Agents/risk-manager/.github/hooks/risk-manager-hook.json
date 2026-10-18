@@ -1,0 +1,13 @@
+﻿{
+  "name": "risk-manager-hook",
+  "description": "Automated hook for Risk Manager processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "risk-manager",
+      "action": "validate",
+      "description": "Run Risk Manager validation on changed files"
+    }
+  ],
+  "enabled": false
+}

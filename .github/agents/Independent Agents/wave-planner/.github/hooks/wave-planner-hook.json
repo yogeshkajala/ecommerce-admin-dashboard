@@ -1,0 +1,13 @@
+﻿{
+  "name": "wave-planner-hook",
+  "description": "Automated hook for Wave Planner processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "wave-planner",
+      "action": "validate",
+      "description": "Run Wave Planner validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "azure-deployer-hook",
+  "description": "Automated hook for Azure Deployer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "azure-deployer",
+      "action": "validate",
+      "description": "Run Azure Deployer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

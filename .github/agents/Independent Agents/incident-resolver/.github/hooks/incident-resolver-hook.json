@@ -1,0 +1,13 @@
+﻿{
+  "name": "incident-resolver-hook",
+  "description": "Automated hook for Incident Resolver processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "incident-resolver",
+      "action": "validate",
+      "description": "Run Incident Resolver validation on changed files"
+    }
+  ],
+  "enabled": false
+}

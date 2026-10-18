@@ -1,0 +1,13 @@
+﻿{
+  "name": "work-item-syncer-hook",
+  "description": "Automated hook for Work Item Syncer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "work-item-syncer",
+      "action": "validate",
+      "description": "Run Work Item Syncer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

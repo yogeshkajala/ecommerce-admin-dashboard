@@ -1,0 +1,13 @@
+﻿{
+  "name": "jira-ops-manager-hook",
+  "description": "Automated hook for Jira Ops Manager processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "jira-ops-manager",
+      "action": "validate",
+      "description": "Run Jira Ops Manager validation on changed files"
+    }
+  ],
+  "enabled": false
+}

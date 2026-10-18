@@ -1,0 +1,13 @@
+﻿{
+  "name": "flaky-test-resolver-hook",
+  "description": "Automated hook for Flaky Test Resolver processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "flaky-test-resolver",
+      "action": "validate",
+      "description": "Run Flaky Test Resolver validation on changed files"
+    }
+  ],
+  "enabled": false
+}

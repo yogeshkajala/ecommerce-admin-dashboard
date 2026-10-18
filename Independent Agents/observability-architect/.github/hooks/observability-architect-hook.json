@@ -1,0 +1,13 @@
+﻿{
+  "name": "observability-architect-hook",
+  "description": "Automated hook for Observability Architect processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "observability-architect",
+      "action": "validate",
+      "description": "Run Observability Architect validation on changed files"
+    }
+  ],
+  "enabled": false
+}

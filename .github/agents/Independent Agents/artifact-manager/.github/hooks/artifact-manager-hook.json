@@ -1,0 +1,13 @@
+﻿{
+  "name": "artifact-manager-hook",
+  "description": "Automated hook for Artifact Manager processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "artifact-manager",
+      "action": "validate",
+      "description": "Run Artifact Manager validation on changed files"
+    }
+  ],
+  "enabled": false
+}

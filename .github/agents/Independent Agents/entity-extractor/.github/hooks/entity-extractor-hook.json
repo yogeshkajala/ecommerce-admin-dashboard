@@ -1,0 +1,13 @@
+﻿{
+  "name": "entity-extractor-hook",
+  "description": "Automated hook for Entity Extractor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "entity-extractor",
+      "action": "validate",
+      "description": "Run Entity Extractor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

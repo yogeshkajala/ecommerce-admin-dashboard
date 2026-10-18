@@ -1,0 +1,13 @@
+﻿{
+  "name": "cloud-readiness-analyzer-hook",
+  "description": "Automated hook for Cloud Readiness Analyzer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "cloud-readiness-analyzer",
+      "action": "validate",
+      "description": "Run Cloud Readiness Analyzer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

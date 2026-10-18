@@ -1,0 +1,13 @@
+﻿{
+  "name": "knowledge-helper-hook",
+  "description": "Automated hook for Knowledge Helper processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "knowledge-helper",
+      "action": "validate",
+      "description": "Run Knowledge Helper validation on changed files"
+    }
+  ],
+  "enabled": false
+}

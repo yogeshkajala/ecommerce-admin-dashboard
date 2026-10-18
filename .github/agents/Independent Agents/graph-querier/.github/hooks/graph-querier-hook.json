@@ -1,0 +1,13 @@
+﻿{
+  "name": "graph-querier-hook",
+  "description": "Automated hook for Graph Querier processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "graph-querier",
+      "action": "validate",
+      "description": "Run Graph Querier validation on changed files"
+    }
+  ],
+  "enabled": false
+}

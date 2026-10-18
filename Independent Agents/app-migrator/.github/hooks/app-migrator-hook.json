@@ -1,0 +1,13 @@
+﻿{
+  "name": "app-migrator-hook",
+  "description": "Automated hook for App Migrator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "app-migrator",
+      "action": "validate",
+      "description": "Run App Migrator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "replication-monitor-hook",
+  "description": "Automated hook for Replication Monitor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "replication-monitor",
+      "action": "validate",
+      "description": "Run Replication Monitor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "database-stack-specialist-hook",
+  "description": "Automated hook for Database Stack Specialist processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "database-stack-specialist",
+      "action": "validate",
+      "description": "Run Database Stack Specialist validation on changed files"
+    }
+  ],
+  "enabled": false
+}

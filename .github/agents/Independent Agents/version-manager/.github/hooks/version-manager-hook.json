@@ -1,0 +1,13 @@
+﻿{
+  "name": "version-manager-hook",
+  "description": "Automated hook for Version Manager processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "version-manager",
+      "action": "validate",
+      "description": "Run Version Manager validation on changed files"
+    }
+  ],
+  "enabled": false
+}

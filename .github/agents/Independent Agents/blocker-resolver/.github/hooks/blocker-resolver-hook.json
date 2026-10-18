@@ -1,0 +1,13 @@
+﻿{
+  "name": "blocker-resolver-hook",
+  "description": "Automated hook for Blocker Resolver processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "blocker-resolver",
+      "action": "validate",
+      "description": "Run Blocker Resolver validation on changed files"
+    }
+  ],
+  "enabled": false
+}

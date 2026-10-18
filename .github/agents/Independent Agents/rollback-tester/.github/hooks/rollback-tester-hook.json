@@ -1,0 +1,13 @@
+﻿{
+  "name": "rollback-tester-hook",
+  "description": "Automated hook for Rollback Tester processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "rollback-tester",
+      "action": "validate",
+      "description": "Run Rollback Tester validation on changed files"
+    }
+  ],
+  "enabled": false
+}

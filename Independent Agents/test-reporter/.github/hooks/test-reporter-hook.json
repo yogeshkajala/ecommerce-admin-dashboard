@@ -1,0 +1,13 @@
+﻿{
+  "name": "test-reporter-hook",
+  "description": "Automated hook for Test Reporter processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "test-reporter",
+      "action": "validate",
+      "description": "Run Test Reporter validation on changed files"
+    }
+  ],
+  "enabled": false
+}

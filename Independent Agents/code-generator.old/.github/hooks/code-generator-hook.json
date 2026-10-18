@@ -1,0 +1,13 @@
+﻿{
+  "name": "code-generator-hook",
+  "description": "Automated hook for Code Generator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "code-generator",
+      "action": "validate",
+      "description": "Run Code Generator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,40 @@
+version: 2
+updates:
+  # ── .NET / NuGet dependencies ──────────────────────────────────────────────
+  - package-ecosystem: "nuget"
+    directory: "/src/EcommerceAdmin.API"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+      timezone: "Asia/Kolkata"
+    open-pull-requests-limit: 5
+    reviewers:
+      - "yogeshkajala/dev-team"
+    labels:
+      - "dependencies"
+      - "dotnet"
+    # Group all patch updates into a single PR (reduces noise)
+    groups:
+      dotnet-patch-updates:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+
+  # ── GitHub Actions versions ────────────────────────────────────────────────
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+      timezone: "Asia/Kolkata"
+    open-pull-requests-limit: 3
+    reviewers:
+      - "yogeshkajala/devops-team"
+    labels:
+      - "dependencies"
+      - "github-actions"
+      - "devops"

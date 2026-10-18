@@ -1,0 +1,13 @@
+﻿{
+  "name": "auto-fixer-hook",
+  "description": "Automated hook for Auto Fixer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "auto-fixer",
+      "action": "validate",
+      "description": "Run Auto Fixer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "dependency-updater-hook",
+  "description": "Automated hook for Dependency Updater processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "dependency-updater",
+      "action": "validate",
+      "description": "Run Dependency Updater validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,75 @@
+# ─────────────────────────────────────────────────────────────────────────────
+#  docker-compose.prod.yml — Production environment overrides
+#
+#  Extends docker-compose.yml with:
+#  - Traefik labels for datasoftio.com routing
+#  - Internal port binding (127.0.0.1 only — Traefik is the public entrypoint)
+#  - SQL Server Standard/Developer edition (full features)
+#  - Higher resource limits for production load
+#
+#  Deploy command (on VPS, from /opt/ecommerce-admin/production/):
+#    docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+# ─────────────────────────────────────────────────────────────────────────────
+
+version: '3.8'
+
+services:
+
+  api:
+    # Bind only to localhost — Traefik proxies from outside
+    ports:
+      - "127.0.0.1:8080:8080"
+    labels:
+      # ── Enable Traefik ──────────────────────────────────────────────────
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik-public"
+
+      # ── HTTPS Router (datasoftio.com) ───────────────────────────────────
+      - "traefik.http.routers.ecommerce-prod.rule=Host(`datasoftio.com`) || Host(`www.datasoftio.com`)"
+      - "traefik.http.routers.ecommerce-prod.entrypoints=websecure"
+      - "traefik.http.routers.ecommerce-prod.tls=true"
+      - "traefik.http.routers.ecommerce-prod.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.ecommerce-prod.priority=10"
+
+      # ── HTTP → HTTPS Redirect ───────────────────────────────────────────
+      - "traefik.http.routers.ecommerce-prod-http.rule=Host(`datasoftio.com`) || Host(`www.datasoftio.com`)"
+      - "traefik.http.routers.ecommerce-prod-http.entrypoints=web"
+      - "traefik.http.routers.ecommerce-prod-http.middlewares=redirect-to-https@docker"
+
+      # ── Backend Service ─────────────────────────────────────────────────
+      - "traefik.http.services.ecommerce-prod-svc.loadbalancer.server.port=8080"
+      - "traefik.http.routers.ecommerce-prod.service=ecommerce-prod-svc"
+
+    deploy:
+      resources:
+        limits:
+          cpus: "1.00"
+          memory: 1G
+        reservations:
+          cpus: "0.50"
+          memory: 512M
+
+  db-sqlserver:
+    # SQL Server Latest (Standard features) on production
+    # SQLSERVER_IMAGE and MSSQL_PID are set in the production .env file:
+    #   SQLSERVER_IMAGE=mcr.microsoft.com/mssql/server:2022-latest
+    #   MSSQL_PID=Developer  (or Standard/Enterprise with license)
+    deploy:
+      resources:
+        limits:
+          cpus: "1.00"
+          memory: 2G
+
+  db-postgres:
+    deploy:
+      resources:
+        limits:
+          cpus: "0.50"
+          memory: 512M
+
+  cache-redis:
+    deploy:
+      resources:
+        limits:
+          cpus: "0.25"
+          memory: 256M

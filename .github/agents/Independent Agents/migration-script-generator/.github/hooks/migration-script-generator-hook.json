@@ -1,0 +1,13 @@
+﻿{
+  "name": "migration-script-generator-hook",
+  "description": "Automated hook for Migration Script Generator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "migration-script-generator",
+      "action": "validate",
+      "description": "Run Migration Script Generator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "root-cause-analyzer-hook",
+  "description": "Automated hook for Root Cause Analyzer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "root-cause-analyzer",
+      "action": "validate",
+      "description": "Run Root Cause Analyzer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

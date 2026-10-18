@@ -1,0 +1,13 @@
+﻿{
+  "name": "deployment-validator-hook",
+  "description": "Automated hook for Deployment Validator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "deployment-validator",
+      "action": "validate",
+      "description": "Run Deployment Validator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

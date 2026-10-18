@@ -1,0 +1,13 @@
+﻿{
+  "name": "error-rate-tracker-hook",
+  "description": "Automated hook for Error Rate Tracker processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "error-rate-tracker",
+      "action": "validate",
+      "description": "Run Error Rate Tracker validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "deprecation-fixer-hook",
+  "description": "Automated hook for Deprecation Fixer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "deprecation-fixer",
+      "action": "validate",
+      "description": "Run Deprecation Fixer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

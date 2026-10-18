@@ -1,0 +1,13 @@
+﻿{
+  "name": "incident-responder-hook",
+  "description": "Automated hook for Incident Responder processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "incident-responder",
+      "action": "validate",
+      "description": "Run Incident Responder validation on changed files"
+    }
+  ],
+  "enabled": false
+}

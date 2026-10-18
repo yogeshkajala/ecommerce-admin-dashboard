@@ -1,0 +1,13 @@
+﻿{
+  "name": "functional-integration-tester-hook",
+  "description": "Automated hook for Functional Integration Tester processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "functional-integration-tester",
+      "action": "validate",
+      "description": "Run Functional Integration Tester validation on changed files"
+    }
+  ],
+  "enabled": false
+}

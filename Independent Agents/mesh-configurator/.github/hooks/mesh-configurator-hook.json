@@ -1,0 +1,13 @@
+﻿{
+  "name": "mesh-configurator-hook",
+  "description": "Automated hook for Mesh Configurator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "mesh-configurator",
+      "action": "validate",
+      "description": "Run Mesh Configurator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

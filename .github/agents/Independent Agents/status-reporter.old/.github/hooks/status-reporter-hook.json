@@ -1,0 +1,13 @@
+﻿{
+  "name": "status-reporter-hook",
+  "description": "Automated hook for Status Reporter processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "status-reporter",
+      "action": "validate",
+      "description": "Run Status Reporter validation on changed files"
+    }
+  ],
+  "enabled": false
+}

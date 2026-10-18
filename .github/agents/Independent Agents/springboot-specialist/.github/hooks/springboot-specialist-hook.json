@@ -1,0 +1,13 @@
+﻿{
+  "name": "springboot-specialist-hook",
+  "description": "Automated hook for Springboot Specialist processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "springboot-specialist",
+      "action": "validate",
+      "description": "Run Springboot Specialist validation on changed files"
+    }
+  ],
+  "enabled": false
+}

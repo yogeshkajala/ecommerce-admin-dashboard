@@ -1,0 +1,13 @@
+﻿{
+  "name": "latency-monitor-hook",
+  "description": "Automated hook for Latency Monitor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "latency-monitor",
+      "action": "validate",
+      "description": "Run Latency Monitor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "migration-performance-benchmarker-hook",
+  "description": "Automated hook for Migration Performance Benchmarker processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "migration-performance-benchmarker",
+      "action": "validate",
+      "description": "Run Migration Performance Benchmarker validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "policy-engine-hook",
+  "description": "Automated hook for Policy Engine processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "policy-engine",
+      "action": "validate",
+      "description": "Run Policy Engine validation on changed files"
+    }
+  ],
+  "enabled": false
+}

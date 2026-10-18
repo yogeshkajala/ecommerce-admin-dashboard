@@ -1,0 +1,13 @@
+﻿{
+  "name": "solution-architect-hook",
+  "description": "Automated hook for Solution Architect processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "solution-architect",
+      "action": "validate",
+      "description": "Run Solution Architect validation on changed files"
+    }
+  ],
+  "enabled": false
+}

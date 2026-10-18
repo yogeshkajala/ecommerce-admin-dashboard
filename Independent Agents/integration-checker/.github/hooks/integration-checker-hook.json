@@ -1,0 +1,13 @@
+﻿{
+  "name": "integration-checker-hook",
+  "description": "Automated hook for Integration Checker processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "integration-checker",
+      "action": "validate",
+      "description": "Run Integration Checker validation on changed files"
+    }
+  ],
+  "enabled": false
+}

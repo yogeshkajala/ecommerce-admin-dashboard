@@ -1,0 +1,13 @@
+﻿{
+  "name": "target-arch-designer-hook",
+  "description": "Automated hook for Target Arch Designer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "target-arch-designer",
+      "action": "validate",
+      "description": "Run Target Arch Designer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

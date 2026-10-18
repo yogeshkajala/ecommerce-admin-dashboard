@@ -1,0 +1,13 @@
+﻿{
+  "name": "discovery-assessor-hook",
+  "description": "Automated hook for Discovery Assessor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "discovery-assessor",
+      "action": "validate",
+      "description": "Run Discovery Assessor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

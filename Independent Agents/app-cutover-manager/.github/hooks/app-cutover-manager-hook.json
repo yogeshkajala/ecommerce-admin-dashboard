@@ -1,0 +1,13 @@
+﻿{
+  "name": "app-cutover-manager-hook",
+  "description": "Automated hook for App Cutover Manager processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "app-cutover-manager",
+      "action": "validate",
+      "description": "Run App Cutover Manager validation on changed files"
+    }
+  ],
+  "enabled": false
+}

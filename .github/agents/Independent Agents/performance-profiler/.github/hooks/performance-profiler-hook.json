@@ -1,0 +1,13 @@
+﻿{
+  "name": "performance-profiler-hook",
+  "description": "Automated hook for Performance Profiler processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "performance-profiler",
+      "action": "validate",
+      "description": "Run Performance Profiler validation on changed files"
+    }
+  ],
+  "enabled": false
+}

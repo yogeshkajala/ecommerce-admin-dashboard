@@ -1,0 +1,13 @@
+﻿{
+  "name": "remediation-executor-hook",
+  "description": "Automated hook for Remediation Executor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "remediation-executor",
+      "action": "validate",
+      "description": "Run Remediation Executor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

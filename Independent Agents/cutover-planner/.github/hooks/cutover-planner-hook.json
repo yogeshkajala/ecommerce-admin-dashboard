@@ -1,0 +1,13 @@
+﻿{
+  "name": "cutover-planner-hook",
+  "description": "Automated hook for Cutover Planner processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "cutover-planner",
+      "action": "validate",
+      "description": "Run Cutover Planner validation on changed files"
+    }
+  ],
+  "enabled": false
+}

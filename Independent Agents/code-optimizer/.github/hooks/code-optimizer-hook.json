@@ -1,0 +1,13 @@
+﻿{
+  "name": "code-optimizer-hook",
+  "description": "Automated hook for Code Optimizer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "code-optimizer",
+      "action": "validate",
+      "description": "Run Code Optimizer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

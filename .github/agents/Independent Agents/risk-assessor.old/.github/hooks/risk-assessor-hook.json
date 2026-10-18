@@ -1,0 +1,13 @@
+﻿{
+  "name": "risk-assessor-hook",
+  "description": "Automated hook for Risk Assessor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "risk-assessor",
+      "action": "validate",
+      "description": "Run Risk Assessor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

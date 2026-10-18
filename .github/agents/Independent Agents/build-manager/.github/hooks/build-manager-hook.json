@@ -1,0 +1,13 @@
+﻿{
+  "name": "build-manager-hook",
+  "description": "Automated hook for Build Manager processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "build-manager",
+      "action": "validate",
+      "description": "Run Build Manager validation on changed files"
+    }
+  ],
+  "enabled": false
+}

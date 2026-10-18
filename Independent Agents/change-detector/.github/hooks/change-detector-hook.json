@@ -1,0 +1,13 @@
+﻿{
+  "name": "change-detector-hook",
+  "description": "Automated hook for Change Detector processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "change-detector",
+      "action": "validate",
+      "description": "Run Change Detector validation on changed files"
+    }
+  ],
+  "enabled": false
+}

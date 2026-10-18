@@ -1,0 +1,13 @@
+﻿{
+  "name": "deployment-worker-hook",
+  "description": "Automated hook for Deployment Worker processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "deployment-worker",
+      "action": "validate",
+      "description": "Run Deployment Worker validation on changed files"
+    }
+  ],
+  "enabled": false
+}

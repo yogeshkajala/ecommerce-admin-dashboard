@@ -1,0 +1,13 @@
+﻿{
+  "name": "observability-monitor-hook",
+  "description": "Automated hook for Observability Monitor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "observability-monitor",
+      "action": "validate",
+      "description": "Run Observability Monitor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

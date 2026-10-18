@@ -1,0 +1,13 @@
+﻿{
+  "name": "compliance-checker-hook",
+  "description": "Automated hook for Compliance Checker processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "compliance-checker",
+      "action": "validate",
+      "description": "Run Compliance Checker validation on changed files"
+    }
+  ],
+  "enabled": false
+}

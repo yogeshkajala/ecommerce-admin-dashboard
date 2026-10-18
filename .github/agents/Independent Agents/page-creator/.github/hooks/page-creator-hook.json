@@ -1,0 +1,13 @@
+﻿{
+  "name": "page-creator-hook",
+  "description": "Automated hook for Page Creator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "page-creator",
+      "action": "validate",
+      "description": "Run Page Creator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

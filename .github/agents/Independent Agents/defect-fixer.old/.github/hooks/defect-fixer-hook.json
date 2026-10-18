@@ -1,0 +1,13 @@
+﻿{
+  "name": "defect-fixer-hook",
+  "description": "Automated hook for Defect Fixer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "defect-fixer",
+      "action": "validate",
+      "description": "Run Defect Fixer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

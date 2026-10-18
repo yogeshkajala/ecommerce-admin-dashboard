@@ -1,0 +1,13 @@
+﻿{
+  "name": "scope-guardian-hook",
+  "description": "Automated hook for Scope Guardian processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "scope-guardian",
+      "action": "validate",
+      "description": "Run Scope Guardian validation on changed files"
+    }
+  ],
+  "enabled": false
+}

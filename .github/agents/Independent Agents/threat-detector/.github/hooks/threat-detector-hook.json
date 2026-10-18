@@ -1,0 +1,13 @@
+﻿{
+  "name": "threat-detector-hook",
+  "description": "Automated hook for Threat Detector processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "threat-detector",
+      "action": "validate",
+      "description": "Run Threat Detector validation on changed files"
+    }
+  ],
+  "enabled": false
+}

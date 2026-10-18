@@ -1,0 +1,13 @@
+﻿{
+  "name": "documentation-updater-hook",
+  "description": "Automated hook for Documentation Updater processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "documentation-updater",
+      "action": "validate",
+      "description": "Run Documentation Updater validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,143 @@
+# ─────────────────────────────────────────────────────────────────────────────
+#  CD Staging Workflow — Deploy to staging.datasoftio.com
+#
+#  Triggers automatically after CI passes on the main branch.
+#
+#  What it does:
+#    1. SSH into the Hostinger VPS
+#    2. Write the .env file from GitHub Secrets (STAGING_ENV_FILE)
+#    3. Pull the new image from ghcr.io
+#    4. Recreate the api container (zero-downtime: databases stay up)
+#    5. Run a health check against the /health endpoint
+#
+#  Required GitHub Environment secrets (Settings → Environments → staging):
+#    STAGING_ENV_FILE  — Full contents of the staging .env file
+#    SSH_HOST          — Hostinger VPS IP address
+#    SSH_USER          — SSH username (e.g. 'deploy' or 'root')
+#    SSH_KEY           — Private SSH key (PEM format)
+# ─────────────────────────────────────────────────────────────────────────────
+
+name: CD — Deploy to Staging
+
+on:
+  workflow_run:
+    workflows: ["CI — Build, Test & Push"]
+    types:
+      - completed
+    branches:
+      - main
+
+permissions:
+  contents: read
+  packages: read
+
+jobs:
+  deploy-staging:
+    name: Deploy → staging.datasoftio.com
+    runs-on: ubuntu-latest
+    # Only run if CI completed successfully
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    # Links to the "staging" GitHub Environment (Settings → Environments)
+    environment:
+      name: staging
+      url: https://staging.datasoftio.com
+
+    steps:
+      - name: Get triggering commit SHA
+        id: sha
+        run: |
+          echo "sha=${{ github.event.workflow_run.head_sha }}" >> $GITHUB_OUTPUT
+          echo "sha_short=$(echo '${{ github.event.workflow_run.head_sha }}' | cut -c1-7)" >> $GITHUB_OUTPUT
+
+      - name: Deploy to Staging VPS via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          timeout: 120s
+          script_stop: true   # Stop on first error
+          script: |
+            set -euo pipefail
+
+            echo "━━━ 🚀 Deploying EcommerceAdmin to STAGING ━━━"
+            echo "   Commit: ${{ steps.sha.outputs.sha_short }}"
+            echo "   Target: staging.datasoftio.com"
+            echo ""
+
+            # ── 1. Ensure deployment directory exists ──────────────────────
+            mkdir -p /opt/ecommerce-admin/staging
+            cd /opt/ecommerce-admin/staging
+
+            # ── 2. Write .env file from GitHub Secret ─────────────────────
+            # The STAGING_ENV_FILE secret contains the full .env file content.
+            # Writing it fresh every deploy ensures secrets stay up to date.
+            cat > .env << 'ENVEOF'
+            ${{ secrets.STAGING_ENV_FILE }}
+            ENVEOF
+
+            # Append the exact image SHA to pin the deployment to this commit
+            echo "" >> .env
+            echo "IMAGE_TAG=${{ steps.sha.outputs.sha }}" >> .env
+            echo "GITHUB_OWNER=${{ github.repository_owner }}" >> .env
+            echo "ASPNETCORE_ENVIRONMENT=Staging" >> .env
+
+            # ── 3. Copy docker-compose files (if not already present) ──────
+            # These are stable files; CI doesn't update them automatically.
+            # See VPS bootstrap instructions to copy them initially.
+            # (Future enhancement: pull from registry/artifact on each deploy)
+
+            # ── 4. Authenticate with GitHub Container Registry ────────────
+            echo "${{ secrets.GITHUB_TOKEN }}" | \
+              docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+
+            # ── 5. Pull new API image ──────────────────────────────────────
+            docker compose \
+              -f /opt/ecommerce-admin/staging/docker-compose.yml \
+              -f /opt/ecommerce-admin/staging/docker-compose.staging.yml \
+              pull api
+
+            # ── 6. Recreate API container only (databases stay running) ────
+            docker compose \
+              -f /opt/ecommerce-admin/staging/docker-compose.yml \
+              -f /opt/ecommerce-admin/staging/docker-compose.staging.yml \
+              up -d --force-recreate --no-deps api
+
+            # ── 7. Wait for container to be healthy ────────────────────────
+            echo "Waiting for API to become healthy..."
+            sleep 10
+
+            # ── 8. Health check ────────────────────────────────────────────
+            HEALTH_RESPONSE=$(curl -sf http://127.0.0.1:8081/health || echo "FAILED")
+            if echo "$HEALTH_RESPONSE" | grep -q "Healthy"; then
+              echo "✅ Health check passed: $HEALTH_RESPONSE"
+            else
+              echo "❌ Health check failed: $HEALTH_RESPONSE"
+              docker compose \
+                -f /opt/ecommerce-admin/staging/docker-compose.yml \
+                -f /opt/ecommerce-admin/staging/docker-compose.staging.yml \
+                logs --tail=50 api
+              exit 1
+            fi
+
+            echo ""
+            echo "━━━ ✅ Staging deployment complete ━━━"
+
+      - name: Deployment summary
+        if: success()
+        run: |
+          echo "## ✅ Staging Deployment Successful" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Field | Value |" >> $GITHUB_STEP_SUMMARY
+          echo "|-------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| URL | [staging.datasoftio.com](https://staging.datasoftio.com) |" >> $GITHUB_STEP_SUMMARY
+          echo "| Health | [/health](https://staging.datasoftio.com/health) |" >> $GITHUB_STEP_SUMMARY
+          echo "| Swagger | [/swagger](https://staging.datasoftio.com/swagger) |" >> $GITHUB_STEP_SUMMARY
+          echo "| Commit | \`${{ steps.sha.outputs.sha_short }}\` |" >> $GITHUB_STEP_SUMMARY
+
+      - name: Notify on failure
+        if: failure()
+        run: |
+          echo "## ❌ Staging Deployment Failed" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Check the SSH deploy step logs above for details." >> $GITHUB_STEP_SUMMARY

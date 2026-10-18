@@ -1,0 +1,13 @@
+﻿{
+  "name": "feature-engineer-hook",
+  "description": "Automated hook for Feature Engineer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "feature-engineer",
+      "action": "validate",
+      "description": "Run Feature Engineer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

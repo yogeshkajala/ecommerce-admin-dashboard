@@ -1,0 +1,13 @@
+﻿{
+  "name": "health-reporter-hook",
+  "description": "Automated hook for Health Reporter processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "health-reporter",
+      "action": "validate",
+      "description": "Run Health Reporter validation on changed files"
+    }
+  ],
+  "enabled": false
+}

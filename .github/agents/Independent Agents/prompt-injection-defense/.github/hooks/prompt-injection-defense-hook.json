@@ -1,0 +1,13 @@
+﻿{
+  "name": "prompt-injection-defense-hook",
+  "description": "Automated hook for Prompt Injection Defense processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "prompt-injection-defense",
+      "action": "validate",
+      "description": "Run Prompt Injection Defense validation on changed files"
+    }
+  ],
+  "enabled": false
+}

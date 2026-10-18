@@ -1,0 +1,13 @@
+﻿{
+  "name": "code-archeologist-hook",
+  "description": "Automated hook for Code Archeologist processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "code-archeologist",
+      "action": "validate",
+      "description": "Run Code Archeologist validation on changed files"
+    }
+  ],
+  "enabled": false
+}

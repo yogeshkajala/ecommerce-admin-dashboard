@@ -1,0 +1,13 @@
+﻿{
+  "name": "event-handler-builder-hook",
+  "description": "Automated hook for Event Handler Builder processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "event-handler-builder",
+      "action": "validate",
+      "description": "Run Event Handler Builder validation on changed files"
+    }
+  ],
+  "enabled": false
+}

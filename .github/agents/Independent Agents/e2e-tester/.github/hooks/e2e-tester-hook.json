@@ -1,0 +1,13 @@
+﻿{
+  "name": "e2e-tester-hook",
+  "description": "Automated hook for E2e Tester processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "e2e-tester",
+      "action": "validate",
+      "description": "Run E2e Tester validation on changed files"
+    }
+  ],
+  "enabled": false
+}

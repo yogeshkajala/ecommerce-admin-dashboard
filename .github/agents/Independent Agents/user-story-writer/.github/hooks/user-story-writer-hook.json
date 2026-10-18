@@ -1,0 +1,13 @@
+﻿{
+  "name": "user-story-writer-hook",
+  "description": "Automated hook for User Story Writer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "user-story-writer",
+      "action": "validate",
+      "description": "Run User Story Writer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

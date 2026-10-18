@@ -1,0 +1,13 @@
+﻿{
+  "name": "cost-analyzer-hook",
+  "description": "Automated hook for Cost Analyzer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "cost-analyzer",
+      "action": "validate",
+      "description": "Run Cost Analyzer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

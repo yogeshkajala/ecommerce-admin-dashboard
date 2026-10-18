@@ -1,0 +1,13 @@
+﻿{
+  "name": "product-strategist-hook",
+  "description": "Automated hook for Product Strategist processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "product-strategist",
+      "action": "validate",
+      "description": "Run Product Strategist validation on changed files"
+    }
+  ],
+  "enabled": false
+}

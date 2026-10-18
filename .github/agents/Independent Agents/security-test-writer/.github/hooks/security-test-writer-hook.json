@@ -1,0 +1,13 @@
+﻿{
+  "name": "security-test-writer-hook",
+  "description": "Automated hook for Security Test Writer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "security-test-writer",
+      "action": "validate",
+      "description": "Run Security Test Writer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

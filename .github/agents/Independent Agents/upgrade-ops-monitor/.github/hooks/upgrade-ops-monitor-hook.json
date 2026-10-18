@@ -1,0 +1,13 @@
+﻿{
+  "name": "upgrade-ops-monitor-hook",
+  "description": "Automated hook for Upgrade Ops Monitor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "upgrade-ops-monitor",
+      "action": "validate",
+      "description": "Run Upgrade Ops Monitor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

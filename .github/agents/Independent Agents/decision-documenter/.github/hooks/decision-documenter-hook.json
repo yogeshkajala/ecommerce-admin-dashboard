@@ -1,0 +1,13 @@
+﻿{
+  "name": "decision-documenter-hook",
+  "description": "Automated hook for Decision Documenter processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "decision-documenter",
+      "action": "validate",
+      "description": "Run Decision Documenter validation on changed files"
+    }
+  ],
+  "enabled": false
+}

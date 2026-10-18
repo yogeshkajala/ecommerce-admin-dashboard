@@ -1,0 +1,13 @@
+﻿{
+  "name": "config-updater-hook",
+  "description": "Automated hook for Config Updater processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "config-updater",
+      "action": "validate",
+      "description": "Run Config Updater validation on changed files"
+    }
+  ],
+  "enabled": false
+}

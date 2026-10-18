@@ -1,0 +1,13 @@
+﻿{
+  "name": "oncall-setup-agent-hook",
+  "description": "Automated hook for Oncall Setup Agent processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "oncall-setup-agent",
+      "action": "validate",
+      "description": "Run Oncall Setup Agent validation on changed files"
+    }
+  ],
+  "enabled": false
+}

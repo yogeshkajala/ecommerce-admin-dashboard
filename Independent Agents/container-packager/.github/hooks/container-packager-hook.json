@@ -1,0 +1,13 @@
+﻿{
+  "name": "container-packager-hook",
+  "description": "Automated hook for Container Packager processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "container-packager",
+      "action": "validate",
+      "description": "Run Container Packager validation on changed files"
+    }
+  ],
+  "enabled": false
+}

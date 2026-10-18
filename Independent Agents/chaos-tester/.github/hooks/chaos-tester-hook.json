@@ -1,0 +1,13 @@
+﻿{
+  "name": "chaos-tester-hook",
+  "description": "Automated hook for Chaos Tester processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "chaos-tester",
+      "action": "validate",
+      "description": "Run Chaos Tester validation on changed files"
+    }
+  ],
+  "enabled": false
+}

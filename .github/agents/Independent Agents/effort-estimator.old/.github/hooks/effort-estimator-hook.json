@@ -1,0 +1,13 @@
+﻿{
+  "name": "effort-estimator-hook",
+  "description": "Automated hook for Effort Estimator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "effort-estimator",
+      "action": "validate",
+      "description": "Run Effort Estimator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

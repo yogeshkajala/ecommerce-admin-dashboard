@@ -1,0 +1,13 @@
+﻿{
+  "name": "legacy-requirements-analyst-hook",
+  "description": "Automated hook for Legacy Requirements Analyst processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "legacy-requirements-analyst",
+      "action": "validate",
+      "description": "Run Legacy Requirements Analyst validation on changed files"
+    }
+  ],
+  "enabled": false
+}

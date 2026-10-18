@@ -1,0 +1,13 @@
+﻿{
+  "name": "code-converter-hook",
+  "description": "Automated hook for Code Converter processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "code-converter",
+      "action": "validate",
+      "description": "Run Code Converter validation on changed files"
+    }
+  ],
+  "enabled": false
+}

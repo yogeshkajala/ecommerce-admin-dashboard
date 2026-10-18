@@ -1,0 +1,13 @@
+﻿{
+  "name": "okr-tracker-hook",
+  "description": "Automated hook for Okr Tracker processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "okr-tracker",
+      "action": "validate",
+      "description": "Run Okr Tracker validation on changed files"
+    }
+  ],
+  "enabled": false
+}

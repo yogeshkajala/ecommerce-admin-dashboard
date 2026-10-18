@@ -1,0 +1,13 @@
+﻿{
+  "name": "requirements-jira-syncer-hook",
+  "description": "Automated hook for Requirements Jira Syncer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "requirements-jira-syncer",
+      "action": "validate",
+      "description": "Run Requirements Jira Syncer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "node-specialist-hook",
+  "description": "Automated hook for Node Specialist processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "node-specialist",
+      "action": "validate",
+      "description": "Run Node Specialist validation on changed files"
+    }
+  ],
+  "enabled": false
+}

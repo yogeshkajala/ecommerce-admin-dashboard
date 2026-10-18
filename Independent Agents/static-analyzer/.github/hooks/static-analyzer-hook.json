@@ -1,0 +1,13 @@
+﻿{
+  "name": "static-analyzer-hook",
+  "description": "Automated hook for Static Analyzer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "static-analyzer",
+      "action": "validate",
+      "description": "Run Static Analyzer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

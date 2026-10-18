@@ -1,0 +1,13 @@
+﻿{
+  "name": "local-deployer-hook",
+  "description": "Automated hook for Local Deployer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "local-deployer",
+      "action": "validate",
+      "description": "Run Local Deployer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

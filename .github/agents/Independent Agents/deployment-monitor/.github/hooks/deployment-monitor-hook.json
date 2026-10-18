@@ -1,0 +1,13 @@
+﻿{
+  "name": "deployment-monitor-hook",
+  "description": "Automated hook for Deployment Monitor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "deployment-monitor",
+      "action": "validate",
+      "description": "Run Deployment Monitor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

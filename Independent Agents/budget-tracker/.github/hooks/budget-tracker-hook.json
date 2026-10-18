@@ -1,0 +1,13 @@
+﻿{
+  "name": "budget-tracker-hook",
+  "description": "Automated hook for Budget Tracker processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "budget-tracker",
+      "action": "validate",
+      "description": "Run Budget Tracker validation on changed files"
+    }
+  ],
+  "enabled": false
+}

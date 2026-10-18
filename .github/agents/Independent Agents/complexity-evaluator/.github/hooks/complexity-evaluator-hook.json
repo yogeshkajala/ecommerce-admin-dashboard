@@ -1,0 +1,13 @@
+﻿{
+  "name": "complexity-evaluator-hook",
+  "description": "Automated hook for Complexity Evaluator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "complexity-evaluator",
+      "action": "validate",
+      "description": "Run Complexity Evaluator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

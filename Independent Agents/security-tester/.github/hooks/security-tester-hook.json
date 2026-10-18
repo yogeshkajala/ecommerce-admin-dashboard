@@ -1,0 +1,13 @@
+﻿{
+  "name": "security-tester-hook",
+  "description": "Automated hook for Security Tester processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "security-tester",
+      "action": "validate",
+      "description": "Run Security Tester validation on changed files"
+    }
+  ],
+  "enabled": false
+}

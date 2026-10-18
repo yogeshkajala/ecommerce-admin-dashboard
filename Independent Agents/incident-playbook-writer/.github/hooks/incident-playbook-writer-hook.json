@@ -1,0 +1,13 @@
+﻿{
+  "name": "incident-playbook-writer-hook",
+  "description": "Automated hook for Incident Playbook Writer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "incident-playbook-writer",
+      "action": "validate",
+      "description": "Run Incident Playbook Writer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

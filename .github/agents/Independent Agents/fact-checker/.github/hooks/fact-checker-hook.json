@@ -1,0 +1,13 @@
+﻿{
+  "name": "fact-checker-hook",
+  "description": "Automated hook for Fact Checker processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "fact-checker",
+      "action": "validate",
+      "description": "Run Fact Checker validation on changed files"
+    }
+  ],
+  "enabled": false
+}

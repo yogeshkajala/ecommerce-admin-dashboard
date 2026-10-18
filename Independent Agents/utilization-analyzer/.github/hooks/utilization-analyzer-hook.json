@@ -1,0 +1,13 @@
+﻿{
+  "name": "utilization-analyzer-hook",
+  "description": "Automated hook for Utilization Analyzer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "utilization-analyzer",
+      "action": "validate",
+      "description": "Run Utilization Analyzer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

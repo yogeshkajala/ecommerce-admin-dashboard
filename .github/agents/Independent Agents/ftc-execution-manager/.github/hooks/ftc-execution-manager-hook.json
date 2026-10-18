@@ -1,0 +1,13 @@
+﻿{
+  "name": "ftc-execution-manager-hook",
+  "description": "Automated hook for Ftc Execution Manager processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "ftc-execution-manager",
+      "action": "validate",
+      "description": "Run Ftc Execution Manager validation on changed files"
+    }
+  ],
+  "enabled": false
+}

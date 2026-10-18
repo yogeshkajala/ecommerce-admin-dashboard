@@ -1,0 +1,13 @@
+﻿{
+  "name": "release-manager-hook",
+  "description": "Automated hook for Release Manager processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "release-manager",
+      "action": "validate",
+      "description": "Run Release Manager validation on changed files"
+    }
+  ],
+  "enabled": false
+}

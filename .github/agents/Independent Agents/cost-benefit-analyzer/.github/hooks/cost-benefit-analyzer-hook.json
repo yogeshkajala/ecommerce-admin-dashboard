@@ -1,0 +1,13 @@
+﻿{
+  "name": "cost-benefit-analyzer-hook",
+  "description": "Automated hook for Cost Benefit Analyzer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "cost-benefit-analyzer",
+      "action": "validate",
+      "description": "Run Cost Benefit Analyzer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

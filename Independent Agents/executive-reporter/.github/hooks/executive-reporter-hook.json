@@ -1,0 +1,13 @@
+﻿{
+  "name": "executive-reporter-hook",
+  "description": "Automated hook for Executive Reporter processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "executive-reporter",
+      "action": "validate",
+      "description": "Run Executive Reporter validation on changed files"
+    }
+  ],
+  "enabled": false
+}

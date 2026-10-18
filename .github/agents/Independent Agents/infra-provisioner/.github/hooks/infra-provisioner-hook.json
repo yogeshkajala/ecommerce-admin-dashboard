@@ -1,0 +1,13 @@
+﻿{
+  "name": "infra-provisioner-hook",
+  "description": "Automated hook for Infra Provisioner processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "infra-provisioner",
+      "action": "validate",
+      "description": "Run Infra Provisioner validation on changed files"
+    }
+  ],
+  "enabled": false
+}

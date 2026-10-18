@@ -1,0 +1,13 @@
+﻿{
+  "name": "serverless-designer-hook",
+  "description": "Automated hook for Serverless Designer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "serverless-designer",
+      "action": "validate",
+      "description": "Run Serverless Designer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "business-rule-extractor-hook",
+  "description": "Automated hook for Business Rule Extractor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "business-rule-extractor",
+      "action": "validate",
+      "description": "Run Business Rule Extractor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "go-nogo-evaluator-hook",
+  "description": "Automated hook for Go Nogo Evaluator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "go-nogo-evaluator",
+      "action": "validate",
+      "description": "Run Go Nogo Evaluator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "code-migrator-hook",
+  "description": "Automated hook for Code Migrator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "code-migrator",
+      "action": "validate",
+      "description": "Run Code Migrator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

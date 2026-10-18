@@ -1,0 +1,13 @@
+﻿{
+  "name": "event-contract-designer-hook",
+  "description": "Automated hook for Event Contract Designer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "event-contract-designer",
+      "action": "validate",
+      "description": "Run Event Contract Designer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

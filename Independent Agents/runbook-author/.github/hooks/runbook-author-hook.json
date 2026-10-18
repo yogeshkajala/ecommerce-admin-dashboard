@@ -1,0 +1,13 @@
+﻿{
+  "name": "runbook-author-hook",
+  "description": "Automated hook for Runbook Author processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "runbook-author",
+      "action": "validate",
+      "description": "Run Runbook Author validation on changed files"
+    }
+  ],
+  "enabled": false
+}

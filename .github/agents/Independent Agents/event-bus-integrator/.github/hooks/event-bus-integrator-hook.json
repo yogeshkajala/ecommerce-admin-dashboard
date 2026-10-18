@@ -1,0 +1,13 @@
+﻿{
+  "name": "event-bus-integrator-hook",
+  "description": "Automated hook for Event Bus Integrator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "event-bus-integrator",
+      "action": "validate",
+      "description": "Run Event Bus Integrator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

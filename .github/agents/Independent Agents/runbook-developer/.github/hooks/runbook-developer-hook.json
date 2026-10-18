@@ -1,0 +1,13 @@
+﻿{
+  "name": "runbook-developer-hook",
+  "description": "Automated hook for Runbook Developer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "runbook-developer",
+      "action": "validate",
+      "description": "Run Runbook Developer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

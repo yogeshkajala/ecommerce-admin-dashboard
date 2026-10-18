@@ -1,0 +1,13 @@
+﻿{
+  "name": "policy-enforcer-hook",
+  "description": "Automated hook for Policy Enforcer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "policy-enforcer",
+      "action": "validate",
+      "description": "Run Policy Enforcer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

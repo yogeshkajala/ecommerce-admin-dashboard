@@ -1,0 +1,13 @@
+﻿{
+  "name": "pipeline-builder-hook",
+  "description": "Automated hook for Pipeline Builder processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "pipeline-builder",
+      "action": "validate",
+      "description": "Run Pipeline Builder validation on changed files"
+    }
+  ],
+  "enabled": false
+}

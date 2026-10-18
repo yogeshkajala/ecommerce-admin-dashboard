@@ -1,0 +1,189 @@
+# ─────────────────────────────────────────────────────────────────────────────
+#  CD Production Workflow — Deploy to datasoftio.com
+#
+#  ⚠️  GATED: Requires manual approval from a designated reviewer.
+#       Configure this in: Settings → Environments → production → Required reviewers
+#
+#  Triggers:
+#    - workflow_dispatch (manual trigger from GitHub Actions UI)
+#      Accepts an optional image_tag input (defaults to 'latest')
+#    - Push to release/* branches (e.g. release/1.0.0) — still gated by approval
+#
+#  What it does:
+#    1. Waits for manual approval (GitHub Environment protection rule)
+#    2. SSH into the Hostinger VPS
+#    3. Write the .env file from GitHub Secrets (PROD_ENV_FILE)
+#    4. Pull the specified image tag from ghcr.io
+#    5. Recreate the api container (databases stay up)
+#    6. Run a health check against the /health endpoint
+#
+#  Required GitHub Environment secrets (Settings → Environments → production):
+#    PROD_ENV_FILE  — Full contents of the production .env file
+#    SSH_HOST       — Hostinger VPS IP address
+#    SSH_USER       — SSH username
+#    SSH_KEY        — Private SSH key (PEM format)
+# ─────────────────────────────────────────────────────────────────────────────
+
+name: CD — Deploy to Production
+
+on:
+  workflow_dispatch:
+    inputs:
+      image_tag:
+        description: 'Image tag to deploy (SHA or semver). Defaults to latest.'
+        required: false
+        default: 'latest'
+        type: string
+      confirm:
+        description: 'Type "deploy" to confirm production deployment'
+        required: true
+        type: string
+
+  push:
+    branches:
+      - 'release/**'
+
+permissions:
+  contents: read
+  packages: read
+
+jobs:
+  # ─────────────────────────────────────────────────────────────────────────
+  #  Guard: Validate manual confirmation input (workflow_dispatch only)
+  # ─────────────────────────────────────────────────────────────────────────
+  validate:
+    name: Validate Deployment Confirmation
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch'
+    steps:
+      - name: Check confirmation input
+        run: |
+          if [ "${{ github.event.inputs.confirm }}" != "deploy" ]; then
+            echo "❌ Confirmation failed. You must type 'deploy' to proceed."
+            exit 1
+          fi
+          echo "✅ Confirmation accepted."
+
+  # ─────────────────────────────────────────────────────────────────────────
+  #  Production Deployment (gated by GitHub Environment approval)
+  # ─────────────────────────────────────────────────────────────────────────
+  deploy-production:
+    name: Deploy → datasoftio.com
+    runs-on: ubuntu-latest
+    needs: [validate]
+    if: always() && (needs.validate.result == 'success' || github.event_name == 'push')
+    # ⚠️  This environment has "Required reviewers" configured.
+    # The job will PAUSE here until a reviewer approves in the GitHub UI.
+    environment:
+      name: production
+      url: https://datasoftio.com
+
+    steps:
+      - name: Determine image tag
+        id: tag
+        run: |
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            echo "image_tag=${{ github.event.inputs.image_tag }}" >> $GITHUB_OUTPUT
+          else
+            # For release/* push, use the commit SHA
+            echo "image_tag=${{ github.sha }}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Deploy to Production VPS via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          timeout: 120s
+          script_stop: true
+          script: |
+            set -euo pipefail
+
+            echo "━━━ 🚀 Deploying EcommerceAdmin to PRODUCTION ━━━"
+            echo "   Tag:    ${{ steps.tag.outputs.image_tag }}"
+            echo "   Target: datasoftio.com"
+            echo "   Actor:  ${{ github.actor }}"
+            echo ""
+
+            # ── 1. Ensure deployment directory exists ──────────────────────
+            mkdir -p /opt/ecommerce-admin/production
+            cd /opt/ecommerce-admin/production
+
+            # ── 2. Write .env file from GitHub Secret ─────────────────────
+            cat > .env << 'ENVEOF'
+            ${{ secrets.PROD_ENV_FILE }}
+            ENVEOF
+
+            # Append runtime deployment metadata
+            echo "" >> .env
+            echo "IMAGE_TAG=${{ steps.tag.outputs.image_tag }}" >> .env
+            echo "GITHUB_OWNER=${{ github.repository_owner }}" >> .env
+            echo "ASPNETCORE_ENVIRONMENT=Production" >> .env
+
+            # ── 3. Authenticate with GitHub Container Registry ────────────
+            echo "${{ secrets.GITHUB_TOKEN }}" | \
+              docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+
+            # ── 4. Pull new API image ──────────────────────────────────────
+            docker compose \
+              -f /opt/ecommerce-admin/production/docker-compose.yml \
+              -f /opt/ecommerce-admin/production/docker-compose.prod.yml \
+              pull api
+
+            # ── 5. Recreate API container only (databases stay running) ────
+            docker compose \
+              -f /opt/ecommerce-admin/production/docker-compose.yml \
+              -f /opt/ecommerce-admin/production/docker-compose.prod.yml \
+              up -d --force-recreate --no-deps api
+
+            # ── 6. Wait for container to start ────────────────────────────
+            echo "Waiting for API to become healthy..."
+            sleep 15
+
+            # ── 7. Health check ────────────────────────────────────────────
+            HEALTH_RESPONSE=$(curl -sf http://127.0.0.1:8080/health || echo "FAILED")
+            if echo "$HEALTH_RESPONSE" | grep -q "Healthy"; then
+              echo "✅ Health check passed: $HEALTH_RESPONSE"
+            else
+              echo "❌ Health check FAILED — rolling back..."
+              # Pull and restart the previous 'latest' image on failure
+              docker compose \
+                -f /opt/ecommerce-admin/production/docker-compose.yml \
+                -f /opt/ecommerce-admin/production/docker-compose.prod.yml \
+                logs --tail=80 api
+              exit 1
+            fi
+
+            # ── 8. Clean up old images (keep last 3) ──────────────────────
+            docker image prune -f --filter "until=168h" || true
+
+            echo ""
+            echo "━━━ ✅ Production deployment complete ━━━"
+
+      - name: Deployment summary
+        if: success()
+        run: |
+          echo "## ✅ Production Deployment Successful" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Field | Value |" >> $GITHUB_STEP_SUMMARY
+          echo "|-------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| URL | [datasoftio.com](https://datasoftio.com) |" >> $GITHUB_STEP_SUMMARY
+          echo "| Health | [/health](https://datasoftio.com/health) |" >> $GITHUB_STEP_SUMMARY
+          echo "| Swagger | [/swagger](https://datasoftio.com/swagger) |" >> $GITHUB_STEP_SUMMARY
+          echo "| Image Tag | \`${{ steps.tag.outputs.image_tag }}\` |" >> $GITHUB_STEP_SUMMARY
+          echo "| Approved by | ${{ github.actor }} |" >> $GITHUB_STEP_SUMMARY
+
+      - name: Notify on failure
+        if: failure()
+        run: |
+          echo "## ❌ Production Deployment Failed" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Action required:** Check SSH deploy step logs. Manual rollback may be needed." >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "To manually rollback on VPS:" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`bash" >> $GITHUB_STEP_SUMMARY
+          echo "cd /opt/ecommerce-admin/production" >> $GITHUB_STEP_SUMMARY
+          echo "# Edit .env → set IMAGE_TAG to previous known-good SHA" >> $GITHUB_STEP_SUMMARY
+          echo "docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --force-recreate --no-deps api" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY

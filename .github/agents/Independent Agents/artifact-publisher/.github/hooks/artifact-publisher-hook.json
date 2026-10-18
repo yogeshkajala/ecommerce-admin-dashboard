@@ -1,0 +1,13 @@
+﻿{
+  "name": "artifact-publisher-hook",
+  "description": "Automated hook for Artifact Publisher processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "artifact-publisher",
+      "action": "validate",
+      "description": "Run Artifact Publisher validation on changed files"
+    }
+  ],
+  "enabled": false
+}

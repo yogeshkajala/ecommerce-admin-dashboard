@@ -1,0 +1,13 @@
+﻿{
+  "name": "dotnet-specialist-hook",
+  "description": "Automated hook for Dotnet Specialist processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "dotnet-specialist",
+      "action": "validate",
+      "description": "Run Dotnet Specialist validation on changed files"
+    }
+  ],
+  "enabled": false
+}

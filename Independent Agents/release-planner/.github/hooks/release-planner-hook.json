@@ -1,0 +1,13 @@
+﻿{
+  "name": "release-planner-hook",
+  "description": "Automated hook for Release Planner processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "release-planner",
+      "action": "validate",
+      "description": "Run Release Planner validation on changed files"
+    }
+  ],
+  "enabled": false
+}

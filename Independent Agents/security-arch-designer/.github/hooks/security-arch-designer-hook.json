@@ -1,0 +1,13 @@
+﻿{
+  "name": "security-arch-designer-hook",
+  "description": "Automated hook for Security Arch Designer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "security-arch-designer",
+      "action": "validate",
+      "description": "Run Security Arch Designer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "data-recovery-agent-hook",
+  "description": "Automated hook for Data Recovery Agent processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "data-recovery-agent",
+      "action": "validate",
+      "description": "Run Data Recovery Agent validation on changed files"
+    }
+  ],
+  "enabled": false
+}

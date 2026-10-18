@@ -1,0 +1,13 @@
+﻿{
+  "name": "domain-identifier-hook",
+  "description": "Automated hook for Domain Identifier processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "domain-identifier",
+      "action": "validate",
+      "description": "Run Domain Identifier validation on changed files"
+    }
+  ],
+  "enabled": false
+}

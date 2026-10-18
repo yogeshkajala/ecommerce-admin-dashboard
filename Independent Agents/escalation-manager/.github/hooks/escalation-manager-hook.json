@@ -1,0 +1,13 @@
+﻿{
+  "name": "escalation-manager-hook",
+  "description": "Automated hook for Escalation Manager processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "escalation-manager",
+      "action": "validate",
+      "description": "Run Escalation Manager validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,86 @@
+# CODEOWNERS — EcommerceAdmin Repository
+# ─────────────────────────────────────────────────────────────────────────────
+#
+# This file defines code ownership for review enforcement.
+# When a pull request modifies a file matching a pattern below, GitHub
+# automatically requests a review from the designated owner(s) BEFORE merge.
+#
+# Docs: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+#
+# Pattern matching rules:
+#   - Most specific rule wins
+#   - Patterns follow .gitignore syntax
+#   - @username or @org/team-name
+#
+# ─── GitHub Team Setup ────────────────────────────────────────────────────────
+#
+#   @yogeshkajala/dev-team    → Developers (DEV)
+#   @yogeshkajala/devops-team → DevOps / Infrastructure (DEVOPS)
+#
+# Until teams are created, individual accounts are used as fallback.
+#
+# ─────────────────────────────────────────────────────────────────────────────
+
+# ── Global fallback (DevOps reviews anything not matched below) ───────────────
+*                                   @yogeshkajala
+
+# ══════════════════════════════════════════════════════════════════════════════
+#  DEV DOMAIN — Developers own application code
+#  Any PR touching these paths requires at least one DEV review
+# ══════════════════════════════════════════════════════════════════════════════
+
+# Application source code
+/src/                               @yogeshkajala/dev-team
+
+# Test projects
+/tests/                             @yogeshkajala/dev-team
+
+# Frontend client
+/client/                            @yogeshkajala/dev-team
+
+# Standalone apps (e.g. datasoftio website)
+/apps/                              @yogeshkajala/dev-team
+
+# Architecture & API documentation (devs keep these up to date)
+ARCHITECTURE.md                     @yogeshkajala/dev-team
+/docs/                              @yogeshkajala/dev-team
+
+# ══════════════════════════════════════════════════════════════════════════════
+#  DEVOPS DOMAIN — DevOps owns all infrastructure & CI/CD
+#  Any PR touching these paths ALSO requires a DEVOPS review
+#  (even if the author is a developer — prevents accidental pipeline changes)
+# ══════════════════════════════════════════════════════════════════════════════
+
+# All GitHub Actions workflows — strictly DevOps territory
+/.github/workflows/                 @yogeshkajala/devops-team
+
+# Docker build files
+Dockerfile                          @yogeshkajala/devops-team
+.dockerignore                       @yogeshkajala/devops-team
+
+# Docker Compose — base + all environment overrides
+docker-compose.yml                  @yogeshkajala/devops-team
+docker-compose.*.yml                @yogeshkajala/devops-team
+
+# Environment variable template (safe to commit, devops controls structure)
+.env.example                        @yogeshkajala/devops-team
+
+# VPS scripts, bootstrapping
+/scripts/                           @yogeshkajala/devops-team
+
+# Solution file (changes affect build — devops reviews too)
+*.sln                               @yogeshkajala/devops-team
+
+# GitHub repository metadata
+/.github/CODEOWNERS                 @yogeshkajala/devops-team
+/.github/dependabot.yml             @yogeshkajala/devops-team
+
+# ══════════════════════════════════════════════════════════════════════════════
+#  SHARED — Both teams must review (intersection of concerns)
+# ══════════════════════════════════════════════════════════════════════════════
+
+# appsettings.json — devs need it for local config, devops reviews for secrets hygiene
+/src/**/appsettings.json            @yogeshkajala/dev-team @yogeshkajala/devops-team
+
+# .csproj changes can affect build pipeline (devops) and dependencies (dev)
+/src/**/*.csproj                    @yogeshkajala/dev-team @yogeshkajala/devops-team

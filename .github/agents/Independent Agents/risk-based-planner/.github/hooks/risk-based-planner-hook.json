@@ -1,0 +1,13 @@
+﻿{
+  "name": "risk-based-planner-hook",
+  "description": "Automated hook for Risk Based Planner processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "risk-based-planner",
+      "action": "validate",
+      "description": "Run Risk Based Planner validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "stakeholder-communicator-hook",
+  "description": "Automated hook for Stakeholder Communicator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "stakeholder-communicator",
+      "action": "validate",
+      "description": "Run Stakeholder Communicator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

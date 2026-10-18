@@ -1,0 +1,13 @@
+﻿{
+  "name": "regression-test-runner-hook",
+  "description": "Automated hook for Regression Test Runner processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "regression-test-runner",
+      "action": "validate",
+      "description": "Run Regression Test Runner validation on changed files"
+    }
+  ],
+  "enabled": false
+}

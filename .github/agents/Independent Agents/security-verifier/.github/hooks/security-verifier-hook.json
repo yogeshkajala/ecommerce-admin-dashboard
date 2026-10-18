@@ -1,0 +1,13 @@
+﻿{
+  "name": "security-verifier-hook",
+  "description": "Automated hook for Security Verifier processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "security-verifier",
+      "action": "validate",
+      "description": "Run Security Verifier validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "network-designer-hook",
+  "description": "Automated hook for Network Designer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "network-designer",
+      "action": "validate",
+      "description": "Run Network Designer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

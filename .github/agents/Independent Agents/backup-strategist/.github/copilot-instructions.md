@@ -1,0 +1,34 @@
+# Backup Strategist -- Workspace Configuration
+
+## Overview
+This workspace includes the **Backup Strategist** agent. Use when designing backup and disaster recovery strategies for modernized cloud applications and data stores.
+
+## Agent Invocation
+- Use `@backup-strategist` to invoke the agent directly
+- Use `/backup-strategist.prompt` for guided workflow prompts
+- Use `/backup-strategist-skill` skill for domain knowledge
+
+## Configuration
+Customize agent behavior by modifying these settings:
+
+| Setting | Default | Description |
+|---------|---------|-------------|
+| `BACKUP_STRAT_BACKUP_BEFORE` | `true` | Take backup before any schema change |
+| `BACKUP_STRAT_SLOW_QUERY_MS` | `2000` | Threshold for slow query detection in milliseconds |
+| `BACKUP_STRAT_MAX_LOCK_WAIT` | `30` | Maximum lock wait time in seconds |
+| `BACKUP_STRAT_INDEX_ANALYSIS` | `true` | Auto-analyze index usage and recommendations |
+| `BACKUP_STRAT_DRY_RUN` | `true` | Preview changes without executing |
+
+## Key Conventions
+- Backup required before any schema change
+- Slow queries are flagged above configured threshold
+- Lock wait times must not exceed configured maximum
+- Index analysis runs automatically on schema changes
+- Dry-run mode previews changes before execution
+
+## Safety Guardrails
+- All inputs are validated before processing
+- Outputs are checked for accuracy and completeness
+- Prompt injection patterns are detected and blocked
+- Sensitive data is never included in agent outputs
+- Human approval required for destructive operations

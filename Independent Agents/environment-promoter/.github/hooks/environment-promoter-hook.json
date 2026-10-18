@@ -1,0 +1,13 @@
+﻿{
+  "name": "environment-promoter-hook",
+  "description": "Automated hook for Environment Promoter processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "environment-promoter",
+      "action": "validate",
+      "description": "Run Environment Promoter validation on changed files"
+    }
+  ],
+  "enabled": false
+}

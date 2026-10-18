@@ -1,0 +1,13 @@
+﻿{
+  "name": "team-allocator-hook",
+  "description": "Automated hook for Team Allocator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "team-allocator",
+      "action": "validate",
+      "description": "Run Team Allocator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

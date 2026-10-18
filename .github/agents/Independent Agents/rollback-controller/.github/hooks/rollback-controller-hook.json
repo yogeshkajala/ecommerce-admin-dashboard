@@ -1,0 +1,13 @@
+﻿{
+  "name": "rollback-controller-hook",
+  "description": "Automated hook for Rollback Controller processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "rollback-controller",
+      "action": "validate",
+      "description": "Run Rollback Controller validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "migration-executor-hook",
+  "description": "Automated hook for Migration Executor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "migration-executor",
+      "action": "validate",
+      "description": "Run Migration Executor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

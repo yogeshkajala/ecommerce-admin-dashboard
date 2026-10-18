@@ -1,0 +1,13 @@
+﻿{
+  "name": "container-architect-hook",
+  "description": "Automated hook for Container Architect processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "container-architect",
+      "action": "validate",
+      "description": "Run Container Architect validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "defect-triager-hook",
+  "description": "Automated hook for Defect Triager processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "defect-triager",
+      "action": "validate",
+      "description": "Run Defect Triager validation on changed files"
+    }
+  ],
+  "enabled": false
+}

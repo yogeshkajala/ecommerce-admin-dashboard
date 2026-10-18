@@ -1,0 +1,13 @@
+﻿{
+  "name": "risk-communicator-hook",
+  "description": "Automated hook for Risk Communicator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "risk-communicator",
+      "action": "validate",
+      "description": "Run Risk Communicator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

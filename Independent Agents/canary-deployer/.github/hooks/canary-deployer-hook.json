@@ -1,0 +1,13 @@
+﻿{
+  "name": "canary-deployer-hook",
+  "description": "Automated hook for Canary Deployer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "canary-deployer",
+      "action": "validate",
+      "description": "Run Canary Deployer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

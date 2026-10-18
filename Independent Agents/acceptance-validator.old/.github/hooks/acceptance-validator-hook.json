@@ -1,0 +1,13 @@
+﻿{
+  "name": "acceptance-validator-hook",
+  "description": "Automated hook for Acceptance Validator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "acceptance-validator",
+      "action": "validate",
+      "description": "Run Acceptance Validator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

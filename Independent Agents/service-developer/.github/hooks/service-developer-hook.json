@@ -1,0 +1,13 @@
+﻿{
+  "name": "service-developer-hook",
+  "description": "Automated hook for Service Developer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "service-developer",
+      "action": "validate",
+      "description": "Run Service Developer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

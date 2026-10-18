@@ -1,0 +1,34 @@
+# Monitoring Configurer -- Workspace Configuration
+
+## Overview
+This workspace includes the **Monitoring Configurer** agent. Use when configuring cloud-native monitoring, dashboards, and alerting for post-migration workloads.
+
+## Agent Invocation
+- Use `@monitoring-configurer` to invoke the agent directly
+- Use `/monitoring-configurer.prompt` for guided workflow prompts
+- Use `/monitoring-configurer-skill` skill for domain knowledge
+
+## Configuration
+Customize agent behavior by modifying these settings:
+
+| Setting | Default | Description |
+|---------|---------|-------------|
+| `MONITORING_C_RETENTION_DAYS` | `30` | Default telemetry retention period in days |
+| `MONITORING_C_ANOMALY_SENSITIVITY` | `medium` | Anomaly detection sensitivity: low, medium, high |
+| `MONITORING_C_CORRELATION_ENABLED` | `true` | Enable cross-signal correlation (metrics+logs+traces) |
+| `MONITORING_C_DASHBOARD_AUTO` | `true` | Auto-generate dashboards for new services |
+| `MONITORING_C_ALERT_DEDUP_WINDOW` | `5m` | Alert deduplication window |
+
+## Key Conventions
+- Cross-signal correlation is enabled by default (metrics + logs + traces)
+- Anomaly detection uses configured sensitivity level
+- Dashboards auto-generated for new services
+- Alerts are deduplicated within the configured window
+- Telemetry retention follows configured retention period
+
+## Safety Guardrails
+- All inputs are validated before processing
+- Outputs are checked for accuracy and completeness
+- Prompt injection patterns are detected and blocked
+- Sensitive data is never included in agent outputs
+- Human approval required for destructive operations

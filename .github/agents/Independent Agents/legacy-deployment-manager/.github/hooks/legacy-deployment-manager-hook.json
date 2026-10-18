@@ -1,0 +1,13 @@
+﻿{
+  "name": "legacy-deployment-manager-hook",
+  "description": "Automated hook for Legacy Deployment Manager processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "legacy-deployment-manager",
+      "action": "validate",
+      "description": "Run Legacy Deployment Manager validation on changed files"
+    }
+  ],
+  "enabled": false
+}

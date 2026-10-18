@@ -1,0 +1,13 @@
+﻿{
+  "name": "ftc-bug-manager-hook",
+  "description": "Automated hook for Ftc Bug Manager processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "ftc-bug-manager",
+      "action": "validate",
+      "description": "Run Ftc Bug Manager validation on changed files"
+    }
+  ],
+  "enabled": false
+}

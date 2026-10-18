@@ -1,0 +1,13 @@
+﻿{
+  "name": "test-data-designer-hook",
+  "description": "Automated hook for Test Data Designer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "test-data-designer",
+      "action": "validate",
+      "description": "Run Test Data Designer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

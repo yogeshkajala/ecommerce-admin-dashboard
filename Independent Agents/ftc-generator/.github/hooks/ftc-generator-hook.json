@@ -1,0 +1,13 @@
+﻿{
+  "name": "ftc-generator-hook",
+  "description": "Automated hook for Ftc Generator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "ftc-generator",
+      "action": "validate",
+      "description": "Run Ftc Generator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

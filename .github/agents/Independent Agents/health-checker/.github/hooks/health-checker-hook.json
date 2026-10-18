@@ -1,0 +1,13 @@
+﻿{
+  "name": "health-checker-hook",
+  "description": "Automated hook for Health Checker processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "health-checker",
+      "action": "validate",
+      "description": "Run Health Checker validation on changed files"
+    }
+  ],
+  "enabled": false
+}

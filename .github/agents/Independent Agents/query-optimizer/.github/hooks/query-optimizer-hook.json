@@ -1,0 +1,13 @@
+﻿{
+  "name": "query-optimizer-hook",
+  "description": "Automated hook for Query Optimizer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "query-optimizer",
+      "action": "validate",
+      "description": "Run Query Optimizer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

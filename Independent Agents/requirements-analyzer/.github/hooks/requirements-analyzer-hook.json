@@ -1,0 +1,13 @@
+﻿{
+  "name": "requirements-analyzer-hook",
+  "description": "Automated hook for Requirements Analyzer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "requirements-analyzer",
+      "action": "validate",
+      "description": "Run Requirements Analyzer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "resource-rightsizer-hook",
+  "description": "Automated hook for Resource Rightsizer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "resource-rightsizer",
+      "action": "validate",
+      "description": "Run Resource Rightsizer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

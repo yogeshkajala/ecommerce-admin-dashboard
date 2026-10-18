@@ -1,0 +1,13 @@
+﻿{
+  "name": "e2e-test-creator-hook",
+  "description": "Automated hook for E2e Test Creator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "e2e-test-creator",
+      "action": "validate",
+      "description": "Run E2e Test Creator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

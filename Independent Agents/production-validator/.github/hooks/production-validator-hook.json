@@ -1,0 +1,13 @@
+﻿{
+  "name": "production-validator-hook",
+  "description": "Automated hook for Production Validator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "production-validator",
+      "action": "validate",
+      "description": "Run Production Validator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

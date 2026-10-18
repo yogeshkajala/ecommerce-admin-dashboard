@@ -1,0 +1,13 @@
+﻿{
+  "name": "relationship-mapper-hook",
+  "description": "Automated hook for Relationship Mapper processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "relationship-mapper",
+      "action": "validate",
+      "description": "Run Relationship Mapper validation on changed files"
+    }
+  ],
+  "enabled": false
+}

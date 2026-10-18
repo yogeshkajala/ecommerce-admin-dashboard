@@ -1,0 +1,13 @@
+﻿{
+  "name": "template-renderer-hook",
+  "description": "Automated hook for Template Renderer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "template-renderer",
+      "action": "validate",
+      "description": "Run Template Renderer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

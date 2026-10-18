@@ -1,0 +1,13 @@
+﻿{
+  "name": "deploy-executor-hook",
+  "description": "Automated hook for Deploy Executor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "deploy-executor",
+      "action": "validate",
+      "description": "Run Deploy Executor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

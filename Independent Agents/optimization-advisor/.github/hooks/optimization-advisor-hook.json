@@ -1,0 +1,13 @@
+﻿{
+  "name": "optimization-advisor-hook",
+  "description": "Automated hook for Optimization Advisor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "optimization-advisor",
+      "action": "validate",
+      "description": "Run Optimization Advisor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

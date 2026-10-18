@@ -1,0 +1,13 @@
+﻿{
+  "name": "hallucination-shield-hook",
+  "description": "Automated hook for Hallucination Shield processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "hallucination-shield",
+      "action": "validate",
+      "description": "Run Hallucination Shield validation on changed files"
+    }
+  ],
+  "enabled": false
+}

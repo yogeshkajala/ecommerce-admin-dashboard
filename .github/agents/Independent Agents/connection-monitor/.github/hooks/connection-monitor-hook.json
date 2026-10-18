@@ -1,0 +1,13 @@
+﻿{
+  "name": "connection-monitor-hook",
+  "description": "Automated hook for Connection Monitor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "connection-monitor",
+      "action": "validate",
+      "description": "Run Connection Monitor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

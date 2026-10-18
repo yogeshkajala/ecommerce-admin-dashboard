@@ -1,0 +1,13 @@
+﻿{
+  "name": "log-analyzer-hook",
+  "description": "Automated hook for Log Analyzer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "log-analyzer",
+      "action": "validate",
+      "description": "Run Log Analyzer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

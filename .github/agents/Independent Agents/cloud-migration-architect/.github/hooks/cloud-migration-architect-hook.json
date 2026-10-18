@@ -1,0 +1,13 @@
+﻿{
+  "name": "cloud-migration-architect-hook",
+  "description": "Automated hook for Cloud Migration Architect processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "cloud-migration-architect",
+      "action": "validate",
+      "description": "Run Cloud Migration Architect validation on changed files"
+    }
+  ],
+  "enabled": false
+}

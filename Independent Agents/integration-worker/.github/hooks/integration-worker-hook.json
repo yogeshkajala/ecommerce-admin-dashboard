@@ -1,0 +1,13 @@
+﻿{
+  "name": "integration-worker-hook",
+  "description": "Automated hook for Integration Worker processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "integration-worker",
+      "action": "validate",
+      "description": "Run Integration Worker validation on changed files"
+    }
+  ],
+  "enabled": false
+}

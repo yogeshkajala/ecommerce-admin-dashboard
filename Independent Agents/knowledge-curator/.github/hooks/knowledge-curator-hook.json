@@ -1,0 +1,13 @@
+﻿{
+  "name": "knowledge-curator-hook",
+  "description": "Automated hook for Knowledge Curator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "knowledge-curator",
+      "action": "validate",
+      "description": "Run Knowledge Curator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

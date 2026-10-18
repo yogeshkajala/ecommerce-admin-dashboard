@@ -1,0 +1,13 @@
+﻿{
+  "name": "legacy-doc-miner-hook",
+  "description": "Automated hook for Legacy Doc Miner processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "legacy-doc-miner",
+      "action": "validate",
+      "description": "Run Legacy Doc Miner validation on changed files"
+    }
+  ],
+  "enabled": false
+}

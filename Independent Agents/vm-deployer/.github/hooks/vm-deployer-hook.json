@@ -1,0 +1,13 @@
+{
+  "name": "vm-deployer-hook",
+  "description": "Automated hook for VM Deployer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "vm-deployer",
+      "action": "validate",
+      "description": "Run VM Deployer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

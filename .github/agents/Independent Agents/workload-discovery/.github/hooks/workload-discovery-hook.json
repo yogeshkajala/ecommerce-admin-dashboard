@@ -1,0 +1,13 @@
+﻿{
+  "name": "workload-discovery-hook",
+  "description": "Automated hook for Workload Discovery processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "workload-discovery",
+      "action": "validate",
+      "description": "Run Workload Discovery validation on changed files"
+    }
+  ],
+  "enabled": false
+}

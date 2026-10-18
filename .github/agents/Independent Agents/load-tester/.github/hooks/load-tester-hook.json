@@ -1,0 +1,13 @@
+﻿{
+  "name": "load-tester-hook",
+  "description": "Automated hook for Load Tester processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "load-tester",
+      "action": "validate",
+      "description": "Run Load Tester validation on changed files"
+    }
+  ],
+  "enabled": false
+}

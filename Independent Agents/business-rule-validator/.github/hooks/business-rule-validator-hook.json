@@ -1,0 +1,13 @@
+﻿{
+  "name": "business-rule-validator-hook",
+  "description": "Automated hook for Business Rule Validator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "business-rule-validator",
+      "action": "validate",
+      "description": "Run Business Rule Validator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

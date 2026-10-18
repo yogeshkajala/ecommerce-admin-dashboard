@@ -1,0 +1,13 @@
+﻿{
+  "name": "test-data-manager-hook",
+  "description": "Automated hook for Test Data Manager processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "test-data-manager",
+      "action": "validate",
+      "description": "Run Test Data Manager validation on changed files"
+    }
+  ],
+  "enabled": false
+}

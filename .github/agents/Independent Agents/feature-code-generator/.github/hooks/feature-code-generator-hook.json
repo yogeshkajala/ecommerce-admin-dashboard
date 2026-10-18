@@ -1,0 +1,13 @@
+﻿{
+  "name": "feature-code-generator-hook",
+  "description": "Automated hook for Feature Code Generator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "feature-code-generator",
+      "action": "validate",
+      "description": "Run Feature Code Generator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

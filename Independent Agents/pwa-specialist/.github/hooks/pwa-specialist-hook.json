@@ -1,0 +1,13 @@
+﻿{
+  "name": "pwa-specialist-hook",
+  "description": "Automated hook for Pwa Specialist processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "pwa-specialist",
+      "action": "validate",
+      "description": "Run Pwa Specialist validation on changed files"
+    }
+  ],
+  "enabled": false
+}
