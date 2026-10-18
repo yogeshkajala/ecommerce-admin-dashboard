@@ -1,0 +1,83 @@
+## ─── .NET Build Artifacts ───────────────────────────────────────────────────
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+**/Properties/launchSettings.json
+
+## ─── NuGet ───────────────────────────────────────────────────────────────────
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+!**/packages/build/
+*.packages.lock.json
+NuGet.Config
+
+## ─── ASP.NET Core ────────────────────────────────────────────────────────────
+# Keep appsettings.json (placeholder values OK)
+# Keep appsettings.Development.json (no secrets there)
+# NEVER commit environment-specific secret overrides
+appsettings.Staging.json
+appsettings.Production.json
+appsettings.Local.json
+appsettings.secrets.json
+
+## ─── Secrets & Environment Files ─────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+secrets/
+*.pfx
+*.p12
+*.pem
+*.key
+
+## ─── Docker ──────────────────────────────────────────────────────────────────
+# Local override compose files (not the committed ones)
+docker-compose.override.yml
+docker-compose.local.yml
+
+## ─── IDEs & Editors ──────────────────────────────────────────────────────────
+.vscode/settings.json
+.vscode/launch.json
+.vscode/tasks.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+## ─── Test Results & Coverage ─────────────────────────────────────────────────
+TestResults/
+coverage/
+*.trx
+*.coveragexml
+lcov.info
+*.opencover.xml
+
+## ─── Node / Frontend (client/) ───────────────────────────────────────────────
+client/node_modules/
+client/.next/
+client/dist/
+client/build/
+client/.env
+client/.env.local
+
+## ─── OS ──────────────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db

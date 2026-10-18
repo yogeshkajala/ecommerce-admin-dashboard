@@ -1,0 +1,13 @@
+﻿{
+  "name": "market-researcher-hook",
+  "description": "Automated hook for Market Researcher processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "market-researcher",
+      "action": "validate",
+      "description": "Run Market Researcher validation on changed files"
+    }
+  ],
+  "enabled": false
+}

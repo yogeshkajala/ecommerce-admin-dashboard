@@ -1,0 +1,13 @@
+﻿{
+  "name": "metric-collector-hook",
+  "description": "Automated hook for Metric Collector processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "metric-collector",
+      "action": "validate",
+      "description": "Run Metric Collector validation on changed files"
+    }
+  ],
+  "enabled": false
+}

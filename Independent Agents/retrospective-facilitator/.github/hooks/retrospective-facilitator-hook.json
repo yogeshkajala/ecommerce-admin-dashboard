@@ -1,0 +1,13 @@
+﻿{
+  "name": "retrospective-facilitator-hook",
+  "description": "Automated hook for Retrospective Facilitator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "retrospective-facilitator",
+      "action": "validate",
+      "description": "Run Retrospective Facilitator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

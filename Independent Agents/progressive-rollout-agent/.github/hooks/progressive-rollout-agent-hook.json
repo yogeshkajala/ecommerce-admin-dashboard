@@ -1,0 +1,13 @@
+﻿{
+  "name": "progressive-rollout-agent-hook",
+  "description": "Automated hook for Progressive Rollout Agent processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "progressive-rollout-agent",
+      "action": "validate",
+      "description": "Run Progressive Rollout Agent validation on changed files"
+    }
+  ],
+  "enabled": false
+}

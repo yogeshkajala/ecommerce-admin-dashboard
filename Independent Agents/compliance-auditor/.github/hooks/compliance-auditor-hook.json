@@ -1,0 +1,13 @@
+﻿{
+  "name": "compliance-auditor-hook",
+  "description": "Automated hook for Compliance Auditor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "compliance-auditor",
+      "action": "validate",
+      "description": "Run Compliance Auditor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

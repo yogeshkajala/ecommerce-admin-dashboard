@@ -1,0 +1,13 @@
+﻿{
+  "name": "legacy-assessor-hook",
+  "description": "Automated hook for Legacy Assessor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "legacy-assessor",
+      "action": "validate",
+      "description": "Run Legacy Assessor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "capacity-scaler-hook",
+  "description": "Automated hook for Capacity Scaler processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "capacity-scaler",
+      "action": "validate",
+      "description": "Run Capacity Scaler validation on changed files"
+    }
+  ],
+  "enabled": false
+}

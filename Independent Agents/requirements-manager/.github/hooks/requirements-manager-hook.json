@@ -1,0 +1,13 @@
+﻿{
+  "name": "requirements-manager-hook",
+  "description": "Automated hook for Requirements Manager processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "requirements-manager",
+      "action": "validate",
+      "description": "Run Requirements Manager validation on changed files"
+    }
+  ],
+  "enabled": false
+}

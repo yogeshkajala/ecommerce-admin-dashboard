@@ -1,0 +1,13 @@
+﻿{
+  "name": "compliance-test-writer-hook",
+  "description": "Automated hook for Compliance Test Writer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "compliance-test-writer",
+      "action": "validate",
+      "description": "Run Compliance Test Writer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

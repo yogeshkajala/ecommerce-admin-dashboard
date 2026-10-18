@@ -1,0 +1,13 @@
+﻿{
+  "name": "non-functional-tester-hook",
+  "description": "Automated hook for Non Functional Tester processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "non-functional-tester",
+      "action": "validate",
+      "description": "Run Non Functional Tester validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "migration-validator-hook",
+  "description": "Automated hook for Migration Validator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "migration-validator",
+      "action": "validate",
+      "description": "Run Migration Validator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

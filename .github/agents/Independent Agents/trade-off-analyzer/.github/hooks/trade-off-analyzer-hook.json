@@ -1,0 +1,13 @@
+﻿{
+  "name": "trade-off-analyzer-hook",
+  "description": "Automated hook for Trade Off Analyzer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "trade-off-analyzer",
+      "action": "validate",
+      "description": "Run Trade Off Analyzer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

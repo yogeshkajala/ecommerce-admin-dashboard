@@ -1,0 +1,38 @@
+## ─── Build Artifacts (rebuilt inside container) ─────────────────────────────
+**/bin/
+**/obj/
+
+## ─── Git & CI ────────────────────────────────────────────────────────────────
+.git/
+.github/
+.gitignore
+
+## ─── Tests (not needed in production image) ──────────────────────────────────
+tests/
+
+## ─── Frontend (separate build pipeline) ─────────────────────────────────────
+client/
+
+## ─── Secrets & Local Environment ────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+**/appsettings.Development.json
+**/appsettings.Local.json
+**/appsettings.Production.json
+**/appsettings.Staging.json
+
+## ─── IDE & OS ────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+.vs/
+**/*.user
+**/*.suo
+.DS_Store
+Thumbs.db
+
+## ─── Docs & Scripts (not needed in image) ───────────────────────────────────
+docs/
+scripts/
+*.md
+generate_docs.py

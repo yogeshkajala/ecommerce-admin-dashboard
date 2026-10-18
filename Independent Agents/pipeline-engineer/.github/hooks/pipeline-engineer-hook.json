@@ -1,0 +1,13 @@
+﻿{
+  "name": "pipeline-engineer-hook",
+  "description": "Automated hook for Pipeline Engineer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "pipeline-engineer",
+      "action": "validate",
+      "description": "Run Pipeline Engineer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "metric-comparator-hook",
+  "description": "Automated hook for Metric Comparator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "metric-comparator",
+      "action": "validate",
+      "description": "Run Metric Comparator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

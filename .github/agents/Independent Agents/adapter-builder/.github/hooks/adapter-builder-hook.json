@@ -1,0 +1,13 @@
+﻿{
+  "name": "adapter-builder-hook",
+  "description": "Automated hook for Adapter Builder processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "adapter-builder",
+      "action": "validate",
+      "description": "Run Adapter Builder validation on changed files"
+    }
+  ],
+  "enabled": false
+}

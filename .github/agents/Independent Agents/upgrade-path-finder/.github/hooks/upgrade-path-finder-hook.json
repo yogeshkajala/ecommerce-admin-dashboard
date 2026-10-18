@@ -1,0 +1,13 @@
+﻿{
+  "name": "upgrade-path-finder-hook",
+  "description": "Automated hook for Upgrade Path Finder processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "upgrade-path-finder",
+      "action": "validate",
+      "description": "Run Upgrade Path Finder validation on changed files"
+    }
+  ],
+  "enabled": false
+}

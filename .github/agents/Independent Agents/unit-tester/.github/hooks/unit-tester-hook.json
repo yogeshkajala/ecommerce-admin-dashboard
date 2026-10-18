@@ -1,0 +1,13 @@
+﻿{
+  "name": "unit-tester-hook",
+  "description": "Automated hook for Unit Tester processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "unit-tester",
+      "action": "validate",
+      "description": "Run Unit Tester validation on changed files"
+    }
+  ],
+  "enabled": false
+}

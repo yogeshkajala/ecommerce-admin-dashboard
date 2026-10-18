@@ -1,0 +1,13 @@
+﻿{
+  "name": "communications-manager-hook",
+  "description": "Automated hook for Communications Manager processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "communications-manager",
+      "action": "validate",
+      "description": "Run Communications Manager validation on changed files"
+    }
+  ],
+  "enabled": false
+}

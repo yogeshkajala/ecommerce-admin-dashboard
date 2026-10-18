@@ -1,0 +1,13 @@
+﻿{
+  "name": "integration-planner-hook",
+  "description": "Automated hook for Integration Planner processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "integration-planner",
+      "action": "validate",
+      "description": "Run Integration Planner validation on changed files"
+    }
+  ],
+  "enabled": false
+}

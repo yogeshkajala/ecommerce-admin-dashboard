@@ -1,0 +1,13 @@
+﻿{
+  "name": "performance-benchmark-hook",
+  "description": "Automated hook for Performance Benchmark processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "performance-benchmark",
+      "action": "validate",
+      "description": "Run Performance Benchmark validation on changed files"
+    }
+  ],
+  "enabled": false
+}

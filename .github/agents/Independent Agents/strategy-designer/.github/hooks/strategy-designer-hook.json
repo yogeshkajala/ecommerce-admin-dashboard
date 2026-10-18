@@ -1,0 +1,13 @@
+﻿{
+  "name": "strategy-designer-hook",
+  "description": "Automated hook for Strategy Designer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "strategy-designer",
+      "action": "validate",
+      "description": "Run Strategy Designer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

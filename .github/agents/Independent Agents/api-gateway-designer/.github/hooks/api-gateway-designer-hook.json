@@ -1,0 +1,13 @@
+﻿{
+  "name": "api-gateway-designer-hook",
+  "description": "Automated hook for Api Gateway Designer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "api-gateway-designer",
+      "action": "validate",
+      "description": "Run Api Gateway Designer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

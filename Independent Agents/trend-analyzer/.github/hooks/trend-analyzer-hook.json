@@ -1,0 +1,13 @@
+﻿{
+  "name": "trend-analyzer-hook",
+  "description": "Automated hook for Trend Analyzer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "trend-analyzer",
+      "action": "validate",
+      "description": "Run Trend Analyzer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

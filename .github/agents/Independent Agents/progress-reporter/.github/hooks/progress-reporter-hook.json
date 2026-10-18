@@ -1,0 +1,13 @@
+﻿{
+  "name": "progress-reporter-hook",
+  "description": "Automated hook for Progress Reporter processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "progress-reporter",
+      "action": "validate",
+      "description": "Run Progress Reporter validation on changed files"
+    }
+  ],
+  "enabled": false
+}

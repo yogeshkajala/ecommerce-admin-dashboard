@@ -1,0 +1,13 @@
+﻿{
+  "name": "acceptance-criteria-generator-hook",
+  "description": "Automated hook for Acceptance Criteria Generator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "acceptance-criteria-generator",
+      "action": "validate",
+      "description": "Run Acceptance Criteria Generator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

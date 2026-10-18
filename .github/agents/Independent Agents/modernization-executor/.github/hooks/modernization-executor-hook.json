@@ -1,0 +1,13 @@
+﻿{
+  "name": "modernization-executor-hook",
+  "description": "Automated hook for Modernization Executor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "modernization-executor",
+      "action": "validate",
+      "description": "Run Modernization Executor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

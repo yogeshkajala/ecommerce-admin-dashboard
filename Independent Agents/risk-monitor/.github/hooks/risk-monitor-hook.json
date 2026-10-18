@@ -1,0 +1,13 @@
+﻿{
+  "name": "risk-monitor-hook",
+  "description": "Automated hook for Risk Monitor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "risk-monitor",
+      "action": "validate",
+      "description": "Run Risk Monitor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

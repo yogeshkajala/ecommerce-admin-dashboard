@@ -1,0 +1,13 @@
+﻿{
+  "name": "infrastructure-provisioner-hook",
+  "description": "Automated hook for Infrastructure Provisioner processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "infrastructure-provisioner",
+      "action": "validate",
+      "description": "Run Infrastructure Provisioner validation on changed files"
+    }
+  ],
+  "enabled": false
+}

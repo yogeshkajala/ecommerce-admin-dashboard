@@ -1,0 +1,13 @@
+﻿{
+  "name": "env-provisioner-hook",
+  "description": "Automated hook for Env Provisioner processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "env-provisioner",
+      "action": "validate",
+      "description": "Run Env Provisioner validation on changed files"
+    }
+  ],
+  "enabled": false
+}

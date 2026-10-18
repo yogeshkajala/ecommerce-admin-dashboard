@@ -1,0 +1,13 @@
+﻿{
+  "name": "observability-configurer-hook",
+  "description": "Automated hook for Observability Configurer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "observability-configurer",
+      "action": "validate",
+      "description": "Run Observability Configurer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

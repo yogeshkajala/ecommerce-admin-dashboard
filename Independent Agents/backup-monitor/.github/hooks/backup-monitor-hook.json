@@ -1,0 +1,13 @@
+﻿{
+  "name": "backup-monitor-hook",
+  "description": "Automated hook for Backup Monitor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "backup-monitor",
+      "action": "validate",
+      "description": "Run Backup Monitor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

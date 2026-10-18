@@ -1,0 +1,13 @@
+﻿{
+  "name": "event-bus-architect-hook",
+  "description": "Automated hook for Event Bus Architect processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "event-bus-architect",
+      "action": "validate",
+      "description": "Run Event Bus Architect validation on changed files"
+    }
+  ],
+  "enabled": false
+}

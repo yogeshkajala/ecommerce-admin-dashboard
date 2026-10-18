@@ -1,0 +1,13 @@
+﻿{
+  "name": "error-tracker-hook",
+  "description": "Automated hook for Error Tracker processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "error-tracker",
+      "action": "validate",
+      "description": "Run Error Tracker validation on changed files"
+    }
+  ],
+  "enabled": false
+}

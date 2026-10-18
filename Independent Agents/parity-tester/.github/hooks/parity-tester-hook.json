@@ -1,0 +1,13 @@
+﻿{
+  "name": "parity-tester-hook",
+  "description": "Automated hook for Parity Tester processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "parity-tester",
+      "action": "validate",
+      "description": "Run Parity Tester validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "ux-designer-hook",
+  "description": "Automated hook for Ux Designer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "ux-designer",
+      "action": "validate",
+      "description": "Run Ux Designer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "dependency-discoverer-hook",
+  "description": "Automated hook for Dependency Discoverer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "dependency-discoverer",
+      "action": "validate",
+      "description": "Run Dependency Discoverer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

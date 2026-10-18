@@ -1,0 +1,13 @@
+﻿{
+  "name": "network-planner-hook",
+  "description": "Automated hook for Network Planner processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "network-planner",
+      "action": "validate",
+      "description": "Run Network Planner validation on changed files"
+    }
+  ],
+  "enabled": false
+}

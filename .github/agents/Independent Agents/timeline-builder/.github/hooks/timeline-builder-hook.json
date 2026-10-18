@@ -1,0 +1,13 @@
+﻿{
+  "name": "timeline-builder-hook",
+  "description": "Automated hook for Timeline Builder processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "timeline-builder",
+      "action": "validate",
+      "description": "Run Timeline Builder validation on changed files"
+    }
+  ],
+  "enabled": false
+}

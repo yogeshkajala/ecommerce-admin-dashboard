@@ -1,0 +1,13 @@
+﻿{
+  "name": "infra-writer-hook",
+  "description": "Automated hook for Infra Writer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "infra-writer",
+      "action": "validate",
+      "description": "Run Infra Writer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

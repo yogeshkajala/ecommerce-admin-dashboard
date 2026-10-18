@@ -1,25 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "/root/server/EcommerceAdmin.Core/EcommerceAdmin.Core.csproj": {}
+    "/Users/yogeshverma/Documents/antigravity/AgentTemplate002/ecommerce-admin-dashboard/src/EcommerceAdmin.Core/EcommerceAdmin.Core.csproj": {}
   },
   "projects": {
-    "/root/server/EcommerceAdmin.Core/EcommerceAdmin.Core.csproj": {
+    "/Users/yogeshverma/Documents/antigravity/AgentTemplate002/ecommerce-admin-dashboard/src/EcommerceAdmin.Core/EcommerceAdmin.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/root/server/EcommerceAdmin.Core/EcommerceAdmin.Core.csproj",
+        "projectUniqueName": "/Users/yogeshverma/Documents/antigravity/AgentTemplate002/ecommerce-admin-dashboard/src/EcommerceAdmin.Core/EcommerceAdmin.Core.csproj",
         "projectName": "EcommerceAdmin.Core",
-        "projectPath": "/root/server/EcommerceAdmin.Core/EcommerceAdmin.Core.csproj",
-        "packagesPath": "/root/.nuget/packages/",
-        "outputPath": "/root/server/EcommerceAdmin.Core/obj/",
+        "projectPath": "/Users/yogeshverma/Documents/antigravity/AgentTemplate002/ecommerce-admin-dashboard/src/EcommerceAdmin.Core/EcommerceAdmin.Core.csproj",
+        "packagesPath": "/Users/yogeshverma/.nuget/packages/",
+        "outputPath": "/Users/yogeshverma/Documents/antigravity/AgentTemplate002/ecommerce-admin-dashboard/src/EcommerceAdmin.Core/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/root/.nuget/NuGet/NuGet.Config"
+          "/Users/yogeshverma/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -32,11 +33,23 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.100"
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -48,12 +61,22 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.22, 8.0.22]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.22, 8.0.22]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.125/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

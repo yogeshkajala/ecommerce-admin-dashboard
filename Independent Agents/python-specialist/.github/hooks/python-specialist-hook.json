@@ -1,0 +1,13 @@
+﻿{
+  "name": "python-specialist-hook",
+  "description": "Automated hook for Python Specialist processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "python-specialist",
+      "action": "validate",
+      "description": "Run Python Specialist validation on changed files"
+    }
+  ],
+  "enabled": false
+}

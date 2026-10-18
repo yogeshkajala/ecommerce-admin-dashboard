@@ -1,0 +1,13 @@
+﻿{
+  "name": "development-worker-hook",
+  "description": "Automated hook for Development Worker processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "development-worker",
+      "action": "validate",
+      "description": "Run Development Worker validation on changed files"
+    }
+  ],
+  "enabled": false
+}

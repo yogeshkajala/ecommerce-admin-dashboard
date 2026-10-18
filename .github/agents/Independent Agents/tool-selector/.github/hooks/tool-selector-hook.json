@@ -1,0 +1,13 @@
+﻿{
+  "name": "tool-selector-hook",
+  "description": "Automated hook for Tool Selector processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "tool-selector",
+      "action": "validate",
+      "description": "Run Tool Selector validation on changed files"
+    }
+  ],
+  "enabled": false
+}

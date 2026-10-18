@@ -1,0 +1,13 @@
+﻿{
+  "name": "legacy-doc-parser-hook",
+  "description": "Automated hook for Legacy Doc Parser processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "legacy-doc-parser",
+      "action": "validate",
+      "description": "Run Legacy Doc Parser validation on changed files"
+    }
+  ],
+  "enabled": false
+}

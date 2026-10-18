@@ -1,0 +1,13 @@
+﻿{
+  "name": "service-mesh-configurer-hook",
+  "description": "Automated hook for Service Mesh Configurer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "service-mesh-configurer",
+      "action": "validate",
+      "description": "Run Service Mesh Configurer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

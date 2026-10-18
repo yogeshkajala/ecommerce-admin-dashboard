@@ -1,0 +1,13 @@
+﻿{
+  "name": "input-sanitizer-hook",
+  "description": "Automated hook for Input Sanitizer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "input-sanitizer",
+      "action": "validate",
+      "description": "Run Input Sanitizer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

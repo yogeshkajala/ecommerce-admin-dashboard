@@ -1,0 +1,13 @@
+﻿{
+  "name": "resilience-tester-hook",
+  "description": "Automated hook for Resilience Tester processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "resilience-tester",
+      "action": "validate",
+      "description": "Run Resilience Tester validation on changed files"
+    }
+  ],
+  "enabled": false
+}

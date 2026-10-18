@@ -1,0 +1,13 @@
+﻿{
+  "name": "status-summarizer-hook",
+  "description": "Automated hook for Status Summarizer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "status-summarizer",
+      "action": "validate",
+      "description": "Run Status Summarizer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

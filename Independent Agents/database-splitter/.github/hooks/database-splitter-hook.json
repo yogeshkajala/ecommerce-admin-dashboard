@@ -1,0 +1,13 @@
+﻿{
+  "name": "database-splitter-hook",
+  "description": "Automated hook for Database Splitter processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "database-splitter",
+      "action": "validate",
+      "description": "Run Database Splitter validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "data-replicator-hook",
+  "description": "Automated hook for Data Replicator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "data-replicator",
+      "action": "validate",
+      "description": "Run Data Replicator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

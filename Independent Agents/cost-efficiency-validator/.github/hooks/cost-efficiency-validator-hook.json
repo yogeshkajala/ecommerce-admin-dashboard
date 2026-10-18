@@ -1,0 +1,13 @@
+﻿{
+  "name": "cost-efficiency-validator-hook",
+  "description": "Automated hook for Cost Efficiency Validator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "cost-efficiency-validator",
+      "action": "validate",
+      "description": "Run Cost Efficiency Validator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

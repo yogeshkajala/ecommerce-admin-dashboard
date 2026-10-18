@@ -1,0 +1,13 @@
+﻿{
+  "name": "build-automator-hook",
+  "description": "Automated hook for Build Automator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "build-automator",
+      "action": "validate",
+      "description": "Run Build Automator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

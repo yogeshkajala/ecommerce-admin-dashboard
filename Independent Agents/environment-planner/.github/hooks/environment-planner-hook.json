@@ -1,0 +1,13 @@
+﻿{
+  "name": "environment-planner-hook",
+  "description": "Automated hook for Environment Planner processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "environment-planner",
+      "action": "validate",
+      "description": "Run Environment Planner validation on changed files"
+    }
+  ],
+  "enabled": false
+}

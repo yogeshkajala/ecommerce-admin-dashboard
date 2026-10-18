@@ -1,0 +1,13 @@
+﻿{
+  "name": "refinement-facilitator-hook",
+  "description": "Automated hook for Refinement Facilitator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "refinement-facilitator",
+      "action": "validate",
+      "description": "Run Refinement Facilitator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

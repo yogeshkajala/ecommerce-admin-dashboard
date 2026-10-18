@@ -1,0 +1,13 @@
+﻿{
+  "name": "microservice-architect-hook",
+  "description": "Automated hook for Microservice Architect processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "microservice-architect",
+      "action": "validate",
+      "description": "Run Microservice Architect validation on changed files"
+    }
+  ],
+  "enabled": false
+}

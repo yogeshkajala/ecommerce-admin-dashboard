@@ -1,0 +1,13 @@
+﻿{
+  "name": "migration-deployer-hook",
+  "description": "Automated hook for Migration Deployer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "migration-deployer",
+      "action": "validate",
+      "description": "Run Migration Deployer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

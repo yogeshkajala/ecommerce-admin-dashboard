@@ -1,0 +1,13 @@
+﻿{
+  "name": "migration-planner-hook",
+  "description": "Automated hook for Migration Planner processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "migration-planner",
+      "action": "validate",
+      "description": "Run Migration Planner validation on changed files"
+    }
+  ],
+  "enabled": false
+}

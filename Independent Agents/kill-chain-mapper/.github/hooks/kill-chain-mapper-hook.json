@@ -1,0 +1,13 @@
+﻿{
+  "name": "kill-chain-mapper-hook",
+  "description": "Automated hook for Kill Chain Mapper processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "kill-chain-mapper",
+      "action": "validate",
+      "description": "Run Kill Chain Mapper validation on changed files"
+    }
+  ],
+  "enabled": false
+}

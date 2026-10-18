@@ -1,0 +1,13 @@
+﻿{
+  "name": "test-case-generator-hook",
+  "description": "Automated hook for Test Case Generator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "test-case-generator",
+      "action": "validate",
+      "description": "Run Test Case Generator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

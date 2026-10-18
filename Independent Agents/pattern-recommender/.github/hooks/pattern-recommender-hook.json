@@ -1,0 +1,13 @@
+﻿{
+  "name": "pattern-recommender-hook",
+  "description": "Automated hook for Pattern Recommender processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "pattern-recommender",
+      "action": "validate",
+      "description": "Run Pattern Recommender validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "ux-reviewer-hook",
+  "description": "Automated hook for Ux Reviewer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "ux-reviewer",
+      "action": "validate",
+      "description": "Run Ux Reviewer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

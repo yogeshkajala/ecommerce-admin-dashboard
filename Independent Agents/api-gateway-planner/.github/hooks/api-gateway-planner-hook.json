@@ -1,0 +1,13 @@
+﻿{
+  "name": "api-gateway-planner-hook",
+  "description": "Automated hook for Api Gateway Planner processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "api-gateway-planner",
+      "action": "validate",
+      "description": "Run Api Gateway Planner validation on changed files"
+    }
+  ],
+  "enabled": false
+}

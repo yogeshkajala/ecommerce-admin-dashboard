@@ -1,0 +1,13 @@
+﻿{
+  "name": "api-designer-hook",
+  "description": "Automated hook for Api Designer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "api-designer",
+      "action": "validate",
+      "description": "Run Api Designer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

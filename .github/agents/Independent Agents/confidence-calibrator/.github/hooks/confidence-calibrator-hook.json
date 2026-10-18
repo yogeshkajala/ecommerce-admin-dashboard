@@ -1,0 +1,13 @@
+﻿{
+  "name": "confidence-calibrator-hook",
+  "description": "Automated hook for Confidence Calibrator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "confidence-calibrator",
+      "action": "validate",
+      "description": "Run Confidence Calibrator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

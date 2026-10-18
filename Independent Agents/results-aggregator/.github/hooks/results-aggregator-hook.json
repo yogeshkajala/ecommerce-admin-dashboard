@@ -1,0 +1,13 @@
+﻿{
+  "name": "results-aggregator-hook",
+  "description": "Automated hook for Results Aggregator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "results-aggregator",
+      "action": "validate",
+      "description": "Run Results Aggregator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

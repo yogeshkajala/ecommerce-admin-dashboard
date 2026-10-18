@@ -1,0 +1,13 @@
+﻿{
+  "name": "java-specialist-hook",
+  "description": "Automated hook for Java Specialist processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "java-specialist",
+      "action": "validate",
+      "description": "Run Java Specialist validation on changed files"
+    }
+  ],
+  "enabled": false
+}

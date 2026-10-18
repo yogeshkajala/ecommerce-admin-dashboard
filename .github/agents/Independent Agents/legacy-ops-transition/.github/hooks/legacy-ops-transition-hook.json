@@ -1,0 +1,13 @@
+﻿{
+  "name": "legacy-ops-transition-hook",
+  "description": "Automated hook for Legacy Ops Transition processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "legacy-ops-transition",
+      "action": "validate",
+      "description": "Run Legacy Ops Transition validation on changed files"
+    }
+  ],
+  "enabled": false
+}

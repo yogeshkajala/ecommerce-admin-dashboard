@@ -1,0 +1,13 @@
+﻿{
+  "name": "data-migrator-hook",
+  "description": "Automated hook for Data Migrator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "data-migrator",
+      "action": "validate",
+      "description": "Run Data Migrator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

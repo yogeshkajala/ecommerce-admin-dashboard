@@ -1,0 +1,13 @@
+﻿{
+  "name": "mitigation-planner-hook",
+  "description": "Automated hook for Mitigation Planner processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "mitigation-planner",
+      "action": "validate",
+      "description": "Run Mitigation Planner validation on changed files"
+    }
+  ],
+  "enabled": false
+}

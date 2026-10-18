@@ -1,0 +1,13 @@
+﻿{
+  "name": "stakeholder-notifier-hook",
+  "description": "Automated hook for Stakeholder Notifier processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "stakeholder-notifier",
+      "action": "validate",
+      "description": "Run Stakeholder Notifier validation on changed files"
+    }
+  ],
+  "enabled": false
+}

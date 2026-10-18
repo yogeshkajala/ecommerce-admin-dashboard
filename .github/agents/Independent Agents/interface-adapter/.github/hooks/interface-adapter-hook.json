@@ -1,0 +1,13 @@
+﻿{
+  "name": "interface-adapter-hook",
+  "description": "Automated hook for Interface Adapter processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "interface-adapter",
+      "action": "validate",
+      "description": "Run Interface Adapter validation on changed files"
+    }
+  ],
+  "enabled": false
+}

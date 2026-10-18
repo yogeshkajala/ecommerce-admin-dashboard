@@ -1,0 +1,13 @@
+﻿{
+  "name": "dependency-audit-hook",
+  "description": "Automated hook for Dependency Audit processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "dependency-audit",
+      "action": "validate",
+      "description": "Run Dependency Audit validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "dashboard-creator-hook",
+  "description": "Automated hook for Dashboard Creator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "dashboard-creator",
+      "action": "validate",
+      "description": "Run Dashboard Creator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

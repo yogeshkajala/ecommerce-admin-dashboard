@@ -1,0 +1,13 @@
+﻿{
+  "name": "dependency-resolver-hook",
+  "description": "Automated hook for Dependency Resolver processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "dependency-resolver",
+      "action": "validate",
+      "description": "Run Dependency Resolver validation on changed files"
+    }
+  ],
+  "enabled": false
+}

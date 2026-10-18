@@ -1,0 +1,13 @@
+﻿{
+  "name": "target-architecture-designer-hook",
+  "description": "Automated hook for Target Architecture Designer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "target-architecture-designer",
+      "action": "validate",
+      "description": "Run Target Architecture Designer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

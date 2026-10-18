@@ -1,0 +1,13 @@
+﻿{
+  "name": "recovery-verifier-hook",
+  "description": "Automated hook for Recovery Verifier processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "recovery-verifier",
+      "action": "validate",
+      "description": "Run Recovery Verifier validation on changed files"
+    }
+  ],
+  "enabled": false
+}

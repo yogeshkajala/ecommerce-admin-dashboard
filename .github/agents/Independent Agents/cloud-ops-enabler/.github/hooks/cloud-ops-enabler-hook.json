@@ -1,0 +1,13 @@
+﻿{
+  "name": "cloud-ops-enabler-hook",
+  "description": "Automated hook for Cloud Ops Enabler processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "cloud-ops-enabler",
+      "action": "validate",
+      "description": "Run Cloud Ops Enabler validation on changed files"
+    }
+  ],
+  "enabled": false
+}

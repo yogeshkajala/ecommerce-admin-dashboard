@@ -1,0 +1,13 @@
+﻿{
+  "name": "upgrade-assessor-hook",
+  "description": "Automated hook for Upgrade Assessor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "upgrade-assessor",
+      "action": "validate",
+      "description": "Run Upgrade Assessor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

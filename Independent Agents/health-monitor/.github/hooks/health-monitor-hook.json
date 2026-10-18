@@ -1,0 +1,13 @@
+﻿{
+  "name": "health-monitor-hook",
+  "description": "Automated hook for Health Monitor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "health-monitor",
+      "action": "validate",
+      "description": "Run Health Monitor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

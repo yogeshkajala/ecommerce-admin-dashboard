@@ -1,0 +1,13 @@
+﻿{
+  "name": "auto-remediation-engine-hook",
+  "description": "Automated hook for Auto Remediation Engine processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "auto-remediation-engine",
+      "action": "validate",
+      "description": "Run Auto Remediation Engine validation on changed files"
+    }
+  ],
+  "enabled": false
+}

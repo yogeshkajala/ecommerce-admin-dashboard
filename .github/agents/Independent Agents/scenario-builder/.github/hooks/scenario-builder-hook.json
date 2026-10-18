@@ -1,0 +1,13 @@
+﻿{
+  "name": "scenario-builder-hook",
+  "description": "Automated hook for Scenario Builder processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "scenario-builder",
+      "action": "validate",
+      "description": "Run Scenario Builder validation on changed files"
+    }
+  ],
+  "enabled": false
+}

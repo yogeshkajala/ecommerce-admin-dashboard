@@ -1,0 +1,13 @@
+﻿{
+  "name": "feedback-processor-hook",
+  "description": "Automated hook for Feedback Processor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "feedback-processor",
+      "action": "validate",
+      "description": "Run Feedback Processor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

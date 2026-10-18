@@ -1,0 +1,13 @@
+﻿{
+  "name": "risk-mitigator-hook",
+  "description": "Automated hook for Risk Mitigator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "risk-mitigator",
+      "action": "validate",
+      "description": "Run Risk Mitigator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

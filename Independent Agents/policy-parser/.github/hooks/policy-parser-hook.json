@@ -1,0 +1,13 @@
+﻿{
+  "name": "policy-parser-hook",
+  "description": "Automated hook for Policy Parser processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "policy-parser",
+      "action": "validate",
+      "description": "Run Policy Parser validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "service-implementer-hook",
+  "description": "Automated hook for Service Implementer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "service-implementer",
+      "action": "validate",
+      "description": "Run Service Implementer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

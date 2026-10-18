@@ -1,0 +1,13 @@
+﻿{
+  "name": "state-restorer-hook",
+  "description": "Automated hook for State Restorer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "state-restorer",
+      "action": "validate",
+      "description": "Run State Restorer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

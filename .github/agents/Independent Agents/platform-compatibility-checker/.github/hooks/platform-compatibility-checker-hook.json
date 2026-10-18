@@ -1,0 +1,13 @@
+﻿{
+  "name": "platform-compatibility-checker-hook",
+  "description": "Automated hook for Platform Compatibility Checker processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "platform-compatibility-checker",
+      "action": "validate",
+      "description": "Run Platform Compatibility Checker validation on changed files"
+    }
+  ],
+  "enabled": false
+}

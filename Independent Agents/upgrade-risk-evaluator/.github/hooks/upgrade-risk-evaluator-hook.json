@@ -1,0 +1,13 @@
+﻿{
+  "name": "upgrade-risk-evaluator-hook",
+  "description": "Automated hook for Upgrade Risk Evaluator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "upgrade-risk-evaluator",
+      "action": "validate",
+      "description": "Run Upgrade Risk Evaluator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

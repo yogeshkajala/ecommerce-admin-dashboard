@@ -1,0 +1,13 @@
+﻿{
+  "name": "waste-detector-hook",
+  "description": "Automated hook for Waste Detector processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "waste-detector",
+      "action": "validate",
+      "description": "Run Waste Detector validation on changed files"
+    }
+  ],
+  "enabled": false
+}

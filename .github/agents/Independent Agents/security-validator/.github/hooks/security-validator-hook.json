@@ -1,0 +1,13 @@
+﻿{
+  "name": "security-validator-hook",
+  "description": "Automated hook for Security Validator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "security-validator",
+      "action": "validate",
+      "description": "Run Security Validator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

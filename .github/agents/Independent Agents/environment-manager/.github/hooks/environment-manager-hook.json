@@ -1,0 +1,13 @@
+﻿{
+  "name": "environment-manager-hook",
+  "description": "Automated hook for Environment Manager processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "environment-manager",
+      "action": "validate",
+      "description": "Run Environment Manager validation on changed files"
+    }
+  ],
+  "enabled": false
+}

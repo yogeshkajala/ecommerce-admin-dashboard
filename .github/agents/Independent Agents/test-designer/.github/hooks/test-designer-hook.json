@@ -1,0 +1,13 @@
+﻿{
+  "name": "test-designer-hook",
+  "description": "Automated hook for Test Designer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "test-designer",
+      "action": "validate",
+      "description": "Run Test Designer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

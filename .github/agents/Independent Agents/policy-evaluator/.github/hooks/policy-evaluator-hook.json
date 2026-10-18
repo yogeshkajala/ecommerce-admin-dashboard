@@ -1,0 +1,13 @@
+﻿{
+  "name": "policy-evaluator-hook",
+  "description": "Automated hook for Policy Evaluator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "policy-evaluator",
+      "action": "validate",
+      "description": "Run Policy Evaluator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "compatibility-analyzer-hook",
+  "description": "Automated hook for Compatibility Analyzer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "compatibility-analyzer",
+      "action": "validate",
+      "description": "Run Compatibility Analyzer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "readiness-evaluator-hook",
+  "description": "Automated hook for Readiness Evaluator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "readiness-evaluator",
+      "action": "validate",
+      "description": "Run Readiness Evaluator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

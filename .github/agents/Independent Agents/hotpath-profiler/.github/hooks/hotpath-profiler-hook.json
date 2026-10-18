@@ -1,0 +1,13 @@
+﻿{
+  "name": "hotpath-profiler-hook",
+  "description": "Automated hook for Hotpath Profiler processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "hotpath-profiler",
+      "action": "validate",
+      "description": "Run Hotpath Profiler validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "modernization-roi-calculator-hook",
+  "description": "Automated hook for Modernization Roi Calculator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "modernization-roi-calculator",
+      "action": "validate",
+      "description": "Run Modernization Roi Calculator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

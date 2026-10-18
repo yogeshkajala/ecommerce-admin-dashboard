@@ -1,0 +1,13 @@
+﻿{
+  "name": "ab-test-manager-hook",
+  "description": "Automated hook for Ab Test Manager processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "ab-test-manager",
+      "action": "validate",
+      "description": "Run Ab Test Manager validation on changed files"
+    }
+  ],
+  "enabled": false
+}

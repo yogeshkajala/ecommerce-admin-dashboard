@@ -1,0 +1,13 @@
+﻿{
+  "name": "disaster-recovery-planner-hook",
+  "description": "Automated hook for Disaster Recovery Planner processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "disaster-recovery-planner",
+      "action": "validate",
+      "description": "Run Disaster Recovery Planner validation on changed files"
+    }
+  ],
+  "enabled": false
+}

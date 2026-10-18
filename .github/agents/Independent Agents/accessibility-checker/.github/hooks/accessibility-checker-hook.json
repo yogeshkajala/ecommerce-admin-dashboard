@@ -1,0 +1,13 @@
+﻿{
+  "name": "accessibility-checker-hook",
+  "description": "Automated hook for Accessibility Checker processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "accessibility-checker",
+      "action": "validate",
+      "description": "Run Accessibility Checker validation on changed files"
+    }
+  ],
+  "enabled": false
+}

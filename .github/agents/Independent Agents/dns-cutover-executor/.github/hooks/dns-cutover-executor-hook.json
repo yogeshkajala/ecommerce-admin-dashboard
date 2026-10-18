@@ -1,0 +1,13 @@
+﻿{
+  "name": "dns-cutover-executor-hook",
+  "description": "Automated hook for Dns Cutover Executor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "dns-cutover-executor",
+      "action": "validate",
+      "description": "Run Dns Cutover Executor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

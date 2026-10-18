@@ -1,0 +1,75 @@
+# ─────────────────────────────────────────────────────────────────────────────
+#  docker-compose.staging.yml — Staging environment overrides
+#
+#  Extends docker-compose.yml with:
+#  - Traefik labels for staging.datasoftio.com routing
+#  - Internal port binding (127.0.0.1 only — Traefik is the public entrypoint)
+#  - SQL Server Express edition (cost-saving)
+#  - Lower resource limits appropriate for staging
+#
+#  Deploy command (on VPS, from /opt/ecommerce-admin/staging/):
+#    docker compose -f docker-compose.yml -f docker-compose.staging.yml up -d
+# ─────────────────────────────────────────────────────────────────────────────
+
+version: '3.8'
+
+services:
+
+  api:
+    # Bind only to localhost — Traefik proxies from outside
+    ports:
+      - "127.0.0.1:8081:8080"
+    labels:
+      # ── Enable Traefik ──────────────────────────────────────────────────
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik-public"
+
+      # ── HTTPS Router (staging.datasoftio.com) ───────────────────────────
+      - "traefik.http.routers.ecommerce-staging.rule=Host(`staging.datasoftio.com`)"
+      - "traefik.http.routers.ecommerce-staging.entrypoints=websecure"
+      - "traefik.http.routers.ecommerce-staging.tls=true"
+      - "traefik.http.routers.ecommerce-staging.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.ecommerce-staging.priority=10"
+
+      # ── HTTP → HTTPS Redirect ───────────────────────────────────────────
+      - "traefik.http.routers.ecommerce-staging-http.rule=Host(`staging.datasoftio.com`)"
+      - "traefik.http.routers.ecommerce-staging-http.entrypoints=web"
+      - "traefik.http.routers.ecommerce-staging-http.middlewares=redirect-to-https@docker"
+
+      # ── Backend Service ─────────────────────────────────────────────────
+      - "traefik.http.services.ecommerce-staging-svc.loadbalancer.server.port=8080"
+      - "traefik.http.routers.ecommerce-staging.service=ecommerce-staging-svc"
+
+    deploy:
+      resources:
+        limits:
+          cpus: "0.50"
+          memory: 512M
+        reservations:
+          cpus: "0.25"
+          memory: 256M
+
+  db-sqlserver:
+    # SQL Server Express — free, 10GB DB limit, suitable for staging
+    # SQLSERVER_IMAGE and MSSQL_PID are set in the staging .env file:
+    #   SQLSERVER_IMAGE=mcr.microsoft.com/mssql/server:2022-express
+    #   MSSQL_PID=Express
+    deploy:
+      resources:
+        limits:
+          cpus: "0.50"
+          memory: 1G
+
+  db-postgres:
+    deploy:
+      resources:
+        limits:
+          cpus: "0.25"
+          memory: 256M
+
+  cache-redis:
+    deploy:
+      resources:
+        limits:
+          cpus: "0.10"
+          memory: 128M

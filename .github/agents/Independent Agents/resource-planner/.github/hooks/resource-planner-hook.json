@@ -1,0 +1,13 @@
+﻿{
+  "name": "resource-planner-hook",
+  "description": "Automated hook for Resource Planner processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "resource-planner",
+      "action": "validate",
+      "description": "Run Resource Planner validation on changed files"
+    }
+  ],
+  "enabled": false
+}

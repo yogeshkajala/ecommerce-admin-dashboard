@@ -1,0 +1,13 @@
+﻿{
+  "name": "api-contract-designer-hook",
+  "description": "Automated hook for Api Contract Designer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "api-contract-designer",
+      "action": "validate",
+      "description": "Run Api Contract Designer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

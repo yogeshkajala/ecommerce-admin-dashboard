@@ -1,0 +1,13 @@
+﻿{
+  "name": "post-incident-reviewer-hook",
+  "description": "Automated hook for Post Incident Reviewer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "post-incident-reviewer",
+      "action": "validate",
+      "description": "Run Post Incident Reviewer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "defect-lifecycle-manager-hook",
+  "description": "Automated hook for Defect Lifecycle Manager processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "defect-lifecycle-manager",
+      "action": "validate",
+      "description": "Run Defect Lifecycle Manager validation on changed files"
+    }
+  ],
+  "enabled": false
+}

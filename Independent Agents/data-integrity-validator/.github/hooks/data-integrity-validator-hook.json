@@ -1,0 +1,13 @@
+﻿{
+  "name": "data-integrity-validator-hook",
+  "description": "Automated hook for Data Integrity Validator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "data-integrity-validator",
+      "action": "validate",
+      "description": "Run Data Integrity Validator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

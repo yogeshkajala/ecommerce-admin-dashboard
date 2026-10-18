@@ -1,0 +1,13 @@
+﻿{
+  "name": "backlog-groomer-hook",
+  "description": "Automated hook for Backlog Groomer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "backlog-groomer",
+      "action": "validate",
+      "description": "Run Backlog Groomer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "strategy-advisor-hook",
+  "description": "Automated hook for Strategy Advisor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "strategy-advisor",
+      "action": "validate",
+      "description": "Run Strategy Advisor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

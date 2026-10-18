@@ -1,0 +1,13 @@
+﻿{
+  "name": "security-auditor-hook",
+  "description": "Automated hook for Security Auditor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "security-auditor",
+      "action": "validate",
+      "description": "Run Security Auditor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "modernization-tester-hook",
+  "description": "Automated hook for Modernization Tester processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "modernization-tester",
+      "action": "validate",
+      "description": "Run Modernization Tester validation on changed files"
+    }
+  ],
+  "enabled": false
+}

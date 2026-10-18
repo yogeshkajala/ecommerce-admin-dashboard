@@ -1,0 +1,13 @@
+﻿{
+  "name": "confluence-publisher-hook",
+  "description": "Automated hook for Confluence Publisher processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "confluence-publisher",
+      "action": "validate",
+      "description": "Run Confluence Publisher validation on changed files"
+    }
+  ],
+  "enabled": false
+}

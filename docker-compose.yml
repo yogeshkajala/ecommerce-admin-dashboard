@@ -1,37 +1,127 @@
 version: '3.8'
+
+# ─────────────────────────────────────────────────────────────────────────────
+#  Base docker-compose.yml — shared across ALL environments (staging + prod)
+#
+#  Environment-specific concerns (Traefik labels, ports, resource limits,
+#  SQL Server edition) are handled in docker-compose.staging.yml
+#  and docker-compose.prod.yml overlays.
+#
+#  Usage:
+#    Staging:    docker compose -f docker-compose.yml -f docker-compose.staging.yml up -d
+#    Production: docker compose -f docker-compose.yml -f docker-compose.prod.yml   up -d
+#    Local dev:  docker compose up -d  (uses base only — no Traefik labels)
+#
+#  All secrets are read from a .env file (never committed).
+#  See .env.example for required variables.
+# ─────────────────────────────────────────────────────────────────────────────
+
 services:
+
+  # ── API ──────────────────────────────────────────────────────────────────
+  api:
+    image: ghcr.io/${GITHUB_OWNER:-yogeshverma}/ecommerce-admin:${IMAGE_TAG:-latest}
+    container_name: ecommerce_admin_api
+    restart: unless-stopped
+    # All appsettings.json keys are overridden via environment variables.
+    # ASP.NET Core maps __ (double underscore) to : (colon) in config paths.
+    # e.g. ConnectionStrings__SqlServerConnection → ConnectionStrings:SqlServerConnection
+    environment:
+      ASPNETCORE_ENVIRONMENT: ${ASPNETCORE_ENVIRONMENT:-Production}
+      ASPNETCORE_URLS: "http://+:8080"
+      # Connection Strings
+      ConnectionStrings__SqlServerConnection: ${SQLSERVER_CONNECTION}
+      ConnectionStrings__CatalogDB: ${POSTGRES_CONNECTION}
+      ConnectionStrings__RedisConnection: ${REDIS_CONNECTION}
+      # Microsoft Entra (Azure AD) Authentication
+      AuthenticationConnectors__Entra__TenantId: ${ENTRA_TENANT_ID}
+      AuthenticationConnectors__Entra__ClientId: ${ENTRA_CLIENT_ID}
+    networks:
+      - traefik-public   # shared with existing Traefik instance
+      - internal         # private backend network (DB + Redis)
+    depends_on:
+      db-sqlserver:
+        condition: service_healthy
+      db-postgres:
+        condition: service_healthy
+      cache-redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8080/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # ── SQL Server ────────────────────────────────────────────────────────────
+  # Image is controlled by SQLSERVER_IMAGE env var:
+  #   Staging:    mcr.microsoft.com/mssql/server:2022-express
+  #   Production: mcr.microsoft.com/mssql/server:2022-latest
   db-sqlserver:
-    image: mcr.microsoft.com/mssql/server:2022-latest
+    image: ${SQLSERVER_IMAGE:-mcr.microsoft.com/mssql/server:2022-latest}
     container_name: ecommerce_admin_sqlserver
+    restart: unless-stopped
     environment:
       ACCEPT_EULA: "Y"
-      MSSQL_SA_PASSWORD: "SuperSecureAdminPassword123!"
-    ports:
-      - "1433:1433"
+      MSSQL_SA_PASSWORD: ${SQLSERVER_SA_PASSWORD}
+      MSSQL_PID: ${MSSQL_PID:-Developer}   # Express on staging (set via env), Developer locally
     volumes:
       - sql_data:/var/opt/mssql
+    networks:
+      - internal
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P \"${SQLSERVER_SA_PASSWORD}\" -C -Q 'SELECT 1' || exit 1"]
+      interval: 15s
+      timeout: 10s
+      retries: 10
+      start_period: 60s
 
+  # ── PostgreSQL ────────────────────────────────────────────────────────────
   db-postgres:
     image: postgres:15-alpine
     container_name: ecommerce_admin_postgres
+    restart: unless-stopped
     environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: SuperSecureAdminPassword123!
-      POSTGRES_DB: EcommerceAdminCatalog
-    ports:
-      - "5432:5432"
+      POSTGRES_USER: ${POSTGRES_USER:-admin}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB:-EcommerceAdminCatalog}
     volumes:
       - pg_data:/var/lib/postgresql/data
+    networks:
+      - internal
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-admin} -d ${POSTGRES_DB:-EcommerceAdminCatalog}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
+  # ── Redis ─────────────────────────────────────────────────────────────────
   cache-redis:
     image: redis:7-alpine
     container_name: ecommerce_admin_redis
-    ports:
-      - "6379:6379"
+    restart: unless-stopped
+    command: redis-server --save 60 1 --loglevel warning
     volumes:
       - redis_data:/data
+    networks:
+      - internal
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
 volumes:
   sql_data:
   pg_data:
   redis_data:
+
+networks:
+  # Shared external network — must be created once on VPS:
+  #   docker network create traefik-public
+  traefik-public:
+    external: true
+
+  # Private backend network (not accessible from outside)
+  internal:
+    driver: bridge

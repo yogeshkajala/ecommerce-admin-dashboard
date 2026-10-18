@@ -1,0 +1,13 @@
+﻿{
+  "name": "regression-executor-hook",
+  "description": "Automated hook for Regression Executor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "regression-executor",
+      "action": "validate",
+      "description": "Run Regression Executor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

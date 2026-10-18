@@ -1,0 +1,13 @@
+﻿{
+  "name": "decomposition-scorer-hook",
+  "description": "Automated hook for Decomposition Scorer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "decomposition-scorer",
+      "action": "validate",
+      "description": "Run Decomposition Scorer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

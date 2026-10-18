@@ -1,0 +1,13 @@
+﻿{
+  "name": "risk-calculator-hook",
+  "description": "Automated hook for Risk Calculator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "risk-calculator",
+      "action": "validate",
+      "description": "Run Risk Calculator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

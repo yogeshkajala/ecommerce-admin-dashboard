@@ -1,0 +1,13 @@
+﻿{
+  "name": "user-feedback-collector-hook",
+  "description": "Automated hook for User Feedback Collector processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "user-feedback-collector",
+      "action": "validate",
+      "description": "Run User Feedback Collector validation on changed files"
+    }
+  ],
+  "enabled": false
+}

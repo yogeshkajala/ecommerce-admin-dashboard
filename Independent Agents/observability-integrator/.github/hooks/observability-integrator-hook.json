@@ -1,0 +1,13 @@
+﻿{
+  "name": "observability-integrator-hook",
+  "description": "Automated hook for Observability Integrator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "observability-integrator",
+      "action": "validate",
+      "description": "Run Observability Integrator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

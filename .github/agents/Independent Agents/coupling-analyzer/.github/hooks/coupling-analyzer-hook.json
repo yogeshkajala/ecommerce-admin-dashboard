@@ -1,0 +1,13 @@
+﻿{
+  "name": "coupling-analyzer-hook",
+  "description": "Automated hook for Coupling Analyzer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "coupling-analyzer",
+      "action": "validate",
+      "description": "Run Coupling Analyzer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

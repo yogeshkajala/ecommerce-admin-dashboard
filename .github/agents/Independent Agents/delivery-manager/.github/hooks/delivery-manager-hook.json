@@ -1,0 +1,13 @@
+﻿{
+  "name": "delivery-manager-hook",
+  "description": "Automated hook for Delivery Manager processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "delivery-manager",
+      "action": "validate",
+      "description": "Run Delivery Manager validation on changed files"
+    }
+  ],
+  "enabled": false
+}

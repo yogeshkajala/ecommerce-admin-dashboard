@@ -1,0 +1,13 @@
+﻿{
+  "name": "requirements-discoverer-hook",
+  "description": "Automated hook for Requirements Discoverer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "requirements-discoverer",
+      "action": "validate",
+      "description": "Run Requirements Discoverer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

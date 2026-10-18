@@ -1,0 +1,13 @@
+﻿{
+  "name": "migration-tester-hook",
+  "description": "Automated hook for Migration Tester processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "migration-tester",
+      "action": "validate",
+      "description": "Run Migration Tester validation on changed files"
+    }
+  ],
+  "enabled": false
+}

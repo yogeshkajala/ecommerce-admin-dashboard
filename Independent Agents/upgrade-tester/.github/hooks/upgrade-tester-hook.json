@@ -1,0 +1,13 @@
+﻿{
+  "name": "upgrade-tester-hook",
+  "description": "Automated hook for Upgrade Tester processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "upgrade-tester",
+      "action": "validate",
+      "description": "Run Upgrade Tester validation on changed files"
+    }
+  ],
+  "enabled": false
+}

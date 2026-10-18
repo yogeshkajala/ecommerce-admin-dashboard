@@ -1,0 +1,13 @@
+﻿{
+  "name": "rollback-manager-hook",
+  "description": "Automated hook for Rollback Manager processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "rollback-manager",
+      "action": "validate",
+      "description": "Run Rollback Manager validation on changed files"
+    }
+  ],
+  "enabled": false
+}

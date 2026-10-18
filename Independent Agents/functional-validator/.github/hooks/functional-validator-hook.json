@@ -1,0 +1,13 @@
+﻿{
+  "name": "functional-validator-hook",
+  "description": "Automated hook for Functional Validator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "functional-validator",
+      "action": "validate",
+      "description": "Run Functional Validator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

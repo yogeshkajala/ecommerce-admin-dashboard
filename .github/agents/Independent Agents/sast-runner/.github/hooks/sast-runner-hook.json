@@ -1,0 +1,13 @@
+﻿{
+  "name": "sast-runner-hook",
+  "description": "Automated hook for Sast Runner processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "sast-runner",
+      "action": "validate",
+      "description": "Run Sast Runner validation on changed files"
+    }
+  ],
+  "enabled": false
+}

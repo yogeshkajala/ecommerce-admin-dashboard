@@ -1,0 +1,13 @@
+﻿{
+  "name": "ftc-jira-syncer-hook",
+  "description": "Automated hook for Ftc Jira Syncer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "ftc-jira-syncer",
+      "action": "validate",
+      "description": "Run Ftc Jira Syncer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

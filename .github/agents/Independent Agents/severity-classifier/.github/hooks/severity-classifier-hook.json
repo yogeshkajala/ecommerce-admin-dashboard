@@ -1,0 +1,13 @@
+﻿{
+  "name": "severity-classifier-hook",
+  "description": "Automated hook for Severity Classifier processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "severity-classifier",
+      "action": "validate",
+      "description": "Run Severity Classifier validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "upgrade-rollback-manager-hook",
+  "description": "Automated hook for Upgrade Rollback Manager processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "upgrade-rollback-manager",
+      "action": "validate",
+      "description": "Run Upgrade Rollback Manager validation on changed files"
+    }
+  ],
+  "enabled": false
+}

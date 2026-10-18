@@ -1,0 +1,13 @@
+﻿{
+  "name": "breaking-change-detector-hook",
+  "description": "Automated hook for Breaking Change Detector processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "breaking-change-detector",
+      "action": "validate",
+      "description": "Run Breaking Change Detector validation on changed files"
+    }
+  ],
+  "enabled": false
+}

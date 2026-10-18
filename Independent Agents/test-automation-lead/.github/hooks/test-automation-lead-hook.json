@@ -1,0 +1,13 @@
+﻿{
+  "name": "test-automation-lead-hook",
+  "description": "Automated hook for Test Automation Lead processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "test-automation-lead",
+      "action": "validate",
+      "description": "Run Test Automation Lead validation on changed files"
+    }
+  ],
+  "enabled": false
+}

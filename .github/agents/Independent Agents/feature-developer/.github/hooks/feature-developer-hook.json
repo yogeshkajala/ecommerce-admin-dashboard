@@ -1,0 +1,13 @@
+﻿{
+  "name": "feature-developer-hook",
+  "description": "Automated hook for Feature Developer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "feature-developer",
+      "action": "validate",
+      "description": "Run Feature Developer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

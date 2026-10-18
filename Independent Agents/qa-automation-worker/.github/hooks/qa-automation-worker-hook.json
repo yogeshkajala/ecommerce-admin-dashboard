@@ -1,0 +1,13 @@
+﻿{
+  "name": "qa-automation-worker-hook",
+  "description": "Automated hook for Qa Automation Worker processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "qa-automation-worker",
+      "action": "validate",
+      "description": "Run Qa Automation Worker validation on changed files"
+    }
+  ],
+  "enabled": false
+}

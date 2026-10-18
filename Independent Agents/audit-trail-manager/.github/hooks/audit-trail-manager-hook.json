@@ -1,0 +1,13 @@
+﻿{
+  "name": "audit-trail-manager-hook",
+  "description": "Automated hook for Audit Trail Manager processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "audit-trail-manager",
+      "action": "validate",
+      "description": "Run Audit Trail Manager validation on changed files"
+    }
+  ],
+  "enabled": false
+}

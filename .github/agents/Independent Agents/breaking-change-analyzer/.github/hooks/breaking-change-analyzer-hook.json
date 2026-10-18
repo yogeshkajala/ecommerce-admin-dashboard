@@ -1,0 +1,13 @@
+﻿{
+  "name": "breaking-change-analyzer-hook",
+  "description": "Automated hook for Breaking Change Analyzer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "breaking-change-analyzer",
+      "action": "validate",
+      "description": "Run Breaking Change Analyzer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

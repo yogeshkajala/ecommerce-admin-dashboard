@@ -1,0 +1,13 @@
+﻿{
+  "name": "migration-complexity-scorer-hook",
+  "description": "Automated hook for Migration Complexity Scorer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "migration-complexity-scorer",
+      "action": "validate",
+      "description": "Run Migration Complexity Scorer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

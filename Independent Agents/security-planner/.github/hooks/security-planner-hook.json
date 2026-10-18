@@ -1,0 +1,13 @@
+﻿{
+  "name": "security-planner-hook",
+  "description": "Automated hook for Security Planner processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "security-planner",
+      "action": "validate",
+      "description": "Run Security Planner validation on changed files"
+    }
+  ],
+  "enabled": false
+}

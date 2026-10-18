@@ -1,8 +1,22 @@
 {
   "version": 2,
-  "dgSpecHash": "fcD8Gnpe9h0CbxPkZLdgNm+ZGl/RFd9hq2kkajD0fTty9yXQourWXYDYLX84yO2XjhqUO8KzUtpr3tijdFJJIQ==",
+  "dgSpecHash": "4l2AbzdhQW4=",
   "success": true,
-  "projectFilePath": "/root/server/EcommerceAdmin.Core/EcommerceAdmin.Core.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/Users/yogeshverma/Documents/antigravity/AgentTemplate002/ecommerce-admin-dashboard/src/EcommerceAdmin.Core/EcommerceAdmin.Core.csproj",
+  "expectedPackageFiles": [
+    "/Users/yogeshverma/.nuget/packages/microsoft.aspnetcore.cryptography.internal/8.0.0/microsoft.aspnetcore.cryptography.internal.8.0.0.nupkg.sha512",
+    "/Users/yogeshverma/.nuget/packages/microsoft.aspnetcore.cryptography.keyderivation/8.0.0/microsoft.aspnetcore.cryptography.keyderivation.8.0.0.nupkg.sha512",
+    "/Users/yogeshverma/.nuget/packages/microsoft.extensions.caching.abstractions/8.0.0/microsoft.extensions.caching.abstractions.8.0.0.nupkg.sha512",
+    "/Users/yogeshverma/.nuget/packages/microsoft.extensions.dependencyinjection/8.0.0/microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
+    "/Users/yogeshverma/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "/Users/yogeshverma/.nuget/packages/microsoft.extensions.identity.core/8.0.0/microsoft.extensions.identity.core.8.0.0.nupkg.sha512",
+    "/Users/yogeshverma/.nuget/packages/microsoft.extensions.identity.stores/8.0.0/microsoft.extensions.identity.stores.8.0.0.nupkg.sha512",
+    "/Users/yogeshverma/.nuget/packages/microsoft.extensions.logging/8.0.0/microsoft.extensions.logging.8.0.0.nupkg.sha512",
+    "/Users/yogeshverma/.nuget/packages/microsoft.extensions.logging.abstractions/8.0.0/microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "/Users/yogeshverma/.nuget/packages/microsoft.extensions.options/8.0.0/microsoft.extensions.options.8.0.0.nupkg.sha512",
+    "/Users/yogeshverma/.nuget/packages/microsoft.extensions.primitives/8.0.0/microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "/Users/yogeshverma/.nuget/packages/microsoft.netcore.app.ref/8.0.22/microsoft.netcore.app.ref.8.0.22.nupkg.sha512",
+    "/Users/yogeshverma/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.22/microsoft.aspnetcore.app.ref.8.0.22.nupkg.sha512"
+  ],
   "logs": []
 }

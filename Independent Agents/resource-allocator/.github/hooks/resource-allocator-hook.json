@@ -1,0 +1,13 @@
+﻿{
+  "name": "resource-allocator-hook",
+  "description": "Automated hook for Resource Allocator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "resource-allocator",
+      "action": "validate",
+      "description": "Run Resource Allocator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

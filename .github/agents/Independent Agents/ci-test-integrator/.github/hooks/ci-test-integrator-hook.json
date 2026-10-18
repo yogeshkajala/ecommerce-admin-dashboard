@@ -1,0 +1,13 @@
+﻿{
+  "name": "ci-test-integrator-hook",
+  "description": "Automated hook for Ci Test Integrator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "ci-test-integrator",
+      "action": "validate",
+      "description": "Run Ci Test Integrator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

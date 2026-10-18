@@ -1,0 +1,13 @@
+﻿{
+  "name": "ioc-collector-hook",
+  "description": "Automated hook for Ioc Collector processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "ioc-collector",
+      "action": "validate",
+      "description": "Run Ioc Collector validation on changed files"
+    }
+  ],
+  "enabled": false
+}

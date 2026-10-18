@@ -1,0 +1,13 @@
+﻿{
+  "name": "control-evaluator-hook",
+  "description": "Automated hook for Control Evaluator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "control-evaluator",
+      "action": "validate",
+      "description": "Run Control Evaluator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

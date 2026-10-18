@@ -1,0 +1,13 @@
+﻿{
+  "name": "retro-facilitator-hook",
+  "description": "Automated hook for Retro Facilitator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "retro-facilitator",
+      "action": "validate",
+      "description": "Run Retro Facilitator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

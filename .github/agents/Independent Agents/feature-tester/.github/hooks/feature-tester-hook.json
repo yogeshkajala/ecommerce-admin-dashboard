@@ -1,0 +1,13 @@
+﻿{
+  "name": "feature-tester-hook",
+  "description": "Automated hook for Feature Tester processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "feature-tester",
+      "action": "validate",
+      "description": "Run Feature Tester validation on changed files"
+    }
+  ],
+  "enabled": false
+}

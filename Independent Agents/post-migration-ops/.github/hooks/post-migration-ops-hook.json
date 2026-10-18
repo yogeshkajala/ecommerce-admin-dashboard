@@ -1,0 +1,13 @@
+﻿{
+  "name": "post-migration-ops-hook",
+  "description": "Automated hook for Post Migration Ops processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "post-migration-ops",
+      "action": "validate",
+      "description": "Run Post Migration Ops validation on changed files"
+    }
+  ],
+  "enabled": false
+}

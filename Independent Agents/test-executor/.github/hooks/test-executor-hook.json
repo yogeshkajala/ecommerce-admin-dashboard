@@ -1,0 +1,13 @@
+﻿{
+  "name": "test-executor-hook",
+  "description": "Automated hook for Test Executor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "test-executor",
+      "action": "validate",
+      "description": "Run Test Executor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

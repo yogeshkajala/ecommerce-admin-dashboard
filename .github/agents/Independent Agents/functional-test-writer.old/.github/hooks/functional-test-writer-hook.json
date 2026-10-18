@@ -1,0 +1,13 @@
+﻿{
+  "name": "functional-test-writer-hook",
+  "description": "Automated hook for Functional Test Writer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "functional-test-writer",
+      "action": "validate",
+      "description": "Run Functional Test Writer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

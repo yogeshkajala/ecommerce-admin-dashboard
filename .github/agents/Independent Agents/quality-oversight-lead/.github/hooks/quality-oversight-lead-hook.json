@@ -1,0 +1,13 @@
+﻿{
+  "name": "quality-oversight-lead-hook",
+  "description": "Automated hook for Quality Oversight Lead processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "quality-oversight-lead",
+      "action": "validate",
+      "description": "Run Quality Oversight Lead validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "rollback-planner-hook",
+  "description": "Automated hook for Rollback Planner processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "rollback-planner",
+      "action": "validate",
+      "description": "Run Rollback Planner validation on changed files"
+    }
+  ],
+  "enabled": false
+}

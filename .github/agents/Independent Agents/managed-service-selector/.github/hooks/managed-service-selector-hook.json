@@ -1,0 +1,13 @@
+﻿{
+  "name": "managed-service-selector-hook",
+  "description": "Automated hook for Managed Service Selector processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "managed-service-selector",
+      "action": "validate",
+      "description": "Run Managed Service Selector validation on changed files"
+    }
+  ],
+  "enabled": false
+}

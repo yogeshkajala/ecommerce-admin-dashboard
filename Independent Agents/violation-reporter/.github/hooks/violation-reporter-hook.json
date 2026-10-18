@@ -1,0 +1,13 @@
+﻿{
+  "name": "violation-reporter-hook",
+  "description": "Automated hook for Violation Reporter processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "violation-reporter",
+      "action": "validate",
+      "description": "Run Violation Reporter validation on changed files"
+    }
+  ],
+  "enabled": false
+}

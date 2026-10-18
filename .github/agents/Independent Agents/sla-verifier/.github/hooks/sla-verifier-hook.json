@@ -1,0 +1,13 @@
+﻿{
+  "name": "sla-verifier-hook",
+  "description": "Automated hook for Sla Verifier processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "sla-verifier",
+      "action": "validate",
+      "description": "Run Sla Verifier validation on changed files"
+    }
+  ],
+  "enabled": false
+}

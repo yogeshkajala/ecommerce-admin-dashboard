@@ -1,0 +1,13 @@
+﻿{
+  "name": "upgrade-validator-hook",
+  "description": "Automated hook for Upgrade Validator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "upgrade-validator",
+      "action": "validate",
+      "description": "Run Upgrade Validator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

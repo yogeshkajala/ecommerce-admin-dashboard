@@ -1,0 +1,13 @@
+﻿{
+  "name": "smoke-test-runner-hook",
+  "description": "Automated hook for Smoke Test Runner processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "smoke-test-runner",
+      "action": "validate",
+      "description": "Run Smoke Test Runner validation on changed files"
+    }
+  ],
+  "enabled": false
+}

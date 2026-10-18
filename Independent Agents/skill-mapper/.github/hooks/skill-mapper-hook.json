@@ -1,0 +1,13 @@
+﻿{
+  "name": "skill-mapper-hook",
+  "description": "Automated hook for Skill Mapper processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "skill-mapper",
+      "action": "validate",
+      "description": "Run Skill Mapper validation on changed files"
+    }
+  ],
+  "enabled": false
+}

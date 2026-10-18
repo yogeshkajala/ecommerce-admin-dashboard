@@ -1,0 +1,13 @@
+﻿{
+  "name": "upgrade-planner-hook",
+  "description": "Automated hook for Upgrade Planner processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "upgrade-planner",
+      "action": "validate",
+      "description": "Run Upgrade Planner validation on changed files"
+    }
+  ],
+  "enabled": false
+}

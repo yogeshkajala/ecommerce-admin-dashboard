@@ -1,0 +1,13 @@
+﻿{
+  "name": "runbook-executor-hook",
+  "description": "Automated hook for Runbook Executor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "runbook-executor",
+      "action": "validate",
+      "description": "Run Runbook Executor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "go-specialist-hook",
+  "description": "Automated hook for Go Specialist processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "go-specialist",
+      "action": "validate",
+      "description": "Run Go Specialist validation on changed files"
+    }
+  ],
+  "enabled": false
+}

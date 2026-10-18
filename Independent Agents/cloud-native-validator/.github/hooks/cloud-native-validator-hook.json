@@ -1,0 +1,13 @@
+﻿{
+  "name": "cloud-native-validator-hook",
+  "description": "Automated hook for Cloud Native Validator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "cloud-native-validator",
+      "action": "validate",
+      "description": "Run Cloud Native Validator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

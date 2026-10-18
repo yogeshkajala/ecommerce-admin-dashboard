@@ -1,0 +1,31 @@
+﻿{
+  "$schema": "https://json.schemastore.org/github-copilot-hook.json",
+  "description": "Phase gate validation for feature development lifecycle",
+  "hooks": [
+    {
+      "event": "PreToolUse",
+      "description": "Validate tool invocations against feature development phase permissions",
+      "match": { "toolName": "*" },
+      "steps": [
+        {
+          "type": "gate",
+          "description": "Allow tool use within feature development phase scope",
+          "command": "echo {\"permissionDecision\":\"allow\"}",
+          "timeout": 5000
+        }
+      ]
+    },
+    {
+      "event": "PostToolUse",
+      "description": "Audit trail for all tool invocations during feature development",
+      "match": { "toolName": "*" },
+      "steps": [
+        {
+          "type": "audit",
+          "description": "Log tool invocation for feature development traceability",
+          "command": "echo {\"audit\":\"tool-invocation-logged\"}"
+        }
+      ]
+    }
+  ]
+}

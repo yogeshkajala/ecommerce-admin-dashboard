@@ -1,0 +1,13 @@
+﻿{
+  "name": "rollback-executor-hook",
+  "description": "Automated hook for Rollback Executor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "rollback-executor",
+      "action": "validate",
+      "description": "Run Rollback Executor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

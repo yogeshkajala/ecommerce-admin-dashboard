@@ -1,0 +1,13 @@
+﻿{
+  "name": "space-manager-hook",
+  "description": "Automated hook for Space Manager processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "space-manager",
+      "action": "validate",
+      "description": "Run Space Manager validation on changed files"
+    }
+  ],
+  "enabled": false
+}

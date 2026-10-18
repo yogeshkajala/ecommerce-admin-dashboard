@@ -1,0 +1,13 @@
+﻿{
+  "name": "docx-creator-hook",
+  "description": "Automated hook for Docx Creator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "docx-creator",
+      "action": "validate",
+      "description": "Run Docx Creator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "demand-forecaster-hook",
+  "description": "Automated hook for Demand Forecaster processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "demand-forecaster",
+      "action": "validate",
+      "description": "Run Demand Forecaster validation on changed files"
+    }
+  ],
+  "enabled": false
+}

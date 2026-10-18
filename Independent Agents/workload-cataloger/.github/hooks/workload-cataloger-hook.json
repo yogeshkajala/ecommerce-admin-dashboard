@@ -1,0 +1,13 @@
+﻿{
+  "name": "workload-cataloger-hook",
+  "description": "Automated hook for Workload Cataloger processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "workload-cataloger",
+      "action": "validate",
+      "description": "Run Workload Cataloger validation on changed files"
+    }
+  ],
+  "enabled": false
+}

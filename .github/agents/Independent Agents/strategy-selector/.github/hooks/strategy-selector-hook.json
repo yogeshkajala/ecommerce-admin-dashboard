@@ -1,0 +1,13 @@
+﻿{
+  "name": "strategy-selector-hook",
+  "description": "Automated hook for Strategy Selector processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "strategy-selector",
+      "action": "validate",
+      "description": "Run Strategy Selector validation on changed files"
+    }
+  ],
+  "enabled": false
+}

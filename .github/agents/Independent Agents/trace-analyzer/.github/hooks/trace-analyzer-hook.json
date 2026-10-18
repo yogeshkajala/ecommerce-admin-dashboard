@@ -1,0 +1,13 @@
+﻿{
+  "name": "trace-analyzer-hook",
+  "description": "Automated hook for Trace Analyzer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "trace-analyzer",
+      "action": "validate",
+      "description": "Run Trace Analyzer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

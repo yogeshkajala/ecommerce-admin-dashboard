@@ -1,0 +1,13 @@
+﻿{
+  "name": "dependency-tracker-hook",
+  "description": "Automated hook for Dependency Tracker processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "dependency-tracker",
+      "action": "validate",
+      "description": "Run Dependency Tracker validation on changed files"
+    }
+  ],
+  "enabled": false
+}

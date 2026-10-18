@@ -1,0 +1,13 @@
+﻿{
+  "name": "aws-deployer-hook",
+  "description": "Automated hook for Aws Deployer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "aws-deployer",
+      "action": "validate",
+      "description": "Run Aws Deployer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

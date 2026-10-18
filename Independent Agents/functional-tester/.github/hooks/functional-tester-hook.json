@@ -1,0 +1,13 @@
+﻿{
+  "name": "functional-tester-hook",
+  "description": "Automated hook for Functional Tester processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "functional-tester",
+      "action": "validate",
+      "description": "Run Functional Tester validation on changed files"
+    }
+  ],
+  "enabled": false
+}

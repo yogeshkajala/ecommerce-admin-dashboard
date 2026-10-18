@@ -1,0 +1,13 @@
+﻿{
+  "name": "modernization-assessor-hook",
+  "description": "Automated hook for Modernization Assessor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "modernization-assessor",
+      "action": "validate",
+      "description": "Run Modernization Assessor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

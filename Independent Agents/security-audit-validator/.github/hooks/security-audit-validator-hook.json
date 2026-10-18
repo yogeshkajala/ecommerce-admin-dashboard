@@ -1,0 +1,13 @@
+﻿{
+  "name": "security-audit-validator-hook",
+  "description": "Automated hook for Security Audit Validator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "security-audit-validator",
+      "action": "validate",
+      "description": "Run Security Audit Validator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

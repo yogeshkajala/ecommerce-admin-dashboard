@@ -1,0 +1,13 @@
+﻿{
+  "name": "feature-flag-controller-hook",
+  "description": "Automated hook for Feature Flag Controller processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "feature-flag-controller",
+      "action": "validate",
+      "description": "Run Feature Flag Controller validation on changed files"
+    }
+  ],
+  "enabled": false
+}

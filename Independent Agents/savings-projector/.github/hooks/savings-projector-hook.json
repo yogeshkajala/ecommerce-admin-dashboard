@@ -1,0 +1,13 @@
+﻿{
+  "name": "savings-projector-hook",
+  "description": "Automated hook for Savings Projector processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "savings-projector",
+      "action": "validate",
+      "description": "Run Savings Projector validation on changed files"
+    }
+  ],
+  "enabled": false
+}

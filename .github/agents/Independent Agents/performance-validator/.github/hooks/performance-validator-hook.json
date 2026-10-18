@@ -1,0 +1,13 @@
+﻿{
+  "name": "performance-validator-hook",
+  "description": "Automated hook for Performance Validator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "performance-validator",
+      "action": "validate",
+      "description": "Run Performance Validator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

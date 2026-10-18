@@ -1,0 +1,13 @@
+﻿{
+  "name": "framework-builder-hook",
+  "description": "Automated hook for Framework Builder processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "framework-builder",
+      "action": "validate",
+      "description": "Run Framework Builder validation on changed files"
+    }
+  ],
+  "enabled": false
+}

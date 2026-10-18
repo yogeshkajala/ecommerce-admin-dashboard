@@ -1,0 +1,13 @@
+﻿{
+  "name": "ci-cd-modernizer-hook",
+  "description": "Automated hook for Ci Cd Modernizer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "ci-cd-modernizer",
+      "action": "validate",
+      "description": "Run Ci Cd Modernizer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

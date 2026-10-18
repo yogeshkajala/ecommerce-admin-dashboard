@@ -1,0 +1,13 @@
+﻿{
+  "name": "pattern-detector-hook",
+  "description": "Automated hook for Pattern Detector processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "pattern-detector",
+      "action": "validate",
+      "description": "Run Pattern Detector validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "state-rollback-agent-hook",
+  "description": "Automated hook for State Rollback Agent processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "state-rollback-agent",
+      "action": "validate",
+      "description": "Run State Rollback Agent validation on changed files"
+    }
+  ],
+  "enabled": false
+}

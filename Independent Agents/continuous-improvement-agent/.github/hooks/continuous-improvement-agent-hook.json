@@ -1,0 +1,13 @@
+﻿{
+  "name": "continuous-improvement-agent-hook",
+  "description": "Automated hook for Continuous Improvement Agent processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "continuous-improvement-agent",
+      "action": "validate",
+      "description": "Run Continuous Improvement Agent validation on changed files"
+    }
+  ],
+  "enabled": false
+}

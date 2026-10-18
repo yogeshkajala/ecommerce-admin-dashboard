@@ -1,0 +1,13 @@
+﻿{
+  "name": "vision-definer-hook",
+  "description": "Automated hook for Vision Definer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "vision-definer",
+      "action": "validate",
+      "description": "Run Vision Definer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "compliance-assessor-hook",
+  "description": "Automated hook for Compliance Assessor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "compliance-assessor",
+      "action": "validate",
+      "description": "Run Compliance Assessor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

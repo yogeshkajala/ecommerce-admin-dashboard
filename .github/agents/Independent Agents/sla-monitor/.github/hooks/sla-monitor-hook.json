@@ -1,0 +1,13 @@
+﻿{
+  "name": "sla-monitor-hook",
+  "description": "Automated hook for Sla Monitor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "sla-monitor",
+      "action": "validate",
+      "description": "Run Sla Monitor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

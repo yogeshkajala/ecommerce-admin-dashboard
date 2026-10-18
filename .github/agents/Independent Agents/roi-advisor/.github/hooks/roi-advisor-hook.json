@@ -1,0 +1,13 @@
+﻿{
+  "name": "roi-advisor-hook",
+  "description": "Automated hook for Roi Advisor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "roi-advisor",
+      "action": "validate",
+      "description": "Run Roi Advisor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "dependency-sequencer-hook",
+  "description": "Automated hook for Dependency Sequencer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "dependency-sequencer",
+      "action": "validate",
+      "description": "Run Dependency Sequencer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

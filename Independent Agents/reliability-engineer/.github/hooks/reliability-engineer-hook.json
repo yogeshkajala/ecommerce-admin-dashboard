@@ -1,0 +1,13 @@
+﻿{
+  "name": "reliability-engineer-hook",
+  "description": "Automated hook for Reliability Engineer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "reliability-engineer",
+      "action": "validate",
+      "description": "Run Reliability Engineer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

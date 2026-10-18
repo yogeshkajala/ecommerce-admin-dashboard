@@ -1,0 +1,13 @@
+﻿{
+  "name": "value-mapper-hook",
+  "description": "Automated hook for Value Mapper processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "value-mapper",
+      "action": "validate",
+      "description": "Run Value Mapper validation on changed files"
+    }
+  ],
+  "enabled": false
+}

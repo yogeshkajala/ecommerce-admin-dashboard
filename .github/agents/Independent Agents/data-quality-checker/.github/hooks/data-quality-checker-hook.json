@@ -1,0 +1,13 @@
+﻿{
+  "name": "data-quality-checker-hook",
+  "description": "Automated hook for Data Quality Checker processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "data-quality-checker",
+      "action": "validate",
+      "description": "Run Data Quality Checker validation on changed files"
+    }
+  ],
+  "enabled": false
+}

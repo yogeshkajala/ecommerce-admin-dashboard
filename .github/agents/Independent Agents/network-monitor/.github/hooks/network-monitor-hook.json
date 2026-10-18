@@ -1,0 +1,13 @@
+﻿{
+  "name": "network-monitor-hook",
+  "description": "Automated hook for Network Monitor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "network-monitor",
+      "action": "validate",
+      "description": "Run Network Monitor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

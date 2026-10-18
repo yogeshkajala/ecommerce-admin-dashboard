@@ -1,0 +1,13 @@
+﻿{
+  "name": "data-modeler-hook",
+  "description": "Automated hook for Data Modeler processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "data-modeler",
+      "action": "validate",
+      "description": "Run Data Modeler validation on changed files"
+    }
+  ],
+  "enabled": false
+}

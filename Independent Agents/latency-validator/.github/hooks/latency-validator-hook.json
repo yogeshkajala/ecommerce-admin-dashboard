@@ -1,0 +1,13 @@
+﻿{
+  "name": "latency-validator-hook",
+  "description": "Automated hook for Latency Validator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "latency-validator",
+      "action": "validate",
+      "description": "Run Latency Validator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

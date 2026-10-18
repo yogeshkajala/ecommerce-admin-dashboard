@@ -1,0 +1,13 @@
+﻿{
+  "name": "metrics-dashboard-builder-hook",
+  "description": "Automated hook for Metrics Dashboard Builder processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "metrics-dashboard-builder",
+      "action": "validate",
+      "description": "Run Metrics Dashboard Builder validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "model-trainer-hook",
+  "description": "Automated hook for Model Trainer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "model-trainer",
+      "action": "validate",
+      "description": "Run Model Trainer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

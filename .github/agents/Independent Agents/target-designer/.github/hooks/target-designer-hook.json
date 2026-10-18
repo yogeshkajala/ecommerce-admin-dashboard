@@ -1,0 +1,13 @@
+﻿{
+  "name": "target-designer-hook",
+  "description": "Automated hook for Target Designer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "target-designer",
+      "action": "validate",
+      "description": "Run Target Designer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

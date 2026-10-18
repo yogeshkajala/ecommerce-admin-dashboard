@@ -1,0 +1,13 @@
+﻿{
+  "name": "data-seeder-hook",
+  "description": "Automated hook for Data Seeder processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "data-seeder",
+      "action": "validate",
+      "description": "Run Data Seeder validation on changed files"
+    }
+  ],
+  "enabled": false
+}

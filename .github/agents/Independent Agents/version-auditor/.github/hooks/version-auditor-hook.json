@@ -1,0 +1,13 @@
+﻿{
+  "name": "version-auditor-hook",
+  "description": "Automated hook for Version Auditor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "version-auditor",
+      "action": "validate",
+      "description": "Run Version Auditor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

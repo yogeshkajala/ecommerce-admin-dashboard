@@ -1,0 +1,13 @@
+﻿{
+  "name": "dependency-scanner-hook",
+  "description": "Automated hook for Dependency Scanner processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "dependency-scanner",
+      "action": "validate",
+      "description": "Run Dependency Scanner validation on changed files"
+    }
+  ],
+  "enabled": false
+}

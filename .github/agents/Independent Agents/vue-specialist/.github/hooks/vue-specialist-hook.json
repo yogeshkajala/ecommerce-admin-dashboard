@@ -1,0 +1,13 @@
+﻿{
+  "name": "vue-specialist-hook",
+  "description": "Automated hook for Vue Specialist processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "vue-specialist",
+      "action": "validate",
+      "description": "Run Vue Specialist validation on changed files"
+    }
+  ],
+  "enabled": false
+}

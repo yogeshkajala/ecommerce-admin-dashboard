@@ -1,0 +1,13 @@
+﻿{
+  "name": "unit-test-generator-hook",
+  "description": "Automated hook for Unit Test Generator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "unit-test-generator",
+      "action": "validate",
+      "description": "Run Unit Test Generator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "blast-radius-assessor-hook",
+  "description": "Automated hook for Blast Radius Assessor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "blast-radius-assessor",
+      "action": "validate",
+      "description": "Run Blast Radius Assessor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "performance-tuner-hook",
+  "description": "Automated hook for Performance Tuner processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "performance-tuner",
+      "action": "validate",
+      "description": "Run Performance Tuner validation on changed files"
+    }
+  ],
+  "enabled": false
+}

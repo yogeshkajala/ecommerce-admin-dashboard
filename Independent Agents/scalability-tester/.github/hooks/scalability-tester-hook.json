@@ -1,0 +1,13 @@
+﻿{
+  "name": "scalability-tester-hook",
+  "description": "Automated hook for Scalability Tester processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "scalability-tester",
+      "action": "validate",
+      "description": "Run Scalability Tester validation on changed files"
+    }
+  ],
+  "enabled": false
+}

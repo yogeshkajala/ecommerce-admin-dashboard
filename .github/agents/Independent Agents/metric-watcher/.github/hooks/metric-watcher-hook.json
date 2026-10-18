@@ -1,0 +1,13 @@
+﻿{
+  "name": "metric-watcher-hook",
+  "description": "Automated hook for Metric Watcher processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "metric-watcher",
+      "action": "validate",
+      "description": "Run Metric Watcher validation on changed files"
+    }
+  ],
+  "enabled": false
+}

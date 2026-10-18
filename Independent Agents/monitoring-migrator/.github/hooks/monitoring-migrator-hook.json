@@ -1,0 +1,13 @@
+﻿{
+  "name": "monitoring-migrator-hook",
+  "description": "Automated hook for Monitoring Migrator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "monitoring-migrator",
+      "action": "validate",
+      "description": "Run Monitoring Migrator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

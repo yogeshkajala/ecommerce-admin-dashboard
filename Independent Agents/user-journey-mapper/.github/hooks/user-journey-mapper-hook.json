@@ -1,0 +1,13 @@
+﻿{
+  "name": "user-journey-mapper-hook",
+  "description": "Automated hook for User Journey Mapper processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "user-journey-mapper",
+      "action": "validate",
+      "description": "Run User Journey Mapper validation on changed files"
+    }
+  ],
+  "enabled": false
+}

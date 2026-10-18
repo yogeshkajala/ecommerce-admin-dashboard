@@ -1,0 +1,13 @@
+﻿{
+  "name": "eol-tracker-hook",
+  "description": "Automated hook for Eol Tracker processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "eol-tracker",
+      "action": "validate",
+      "description": "Run Eol Tracker validation on changed files"
+    }
+  ],
+  "enabled": false
+}

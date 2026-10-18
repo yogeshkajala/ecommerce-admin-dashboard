@@ -1,0 +1,13 @@
+﻿{
+  "name": "requirements-elicitor-hook",
+  "description": "Automated hook for Requirements Elicitor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "requirements-elicitor",
+      "action": "validate",
+      "description": "Run Requirements Elicitor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

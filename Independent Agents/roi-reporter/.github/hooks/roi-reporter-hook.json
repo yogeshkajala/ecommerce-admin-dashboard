@@ -1,0 +1,13 @@
+﻿{
+  "name": "roi-reporter-hook",
+  "description": "Automated hook for Roi Reporter processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "roi-reporter",
+      "action": "validate",
+      "description": "Run Roi Reporter validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "auto-scaling-configurer-hook",
+  "description": "Automated hook for Auto Scaling Configurer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "auto-scaling-configurer",
+      "action": "validate",
+      "description": "Run Auto Scaling Configurer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

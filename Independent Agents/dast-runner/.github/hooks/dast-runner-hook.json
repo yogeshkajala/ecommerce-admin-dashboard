@@ -1,0 +1,13 @@
+﻿{
+  "name": "dast-runner-hook",
+  "description": "Automated hook for Dast Runner processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "dast-runner",
+      "action": "validate",
+      "description": "Run Dast Runner validation on changed files"
+    }
+  ],
+  "enabled": false
+}

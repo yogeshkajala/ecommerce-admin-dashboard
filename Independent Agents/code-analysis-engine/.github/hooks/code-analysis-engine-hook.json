@@ -1,0 +1,13 @@
+﻿{
+  "name": "code-analysis-engine-hook",
+  "description": "Automated hook for Code Analysis Engine processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "code-analysis-engine",
+      "action": "validate",
+      "description": "Run Code Analysis Engine validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "hotspot-detector-hook",
+  "description": "Automated hook for Hotspot Detector processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "hotspot-detector",
+      "action": "validate",
+      "description": "Run Hotspot Detector validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "service-boundary-designer-hook",
+  "description": "Automated hook for Service Boundary Designer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "service-boundary-designer",
+      "action": "validate",
+      "description": "Run Service Boundary Designer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

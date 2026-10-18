@@ -1,0 +1,13 @@
+﻿{
+  "name": "process-auditor-hook",
+  "description": "Automated hook for Process Auditor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "process-auditor",
+      "action": "validate",
+      "description": "Run Process Auditor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

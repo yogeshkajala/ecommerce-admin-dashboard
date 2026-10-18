@@ -1,0 +1,13 @@
+﻿{
+  "name": "document-generator-hook",
+  "description": "Automated hook for Document Generator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "document-generator",
+      "action": "validate",
+      "description": "Run Document Generator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

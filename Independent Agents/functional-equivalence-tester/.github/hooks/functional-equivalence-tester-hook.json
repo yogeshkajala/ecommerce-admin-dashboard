@@ -1,0 +1,13 @@
+﻿{
+  "name": "functional-equivalence-tester-hook",
+  "description": "Automated hook for Functional Equivalence Tester processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "functional-equivalence-tester",
+      "action": "validate",
+      "description": "Run Functional Equivalence Tester validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "threat-responder-hook",
+  "description": "Automated hook for Threat Responder processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "threat-responder",
+      "action": "validate",
+      "description": "Run Threat Responder validation on changed files"
+    }
+  ],
+  "enabled": false
+}

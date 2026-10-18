@@ -1,0 +1,13 @@
+﻿{
+  "name": "ticket-enricher-hook",
+  "description": "Automated hook for Ticket Enricher processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "ticket-enricher",
+      "action": "validate",
+      "description": "Run Ticket Enricher validation on changed files"
+    }
+  ],
+  "enabled": false
+}

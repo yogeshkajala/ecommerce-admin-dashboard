@@ -1,0 +1,13 @@
+﻿{
+  "name": "model-monitor-hook",
+  "description": "Automated hook for Model Monitor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "model-monitor",
+      "action": "validate",
+      "description": "Run Model Monitor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

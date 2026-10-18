@@ -1,0 +1,13 @@
+﻿{
+  "name": "cost-projector-hook",
+  "description": "Automated hook for Cost Projector processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "cost-projector",
+      "action": "validate",
+      "description": "Run Cost Projector validation on changed files"
+    }
+  ],
+  "enabled": false
+}

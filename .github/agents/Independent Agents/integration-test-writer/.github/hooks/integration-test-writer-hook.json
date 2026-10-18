@@ -1,0 +1,13 @@
+﻿{
+  "name": "integration-test-writer-hook",
+  "description": "Automated hook for Integration Test Writer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "integration-test-writer",
+      "action": "validate",
+      "description": "Run Integration Test Writer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

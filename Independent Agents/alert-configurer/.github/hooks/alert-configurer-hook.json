@@ -1,0 +1,13 @@
+﻿{
+  "name": "alert-configurer-hook",
+  "description": "Automated hook for Alert Configurer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "alert-configurer",
+      "action": "validate",
+      "description": "Run Alert Configurer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

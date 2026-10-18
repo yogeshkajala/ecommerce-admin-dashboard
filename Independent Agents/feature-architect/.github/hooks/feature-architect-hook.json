@@ -1,0 +1,13 @@
+﻿{
+  "name": "feature-architect-hook",
+  "description": "Automated hook for Feature Architect processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "feature-architect",
+      "action": "validate",
+      "description": "Run Feature Architect validation on changed files"
+    }
+  ],
+  "enabled": false
+}

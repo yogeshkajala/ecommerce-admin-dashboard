@@ -1,0 +1,13 @@
+﻿{
+  "name": "complexity-scorer-hook",
+  "description": "Automated hook for Complexity Scorer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "complexity-scorer",
+      "action": "validate",
+      "description": "Run Complexity Scorer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

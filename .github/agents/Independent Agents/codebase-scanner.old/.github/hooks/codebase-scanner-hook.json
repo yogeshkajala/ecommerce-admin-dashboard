@@ -1,0 +1,13 @@
+﻿{
+  "name": "codebase-scanner-hook",
+  "description": "Automated hook for Codebase Scanner processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "codebase-scanner",
+      "action": "validate",
+      "description": "Run Codebase Scanner validation on changed files"
+    }
+  ],
+  "enabled": false
+}

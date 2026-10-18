@@ -1,0 +1,13 @@
+﻿{
+  "name": "coverage-analyzer-hook",
+  "description": "Automated hook for Coverage Analyzer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "coverage-analyzer",
+      "action": "validate",
+      "description": "Run Coverage Analyzer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

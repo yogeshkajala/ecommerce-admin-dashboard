@@ -1,0 +1,13 @@
+﻿{
+  "name": "ops-enablement-lead-hook",
+  "description": "Automated hook for Ops Enablement Lead processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "ops-enablement-lead",
+      "action": "validate",
+      "description": "Run Ops Enablement Lead validation on changed files"
+    }
+  ],
+  "enabled": false
+}

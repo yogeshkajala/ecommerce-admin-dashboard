@@ -1,0 +1,13 @@
+﻿{
+  "name": "requirement-prioritizer-hook",
+  "description": "Automated hook for Requirement Prioritizer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "requirement-prioritizer",
+      "action": "validate",
+      "description": "Run Requirement Prioritizer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

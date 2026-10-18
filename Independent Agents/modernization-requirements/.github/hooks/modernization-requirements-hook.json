@@ -1,0 +1,13 @@
+﻿{
+  "name": "modernization-requirements-hook",
+  "description": "Automated hook for Modernization Requirements processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "modernization-requirements",
+      "action": "validate",
+      "description": "Run Modernization Requirements validation on changed files"
+    }
+  ],
+  "enabled": false
+}

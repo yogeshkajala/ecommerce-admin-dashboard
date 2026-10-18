@@ -1,0 +1,13 @@
+﻿{
+  "name": "compatibility-checker-hook",
+  "description": "Automated hook for Compatibility Checker processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "compatibility-checker",
+      "action": "validate",
+      "description": "Run Compatibility Checker validation on changed files"
+    }
+  ],
+  "enabled": false
+}

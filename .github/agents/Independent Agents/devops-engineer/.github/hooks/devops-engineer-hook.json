@@ -1,0 +1,13 @@
+﻿{
+  "name": "devops-engineer-hook",
+  "description": "Automated hook for Devops Engineer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "devops-engineer",
+      "action": "validate",
+      "description": "Run Devops Engineer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

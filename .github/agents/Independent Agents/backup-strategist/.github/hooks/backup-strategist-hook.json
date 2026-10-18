@@ -1,0 +1,13 @@
+﻿{
+  "name": "backup-strategist-hook",
+  "description": "Automated hook for Backup Strategist processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "backup-strategist",
+      "action": "validate",
+      "description": "Run Backup Strategist validation on changed files"
+    }
+  ],
+  "enabled": false
+}

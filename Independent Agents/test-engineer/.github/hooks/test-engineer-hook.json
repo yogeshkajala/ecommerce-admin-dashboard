@@ -1,0 +1,13 @@
+﻿{
+  "name": "test-engineer-hook",
+  "description": "Automated hook for Test Engineer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "test-engineer",
+      "action": "validate",
+      "description": "Run Test Engineer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

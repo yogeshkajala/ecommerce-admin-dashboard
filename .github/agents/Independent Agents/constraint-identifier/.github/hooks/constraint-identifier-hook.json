@@ -1,0 +1,13 @@
+﻿{
+  "name": "constraint-identifier-hook",
+  "description": "Automated hook for Constraint Identifier processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "constraint-identifier",
+      "action": "validate",
+      "description": "Run Constraint Identifier validation on changed files"
+    }
+  ],
+  "enabled": false
+}

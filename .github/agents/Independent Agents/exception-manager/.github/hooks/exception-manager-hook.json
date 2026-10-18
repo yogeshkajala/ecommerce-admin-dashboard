@@ -1,0 +1,13 @@
+﻿{
+  "name": "exception-manager-hook",
+  "description": "Automated hook for Exception Manager processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "exception-manager",
+      "action": "validate",
+      "description": "Run Exception Manager validation on changed files"
+    }
+  ],
+  "enabled": false
+}

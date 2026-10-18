@@ -1,0 +1,13 @@
+﻿{
+  "name": "scope-negotiator-hook",
+  "description": "Automated hook for Scope Negotiator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "scope-negotiator",
+      "action": "validate",
+      "description": "Run Scope Negotiator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

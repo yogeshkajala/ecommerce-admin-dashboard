@@ -1,0 +1,13 @@
+﻿{
+  "name": "api-tester-hook",
+  "description": "Automated hook for Api Tester processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "api-tester",
+      "action": "validate",
+      "description": "Run Api Tester validation on changed files"
+    }
+  ],
+  "enabled": false
+}

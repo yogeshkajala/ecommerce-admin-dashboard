@@ -1,0 +1,13 @@
+﻿{
+  "name": "sre-practice-lead-hook",
+  "description": "Automated hook for Sre Practice Lead processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "sre-practice-lead",
+      "action": "validate",
+      "description": "Run Sre Practice Lead validation on changed files"
+    }
+  ],
+  "enabled": false
+}

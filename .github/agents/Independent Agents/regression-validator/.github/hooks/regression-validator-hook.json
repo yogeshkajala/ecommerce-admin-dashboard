@@ -1,0 +1,13 @@
+﻿{
+  "name": "regression-validator-hook",
+  "description": "Automated hook for Regression Validator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "regression-validator",
+      "action": "validate",
+      "description": "Run Regression Validator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

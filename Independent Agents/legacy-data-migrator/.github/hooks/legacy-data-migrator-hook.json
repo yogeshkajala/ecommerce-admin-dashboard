@@ -1,0 +1,13 @@
+﻿{
+  "name": "legacy-data-migrator-hook",
+  "description": "Automated hook for Legacy Data Migrator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "legacy-data-migrator",
+      "action": "validate",
+      "description": "Run Legacy Data Migrator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

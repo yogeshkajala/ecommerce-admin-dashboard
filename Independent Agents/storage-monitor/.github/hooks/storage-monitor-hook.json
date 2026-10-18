@@ -1,0 +1,13 @@
+﻿{
+  "name": "storage-monitor-hook",
+  "description": "Automated hook for Storage Monitor processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "storage-monitor",
+      "action": "validate",
+      "description": "Run Storage Monitor validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "code-developer-hook",
+  "description": "Automated hook for Code Developer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "code-developer",
+      "action": "validate",
+      "description": "Run Code Developer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

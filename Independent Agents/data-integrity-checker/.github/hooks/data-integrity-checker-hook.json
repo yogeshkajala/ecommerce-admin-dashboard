@@ -1,0 +1,13 @@
+﻿{
+  "name": "data-integrity-checker-hook",
+  "description": "Automated hook for Data Integrity Checker processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "data-integrity-checker",
+      "action": "validate",
+      "description": "Run Data Integrity Checker validation on changed files"
+    }
+  ],
+  "enabled": false
+}

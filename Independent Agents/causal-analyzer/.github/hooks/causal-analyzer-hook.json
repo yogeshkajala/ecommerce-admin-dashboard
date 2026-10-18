@@ -1,0 +1,13 @@
+﻿{
+  "name": "causal-analyzer-hook",
+  "description": "Automated hook for Causal Analyzer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "causal-analyzer",
+      "action": "validate",
+      "description": "Run Causal Analyzer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

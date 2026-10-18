@@ -1,0 +1,13 @@
+﻿{
+  "name": "risk-prioritizer-hook",
+  "description": "Automated hook for Risk Prioritizer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "risk-prioritizer",
+      "action": "validate",
+      "description": "Run Risk Prioritizer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "architecture-designer-hook",
+  "description": "Automated hook for Architecture Designer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "architecture-designer",
+      "action": "validate",
+      "description": "Run Architecture Designer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

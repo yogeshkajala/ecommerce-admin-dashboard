@@ -1,0 +1,13 @@
+﻿{
+  "name": "impact-calculator-hook",
+  "description": "Automated hook for Impact Calculator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "impact-calculator",
+      "action": "validate",
+      "description": "Run Impact Calculator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

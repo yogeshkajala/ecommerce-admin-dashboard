@@ -1,0 +1,13 @@
+﻿{
+  "name": "context-identifier-hook",
+  "description": "Automated hook for Context Identifier processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "context-identifier",
+      "action": "validate",
+      "description": "Run Context Identifier validation on changed files"
+    }
+  ],
+  "enabled": false
+}

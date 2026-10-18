@@ -1,0 +1,13 @@
+﻿{
+  "name": "telemetry-collector-hook",
+  "description": "Automated hook for Telemetry Collector processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "telemetry-collector",
+      "action": "validate",
+      "description": "Run Telemetry Collector validation on changed files"
+    }
+  ],
+  "enabled": false
+}

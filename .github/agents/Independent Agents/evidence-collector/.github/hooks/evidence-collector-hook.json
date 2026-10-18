@@ -1,0 +1,13 @@
+﻿{
+  "name": "evidence-collector-hook",
+  "description": "Automated hook for Evidence Collector processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "evidence-collector",
+      "action": "validate",
+      "description": "Run Evidence Collector validation on changed files"
+    }
+  ],
+  "enabled": false
+}

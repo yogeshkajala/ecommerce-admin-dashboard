@@ -1,0 +1,13 @@
+﻿{
+  "name": "cloud-architect-hook",
+  "description": "Automated hook for Cloud Architect processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "cloud-architect",
+      "action": "validate",
+      "description": "Run Cloud Architect validation on changed files"
+    }
+  ],
+  "enabled": false
+}

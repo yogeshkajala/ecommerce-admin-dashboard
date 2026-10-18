@@ -1,0 +1,13 @@
+﻿{
+  "name": "debug-helper-hook",
+  "description": "Automated hook for Debug Helper processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "debug-helper",
+      "action": "validate",
+      "description": "Run Debug Helper validation on changed files"
+    }
+  ],
+  "enabled": false
+}

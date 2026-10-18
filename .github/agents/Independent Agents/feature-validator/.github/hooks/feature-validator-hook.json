@@ -1,0 +1,13 @@
+﻿{
+  "name": "feature-validator-hook",
+  "description": "Automated hook for Feature Validator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "feature-validator",
+      "action": "validate",
+      "description": "Run Feature Validator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

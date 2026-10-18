@@ -1,0 +1,13 @@
+﻿{
+  "name": "pdf-creator-hook",
+  "description": "Automated hook for Pdf Creator processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "pdf-creator",
+      "action": "validate",
+      "description": "Run Pdf Creator validation on changed files"
+    }
+  ],
+  "enabled": false
+}

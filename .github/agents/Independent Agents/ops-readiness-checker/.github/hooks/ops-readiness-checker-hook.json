@@ -1,0 +1,13 @@
+﻿{
+  "name": "ops-readiness-checker-hook",
+  "description": "Automated hook for Ops Readiness Checker processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "ops-readiness-checker",
+      "action": "validate",
+      "description": "Run Ops Readiness Checker validation on changed files"
+    }
+  ],
+  "enabled": false
+}

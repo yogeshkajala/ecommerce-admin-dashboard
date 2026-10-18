@@ -1,0 +1,13 @@
+﻿{
+  "name": "onboarding-guide-hook",
+  "description": "Automated hook for Onboarding Guide processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "onboarding-guide",
+      "action": "validate",
+      "description": "Run Onboarding Guide validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "documentation-writer-hook",
+  "description": "Automated hook for Documentation Writer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "documentation-writer",
+      "action": "validate",
+      "description": "Run Documentation Writer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

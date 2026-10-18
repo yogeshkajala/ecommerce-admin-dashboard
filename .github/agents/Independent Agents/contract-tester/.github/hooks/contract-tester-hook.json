@@ -1,0 +1,13 @@
+﻿{
+  "name": "contract-tester-hook",
+  "description": "Automated hook for Contract Tester processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "contract-tester",
+      "action": "validate",
+      "description": "Run Contract Tester validation on changed files"
+    }
+  ],
+  "enabled": false
+}

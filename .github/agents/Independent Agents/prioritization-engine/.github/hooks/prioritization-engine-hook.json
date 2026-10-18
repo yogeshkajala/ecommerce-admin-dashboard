@@ -1,0 +1,13 @@
+﻿{
+  "name": "prioritization-engine-hook",
+  "description": "Automated hook for Prioritization Engine processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "prioritization-engine",
+      "action": "validate",
+      "description": "Run Prioritization Engine validation on changed files"
+    }
+  ],
+  "enabled": false
+}

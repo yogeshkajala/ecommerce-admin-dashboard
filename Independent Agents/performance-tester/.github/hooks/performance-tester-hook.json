@@ -1,0 +1,13 @@
+﻿{
+  "name": "performance-tester-hook",
+  "description": "Automated hook for Performance Tester processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "performance-tester",
+      "action": "validate",
+      "description": "Run Performance Tester validation on changed files"
+    }
+  ],
+  "enabled": false
+}

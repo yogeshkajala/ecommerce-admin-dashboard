@@ -1,0 +1,13 @@
+﻿{
+  "name": "interface-cataloger-hook",
+  "description": "Automated hook for Interface Cataloger processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "interface-cataloger",
+      "action": "validate",
+      "description": "Run Interface Cataloger validation on changed files"
+    }
+  ],
+  "enabled": false
+}

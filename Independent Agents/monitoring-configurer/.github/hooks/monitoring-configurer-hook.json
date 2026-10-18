@@ -1,0 +1,13 @@
+﻿{
+  "name": "monitoring-configurer-hook",
+  "description": "Automated hook for Monitoring Configurer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "monitoring-configurer",
+      "action": "validate",
+      "description": "Run Monitoring Configurer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

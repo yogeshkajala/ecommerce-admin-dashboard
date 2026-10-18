@@ -1,0 +1,13 @@
+﻿{
+  "name": "containerizer-hook",
+  "description": "Automated hook for Containerizer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "containerizer",
+      "action": "validate",
+      "description": "Run Containerizer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

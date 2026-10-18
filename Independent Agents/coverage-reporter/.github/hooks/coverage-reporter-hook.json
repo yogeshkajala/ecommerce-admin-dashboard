@@ -1,0 +1,13 @@
+﻿{
+  "name": "coverage-reporter-hook",
+  "description": "Automated hook for Coverage Reporter processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "coverage-reporter",
+      "action": "validate",
+      "description": "Run Coverage Reporter validation on changed files"
+    }
+  ],
+  "enabled": false
+}

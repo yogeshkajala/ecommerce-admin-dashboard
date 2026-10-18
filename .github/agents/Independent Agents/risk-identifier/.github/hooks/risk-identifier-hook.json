@@ -1,0 +1,13 @@
+﻿{
+  "name": "risk-identifier-hook",
+  "description": "Automated hook for Risk Identifier processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "risk-identifier",
+      "action": "validate",
+      "description": "Run Risk Identifier validation on changed files"
+    }
+  ],
+  "enabled": false
+}

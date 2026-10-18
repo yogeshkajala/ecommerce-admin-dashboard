@@ -1,0 +1,13 @@
+﻿{
+  "name": "backend-writer-hook",
+  "description": "Automated hook for Backend Writer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "backend-writer",
+      "action": "validate",
+      "description": "Run Backend Writer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

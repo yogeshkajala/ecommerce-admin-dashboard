@@ -1,0 +1,13 @@
+﻿{
+  "name": "evidence-grounder-hook",
+  "description": "Automated hook for Evidence Grounder processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "evidence-grounder",
+      "action": "validate",
+      "description": "Run Evidence Grounder validation on changed files"
+    }
+  ],
+  "enabled": false
+}

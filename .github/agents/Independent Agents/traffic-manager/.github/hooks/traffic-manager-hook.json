@@ -1,0 +1,13 @@
+﻿{
+  "name": "traffic-manager-hook",
+  "description": "Automated hook for Traffic Manager processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "traffic-manager",
+      "action": "validate",
+      "description": "Run Traffic Manager validation on changed files"
+    }
+  ],
+  "enabled": false
+}

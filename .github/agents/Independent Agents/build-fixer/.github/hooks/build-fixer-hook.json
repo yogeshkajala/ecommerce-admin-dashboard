@@ -1,0 +1,13 @@
+﻿{
+  "name": "build-fixer-hook",
+  "description": "Automated hook for Build Fixer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "build-fixer",
+      "action": "validate",
+      "description": "Run Build Fixer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "data-converter-hook",
+  "description": "Automated hook for Data Converter processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "data-converter",
+      "action": "validate",
+      "description": "Run Data Converter validation on changed files"
+    }
+  ],
+  "enabled": false
+}

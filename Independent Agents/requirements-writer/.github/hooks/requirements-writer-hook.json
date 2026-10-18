@@ -1,0 +1,13 @@
+﻿{
+  "name": "requirements-writer-hook",
+  "description": "Automated hook for Requirements Writer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "requirements-writer",
+      "action": "validate",
+      "description": "Run Requirements Writer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

@@ -1,0 +1,13 @@
+﻿{
+  "name": "topology-visualizer-hook",
+  "description": "Automated hook for Topology Visualizer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "topology-visualizer",
+      "action": "validate",
+      "description": "Run Topology Visualizer validation on changed files"
+    }
+  ],
+  "enabled": false
+}

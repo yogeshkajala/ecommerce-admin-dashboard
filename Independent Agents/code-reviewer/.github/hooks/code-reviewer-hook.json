@@ -1,0 +1,13 @@
+﻿{
+  "name": "code-reviewer-hook",
+  "description": "Automated hook for Code Reviewer processing",
+  "event": "onSave",
+  "steps": [
+    {
+      "agent": "code-reviewer",
+      "action": "validate",
+      "description": "Run Code Reviewer validation on changed files"
+    }
+  ],
+  "enabled": false
+}
